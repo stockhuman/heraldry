@@ -37,21 +37,29 @@ export function Shape({ type }) {
 }
 
 
-export function Divisions({ type, colors = ['blue', 'red'] }) {
+export function Divisions({ type, colors = ['blue', 'red'], pattern = null }) {
 
-	let division;
+	let division
+	let fill = (pattern !== null) ? `url(#${pattern})` : colors[1]
 
 	switch (type) {
 		case 'party per pale': division = (
-			<g>
-			<rect clipPath="url(#escutcheon)" width="700" height="800" fill={ colors[0] }></rect>
-			<rect clipPath="url(#escutcheon)" width="300" height="800" fill={ colors[1] }></rect>
+			<g clipPath="url(#escutcheon)">
+			<rect width="700" height="800" fill={ colors[0] }></rect>
+			<rect width="300" height="800" fill={ fill }></rect>
 			</g>
 		); break;
 		case 'party per fess': division = (
-			<g>
-				<rect clipPath="url(#escutcheon)" width="700" height="700" fill={ colors[0] }></rect>
-				<rect clipPath="url(#escutcheon)" width="700" height="300" fill={ colors[1] }></rect>
+			<g clipPath="url(#escutcheon)">
+				<rect width="700" height="700" fill={ colors[0] }></rect>
+				<rect width="700" height="300" fill={ fill }></rect>
+			</g>
+		); break;
+		case 'party per quartely': division = (
+			<g clipPath="url(#escutcheon)">
+				<rect width="700" height="800" fill={ colors[0] }></rect>
+				<rect x="-10" width="312" height="360" fill={ colors[1] } />
+				<rect x="302" y="360" width="312" height="360" fill={ fill }/>
 			</g>
 		); break;
 		default: division = ( // plain field
@@ -63,7 +71,7 @@ export function Divisions({ type, colors = ['blue', 'red'] }) {
 }
 
 
-export function Ordinaries({ type, colors = ['blue', 'red'] }) {
+export function Ordinaries({ type, colors = ['blue', 'red'], pattern = null }) {
 	let ordinary;
 
 	switch (type) {
@@ -80,7 +88,7 @@ export function Ordinaries({ type, colors = ['blue', 'red'] }) {
 		);
 			break;
 		case 'fess': ordinary = (
-			<rect kind="fess" x="0" y="0" width="970" height="136 " fill={ colors[1] } />
+			<rect kind="fess" x="0" y="0" width="970" height="136" fill={ colors[1] } />
 		);
 			break;
 		case 'cross': ordinary = (
@@ -117,4 +125,29 @@ export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#000' }
 	if (charge) {
 		return <text x={x} y={y} textAnchor="middle" style={{ fontSize: size, fill: color }}>{ charge }</text>
 	} else return null
+}
+
+
+export function Seme ({ type, colors = ['blue', 'red', 'white'] }) {
+	let pattern
+	switch (type) {
+		case 'star': pattern = <polygon points="0,0 2,5 0,10 5,8 10,10 8,5 10,0 5,2" fill={colors[1]}/>
+		break;
+
+		case 'chevron': pattern = (
+		<g>
+			<path d="M0 0l5 3v5l-5 -3z" fill={colors[2]} />
+			<path d="M10 0l-5 3v5l5 -3" fill={colors[2]} />
+		</g>
+		)
+		break;
+		default: pattern = null
+	}
+
+	return (
+		<pattern id={ type } viewBox="0,0,10,10" width="40" height="40" patternUnits="userSpaceOnUse">
+			<rect width="10" height="10" fill={ colors[1] } />
+			{ pattern }
+		</pattern>
+	)
 }

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import { Shape, Divisions, Ordinaries, Charge } from './components/escutcheon';
+import { Shape, Divisions, Ordinaries, Charge, Seme } from './components/escutcheon'
 import emoji from './components/emoji'
 import colors from './components/colors'
 
@@ -10,9 +10,10 @@ export default class Generator extends Component {
 		super(props)
 		this.state = {
 			shape: '',
-			design: 'ordinary',
-			divisions: 'plain',
+			design: 'divided',
+			divisions: 'party per quartely',
 			ordinaries: 'bend-sinister',
+			seme: 'chevron',
 			charge: emoji('recommended'),
 			colors: ['#f4f606', '#d7d0f3']
 		}
@@ -36,17 +37,18 @@ export default class Generator extends Component {
 			'spanish'
 		]
 		const divisions = [
+			'', // default, solid field
 			'party per pale',
 			'party per fess',
-			'plain'
+			'party per quartely'
 		]
 		const ordinaries = [
+			'', // default, solid field
 			'cross',
 			'fess',
 			'pale',
 			'bend',
 			'bend-sinister',
-			'plain',
 			'chief'
 		]
 		const designs = ['ordinary', 'divided']
@@ -67,10 +69,14 @@ export default class Generator extends Component {
 				<clipPath id="escutcheon"><use xlinkHref="#clipMain"/></clipPath>
 				<use clipPath="url(#shieldPath)" />
 
-				<defs><Shape type={this.state.shape} /></defs>
+				<defs>
+					<Shape type={this.state.shape} />
+					<Seme type={this.state.seme} colors={this.state.colors} />
+				</defs>
+
 				{ this.state.design === 'ordinary'
 					? <Ordinaries type={this.state.ordinaries} colors={this.state.colors} />
-					: <Divisions type={this.state.divisions} colors={this.state.colors} />
+					: <Divisions type={this.state.divisions} colors={this.state.colors} pattern={this.state.seme}/>
 				}
 				<Charge charge={this.state.charge} color={this.state.colors[2]} />
 			</svg>
