@@ -26,7 +26,7 @@ export function Shape({ type }) {
 		case 'spanish': shape = 'M40.4,4.1v434.8h0.2c0,144.1,116.9,261,261,261s261-116.9,261-261h-0.5V4.1H40.4z';
 			break;
 
-		default: shape = "M596.4,6.4c0,0,1.5,196.9,0,295.2c-1.4,94.8-6.1,168.8-48.6,226.7c-51.1,69.7-136.4,120-246.1,169.4   C192,648.2,106.8,597.9,55.6,528.2C13.2,470.4,8.4,396.4,7,301.6C5.6,203.1,5.5,104.7,7,6.4H596.4z";
+		default: shape = "M596.4,6.4c0,0,1.5,196.9,0,295.2c-1.4,94.8-6.1,168.8-48.6,226.7c-51.1,69.7-136.4,120-246.1,169.4 C192,648.2,106.8,597.9,55.6,528.2C13.2,470.4,8.4,396.4,7,301.6C5.6,203.1,5.5,104.7,7,6.4H596.4z";
 	}
 
 	return (
@@ -68,7 +68,11 @@ export function Ordinaries({ type, colors = ['blue', 'red'] }) {
 
 	switch (type) {
 		case 'bend': ordinary = (
-			<rect kind="bend" x="-93.5" y="203" width="970" height="136" transform="rotate(-45 391.8 391.801)" fill={ colors[1] } />
+			<rect kind="bend" x="-93.5" y="203" width="970" height="136" transform="rotate(-45 391 391)" fill={ colors[1] } />
+		);
+			break;
+		case 'bend-sinister': ordinary = (
+			<rect kind="bend-sinister" x="0" y="-50" width="970" height="136" transform="rotate(45)" fill={ colors[1] } />
 		);
 			break;
 		case 'pale': ordinary = (
@@ -76,7 +80,7 @@ export function Ordinaries({ type, colors = ['blue', 'red'] }) {
 		);
 			break;
 		case 'fess': ordinary = (
-			<rect kind="fess" x="0" y="0" width="970.59" height="136 " fill={ colors[1] } />
+			<rect kind="fess" x="0" y="0" width="970" height="136 " fill={ colors[1] } />
 		);
 			break;
 		case 'cross': ordinary = (
@@ -88,7 +92,7 @@ export function Ordinaries({ type, colors = ['blue', 'red'] }) {
 		);
 			break;
 		case 'chief': ordinary = (
-			<rect x="0.38" y="0.38" width="693.55" height="289.32" fill={ colors[1] } />
+			<rect x="0" y="0" width="693" height="289" fill={ colors[1] } />
 		);
 			break;
 		default: ordinary = null
@@ -100,4 +104,17 @@ export function Ordinaries({ type, colors = ['blue', 'red'] }) {
 			{ ordinary }
 		</g>
 	)
+}
+
+/**
+ * A charge is any object or figure placed on a heraldic shield
+ * or on any other object of an armorial composition.
+ * Any object found in nature or technology may appear
+ * as a heraldic charge in armory.
+ * Charges can be animals, objects, or geometric shapes.
+ */
+export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#000' }) {
+	if (charge) {
+		return <text x={x} y={y} textAnchor="middle" style={{ fontSize: size, fill: color }}>{ charge }</text>
+	} else return null
 }

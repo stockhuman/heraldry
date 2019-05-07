@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import { Shape, Divisions, Ordinaries } from './components/escutcheon';
-import { Charge } from './components/charge'
+import { Shape, Divisions, Ordinaries, Charge } from './components/escutcheon';
 import emoji from './components/emoji'
 import colors from './components/colors'
 
@@ -13,7 +12,7 @@ export default class Generator extends Component {
 			shape: '',
 			design: 'ordinary',
 			divisions: 'plain',
-			ordinaries: 'bend',
+			ordinaries: 'bend-sinister',
 			charge: emoji('recommended'),
 			colors: ['#f4f606', '#d7d0f3']
 		}
@@ -46,6 +45,7 @@ export default class Generator extends Component {
 			'fess',
 			'pale',
 			'bend',
+			'bend-sinister',
 			'plain',
 			'chief'
 		]
@@ -72,7 +72,7 @@ export default class Generator extends Component {
 					? <Ordinaries type={this.state.ordinaries} colors={this.state.colors} />
 					: <Divisions type={this.state.divisions} colors={this.state.colors} />
 				}
-				<Charge charge={this.state.charge} />
+				<Charge charge={this.state.charge} color={this.state.colors[2]} />
 			</svg>
 		)
 	}
