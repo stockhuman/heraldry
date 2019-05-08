@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
-import { Shape, Divisions, Ordinaries, Charge, Seme } from './components/escutcheon'
+import { Shape, Divisions, Ordinaries, Seme } from './components/escutcheon'
+import Charges from './components/charge'
 import emoji from './components/emoji'
 import colors from './components/colors'
 
@@ -10,12 +11,12 @@ export default class Generator extends Component {
 		super(props)
 		this.state = {
 			shape: '',
-			design: 'divided',
-			divisions: 'party per pale',
-			ordinaries: '',
+			design: 'ordered',
+			divisions: '',
+			ordinaries: 'chief',
 			seme: 'fleur-de-lys',
 			charge: emoji('recommended'),
-			colors: ['#331', '#ddd', '#c61'],
+			colors: ['#e5e', '#ddd', '#c61'],
 			emojiSource: 'recommended'
 		}
 		this.randomise = this.randomise.bind(this)
@@ -54,7 +55,7 @@ export default class Generator extends Component {
 			'bend-sinister',
 			'chief'
 		]
-		const designs = ['ordinary', 'divided']
+		const designs = ['ordered', 'divided']
 		const patterns = [
 			'',
 			'fleur-de-lys',
@@ -87,11 +88,11 @@ export default class Generator extends Component {
 					<Seme type={this.state.seme} colors={this.state.colors} />
 				</defs>
 
-				{ this.state.design === 'ordinary'
+				{ this.state.design === 'ordered'
 					? <Ordinaries type={this.state.ordinaries} colors={this.state.colors} />
 					: <Divisions type={this.state.divisions} colors={this.state.colors} pattern={this.state.seme}/>
 				}
-				<Charge charge={this.state.charge} color={this.state.colors[2]} />
+				<Charges state={this.state} count={10} alt={emoji('alt')}/>
 			</svg>
 		)
 	}
