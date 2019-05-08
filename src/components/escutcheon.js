@@ -127,26 +127,50 @@ export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#000' }
 	} else return null
 }
 
-
+/**
+ * Most small charges can be depicted as semé, e.g. semé of roses, semé of estoiles, and so forth.
+ * @param {string} options.type     The named type of pattern, corresponds to ID
+ * @param {Array}  options.colors   The colors of the whole design, two used in pattern
+ */
 export function Seme ({ type, colors = ['blue', 'red', 'white'] }) {
 	let pattern
 	switch (type) {
-		case 'star': pattern = <polygon points="0,0 2,5 0,10 5,8 10,10 8,5 10,0 5,2" fill={colors[1]}/>
+		case 'lozengy': pattern = (
+			<g>
+				<rect width='30' height='30' fill={colors[1]}/>
+				<rect x="16" y="-14" width='28' height='28' transform='rotate(45)' fill={colors[2]}/>
+			</g>
+		)
+		break;
+
+		case 'fleur-de-lys': pattern = (
+			<g>
+				<text style={{ fontSize: 30, fill: colors[2]}} transform="matrix(1 0 0 1 0 20)">⚜</text>
+				<text style={{ fontSize: 30, fill: colors[2]}} transform="matrix(1 0 0 1 20 40)">⚜</text>
+			</g>
+		)
+		break;
+
+		case 'star': pattern = <polygon points="0,0 2,5 0,10 5,8 10,10 8,5 10,0 5,2" fill={colors[0]}/>
 		break;
 
 		case 'chevron': pattern = (
 		<g>
 			<path d="M0 0l5 3v5l-5 -3z" fill={colors[2]} />
-			<path d="M10 0l-5 3v5l5 -3" fill={colors[2]} />
+			<path d="M10 0l-5 3v5l5 -3" />
 		</g>
 		)
 		break;
+
+		case 'masoned': pattern = <g fill-rule="evenodd"><path fill={colors[2]} d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/></g>;
+		break;
+
 		default: pattern = null
 	}
 
 	return (
-		<pattern id={ type } viewBox="0,0,10,10" width="40" height="40" patternUnits="userSpaceOnUse">
-			<rect width="10" height="10" fill={ colors[1] } />
+		<pattern id={ type } width="40" height="40" patternUnits="userSpaceOnUse">
+			<rect width="40" height="40" fill={ colors[1] } />
 			{ pattern }
 		</pattern>
 	)

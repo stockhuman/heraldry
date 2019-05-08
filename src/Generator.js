@@ -13,7 +13,7 @@ export default class Generator extends Component {
 			design: 'divided',
 			divisions: 'party per quartely',
 			ordinaries: 'bend-sinister',
-			seme: 'chevron',
+			seme: 'lozengy',
 			charge: emoji('recommended'),
 			colors: ['#f4f606', '#d7d0f3']
 		}
@@ -52,6 +52,14 @@ export default class Generator extends Component {
 			'chief'
 		]
 		const designs = ['ordinary', 'divided']
+		const patterns = [
+			'fleur-de-lys',
+			'star',
+			'chevron',
+			'masoned',
+			'lozengy'
+		]
+
 		this.setState({
 			shape: shapes[Math.floor(Math.random() * shapes.length)],
 			design: designs[Math.floor(Math.random() * designs.length)],
