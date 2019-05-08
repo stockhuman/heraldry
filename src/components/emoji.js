@@ -23,6 +23,7 @@ export default function emojis (subset = 'all') {
 			'🧜‍♂️',
 			'🧜‍♀️',
 			'👣',
+			'📖',
 			'🦊',
 			'🐮',
 			'🌷',
@@ -60,6 +61,19 @@ export default function emojis (subset = 'all') {
 			'☦',
 			'⚜',
 			'⚫'
+		]
+		return e[Math.floor(Math.random() * e.length)]
+	} else if (subset === 'alt') {
+		const e = [
+			'😩',
+			'💁‍♀️',
+			'😍',
+			'💩',
+			'💦',
+			'🍆',
+			'😂',
+			'🍑',
+			'🤑'
 		]
 		return e[Math.floor(Math.random() * e.length)]
 	}
