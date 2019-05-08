@@ -40,7 +40,7 @@ export function Shape({ type }) {
 export function Divisions({ type, colors, pattern = null }) {
 
 	let division
-	let fill = (pattern !== null) ? `url(#${pattern})` : colors[1]
+	let fill = (pattern) ? `url(#${pattern})` : colors[2]
 
 	switch (type) {
 		case 'party per pale': division = (
@@ -145,8 +145,7 @@ export function Seme ({ type, colors = ['#331', '#ddd', '#c61'] }) {
 
 		case 'fleur-de-lys': pattern = (
 			<g>
-				<text style={{ fontSize: 30, fill: colors[2]}} transform="matrix(1 0 0 1 0 20)">⚜</text>
-				<text style={{ fontSize: 30, fill: colors[2]}} transform="matrix(1 0 0 1 20 40)">⚜</text>
+				<text style={{ fontSize: 25, fill: colors[2]}} transform="matrix(1 0 0 1 0 25)">⚜</text>
 			</g>
 		)
 		break;
@@ -162,7 +161,7 @@ export function Seme ({ type, colors = ['#331', '#ddd', '#c61'] }) {
 		)
 		break;
 
-		case 'masoned': pattern = <g fill-rule="evenodd"><path fill={colors[2]} d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/></g>;
+		case 'masoned': pattern = <g fillRule="evenodd"><path fill={colors[2]} d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/></g>;
 		break;
 
 		default: pattern = null
