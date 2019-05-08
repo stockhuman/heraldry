@@ -37,7 +37,7 @@ export function Shape({ type }) {
 }
 
 
-export function Divisions({ type, colors = ['blue', 'red'], pattern = null }) {
+export function Divisions({ type, colors, pattern = null }) {
 
 	let division
 	let fill = (pattern !== null) ? `url(#${pattern})` : colors[1]
@@ -71,7 +71,7 @@ export function Divisions({ type, colors = ['blue', 'red'], pattern = null }) {
 }
 
 
-export function Ordinaries({ type, colors = ['blue', 'red'], pattern = null }) {
+export function Ordinaries({ type, colors, pattern = null }) {
 	let ordinary;
 
 	switch (type) {
@@ -121,7 +121,7 @@ export function Ordinaries({ type, colors = ['blue', 'red'], pattern = null }) {
  * as a heraldic charge in armory.
  * Charges can be animals, objects, or geometric shapes.
  */
-export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#000' }) {
+export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#111' }) {
 	if (charge) {
 		return <text x={x} y={y} textAnchor="middle" style={{ fontSize: size, fill: color }}>{ charge }</text>
 	} else return null
@@ -132,7 +132,7 @@ export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#000' }
  * @param {string} options.type     The named type of pattern, corresponds to ID
  * @param {Array}  options.colors   The colors of the whole design, two used in pattern
  */
-export function Seme ({ type, colors = ['blue', 'red', 'white'] }) {
+export function Seme ({ type, colors = ['#331', '#ddd', '#c61'] }) {
 	let pattern
 	switch (type) {
 		case 'lozengy': pattern = (
@@ -151,13 +151,13 @@ export function Seme ({ type, colors = ['blue', 'red', 'white'] }) {
 		)
 		break;
 
-		case 'star': pattern = <polygon points="0,0 2,5 0,10 5,8 10,10 8,5 10,0 5,2" fill={colors[0]}/>
+		case 'star': pattern = <polygon transform="matrix(1 0 0 1 8 5)" points="0,0 4,10 0,20 10,16 20,20 16,10 20,0 10,4" fill={colors[0]}/>
 		break;
 
 		case 'chevron': pattern = (
-		<g>
-			<path d="M0 0l5 3v5l-5 -3z" fill={colors[2]} />
-			<path d="M10 0l-5 3v5l5 -3" />
+		<g transform="scale(4)">
+			<path d="M0  0l5  3v5l-5 -3z" fill={colors[2]} />
+			<path d="M10 0l-5 3v5l5  -3" fill={colors[2]} />
 		</g>
 		)
 		break;

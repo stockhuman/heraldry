@@ -11,11 +11,12 @@ export default class Generator extends Component {
 		this.state = {
 			shape: '',
 			design: 'divided',
-			divisions: 'party per quartely',
-			ordinaries: 'bend-sinister',
-			seme: 'lozengy',
+			divisions: 'party per pale',
+			ordinaries: '',
+			seme: 'fleur-de-lys',
 			charge: emoji('recommended'),
-			colors: ['#f4f606', '#d7d0f3']
+			colors: ['#331', '#ddd', '#c61'],
+			emojiSource: 'recommended'
 		}
 		this.randomise = this.randomise.bind(this)
 	}
@@ -29,6 +30,8 @@ export default class Generator extends Component {
   }
 
 	randomise () {
+		const random = arr => arr[Math.floor(Math.random() * arr.length)]
+
 		const shapes = [
 			'', // default, old french
 			'swiss',
@@ -53,6 +56,7 @@ export default class Generator extends Component {
 		]
 		const designs = ['ordinary', 'divided']
 		const patterns = [
+			'',
 			'fleur-de-lys',
 			'star',
 			'chevron',
@@ -61,11 +65,12 @@ export default class Generator extends Component {
 		]
 
 		this.setState({
-			shape: shapes[Math.floor(Math.random() * shapes.length)],
-			design: designs[Math.floor(Math.random() * designs.length)],
-			divisions: divisions[Math.floor(Math.random() * divisions.length)],
-			ordinaries: ordinaries[Math.floor(Math.random() * ordinaries.length)],
-			charge: emoji('recommended'),
+			shape: random(shapes),
+			design: random(designs),
+			divisions: random(divisions),
+			ordinaries: random(ordinaries),
+			seme: random(patterns),
+			charge: emoji(this.state.emojiSource),
 			colors: colors()
 		})
 	}
