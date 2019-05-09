@@ -10,13 +10,14 @@ export default class Generator extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
-			shape: '',
-			design: 'ordered',
-			divisions: '',
+			shape: 'swiss',
+			design: 'divided',
+			divisions: 'party per pale',
 			ordinaries: 'chief',
 			seme: 'fleur-de-lys',
+			chargeCount: 6,
 			charge: emoji('recommended'),
-			colors: ['#e5e', '#ddd', '#c61'],
+			colors: ['#2c6', '#ddd', '#c61'],
 			emojiSource: 'recommended'
 		}
 		this.randomise = this.randomise.bind(this)
@@ -24,10 +25,12 @@ export default class Generator extends Component {
 
 	componentDidMount() {
 		document.addEventListener('keydown', this.randomise);
+		document.addEventListener('click', this.randomise);
   }
 
   componentWillUnmount() {
 		document.removeEventListener('keydown', this.randomise);
+		document.removeEventListener('click', this.randomise);
   }
 
 	randomise () {
@@ -71,12 +74,14 @@ export default class Generator extends Component {
 			divisions: random(divisions),
 			ordinaries: random(ordinaries),
 			seme: random(patterns),
+			chargeCount: Math.max(1, Math.floor(Math.random() * 10)),
 			charge: emoji(this.state.emojiSource),
 			colors: colors()
 		})
 	}
 
 	render () {
+		const { shape, chargeCount, colors, seme, divisions, ordinaries, design } = this.state
 		return (
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" id="shield"
 			 viewBox="0 0 603 704" enableBackground="new 0 0 603 704">
@@ -84,15 +89,15 @@ export default class Generator extends Component {
 				<use clipPath="url(#shieldPath)" />
 
 				<defs>
-					<Shape type={this.state.shape} />
-					<Seme type={this.state.seme} colors={this.state.colors} />
+					<Shape type={shape} />
+					<Seme type={seme} colors={colors} />
 				</defs>
 
-				{ this.state.design === 'ordered'
-					? <Ordinaries type={this.state.ordinaries} colors={this.state.colors} />
-					: <Divisions type={this.state.divisions} colors={this.state.colors} pattern={this.state.seme}/>
+				{ design === 'ordered'
+					? <Ordinaries type={ordinaries} colors={colors} />
+					: <Divisions type={divisions} colors={colors} pattern={seme}/>
 				}
-				<Charges state={this.state} count={10} alt={emoji('alt')}/>
+				<Charges state={this.state} count={chargeCount} alt={emoji('alt')}/>
 			</svg>
 		)
 	}
