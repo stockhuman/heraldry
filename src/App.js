@@ -7,7 +7,10 @@ import './assets/css/App.css'
 function App() {
 	return (
 		<div className="App">
-			<header>Heraldry.io</header>
+			<header>
+				<h1>Heraldry.io</h1>
+				<p>Press any key / tap to generate</p>
+			</header>
 			<main>
 				<span role="img" style={{display: 'block', textAlign: 'center', fontSize: 150}} aria-label="crown">👑</span>
 				<Generator />
