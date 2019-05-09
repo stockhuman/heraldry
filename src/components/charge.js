@@ -299,7 +299,7 @@ export default function Charges({ state, count = 1, alt }) {
 			y={ placements[ computedCount - 1 ][i].y }
 			charge={ c }
 			key={i}
-			colors={ colors }
+			color={ colors[2] }
 		/>
 	}
 
