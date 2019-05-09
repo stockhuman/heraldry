@@ -9,7 +9,7 @@ export default function Charges({ state, count = 1, alt }) {
 	let placements = []; // [] store of possible X/Y values to charges
 	let isPlain = false; // is the shield an open field?
 
-	const { shape, design, divisions, ordinaries, charge } = state;
+	const { shape, design, divisions, ordinaries, charge, colors } = state;
 
 	// adjusts placement of charges to fit better on varying shields
 	const adjustX = (array, direction, adjustment, size = 1) => {
@@ -85,6 +85,9 @@ export default function Charges({ state, count = 1, alt }) {
 							{x:160, y:500, size: 90, useAlt: true}
 						]
 					]
+					if (shape === 'swiss') { // too skinny
+						placements[5] = adjustX(placements[5], 'in', 25)
+					}
 					maxCharges = 6
 				break;
 
@@ -111,6 +114,7 @@ export default function Charges({ state, count = 1, alt }) {
 					maxCharges = 4
 				break;
 
+				// divides into quarters
 				case 'party per quartely':
 					placements = [
 						// top left
@@ -296,6 +300,7 @@ export default function Charges({ state, count = 1, alt }) {
 			y={ placements[ computedCount - 1 ][i].y }
 			charge={ c }
 			key={i}
+			colors={ colors }
 		/>
 	}
 
