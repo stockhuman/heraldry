@@ -45,7 +45,6 @@ export default function Charges({ state, count = 1, alt }) {
 			// central
 			[{x:300, y:360, size: 200}]
 		]
-		console.log('isPlain: ', isPlain);
 	} else {
 		// the field has a design on it
 
