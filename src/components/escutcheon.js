@@ -123,7 +123,7 @@ export function Ordinaries({ type, colors, pattern = null }) {
  */
 export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#111' }) {
 	if (charge) {
-		return <text x={x} y={y} textAnchor="middle" style={{ fontSize: size, fill: color }}>{ charge }</text>
+		return <text x={x} y={y} textAnchor="middle" style={{ fontSize: size, fill: color, fontFamily: 'Segoe UI Emoji' }}>{ charge }</text>
 	} else return null
 }
 
@@ -145,7 +145,7 @@ export function Seme ({ type, colors = ['#331', '#ddd', '#c61'] }) {
 
 		case 'fleur-de-lys': pattern = (
 			<g>
-				<text style={{ fontSize: 25, fill: colors[2]}} transform="matrix(1 0 0 1 0 25)">⚜</text>
+				<text style={{ fontSize: 25, fill: colors[2], fontFamily: 'Segoe UI Emoji'}} transform="matrix(1 0 0 1 0 25)">⚜</text>
 			</g>
 		)
 		break;

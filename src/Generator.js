@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import { saveSvgAsPng } from 'save-svg-as-png'
 
 import { Shape, Divisions, Ordinaries, Seme } from './components/escutcheon'
 import Charges from './components/charge'
 import emoji from './components/emoji'
 import colors from './components/colors'
+
+import { sanitizeEmoji } from './components/util/strings'
 
 export default class Generator extends Component {
 
@@ -24,60 +27,86 @@ export default class Generator extends Component {
 	}
 
 	componentDidMount() {
-		document.addEventListener('keydown', this.randomise);
-		document.addEventListener('click', this.randomise);
+		document.addEventListener('keydown', this.randomise)
+		document.addEventListener('click', this.randomise)
+		window.addEventListener('touchstart', this.randomise)
   }
 
   componentWillUnmount() {
-		document.removeEventListener('keydown', this.randomise);
-		document.removeEventListener('click', this.randomise);
+		document.removeEventListener('keydown', this.randomise)
+		document.removeEventListener('click', this.randomise)
+		window.removeEventListener('touchstart', this.randomise)
   }
 
-	randomise () {
-		const random = arr => arr[Math.floor(Math.random() * arr.length)]
+	randomise (event) {
+		// catch the 's' key / two finger tap and save instead of randomising
+		if ((event.touches && event.touches.length === 2) || event.key === 's') {
+			this.save()
+		} else {
+			const random = arr => arr[Math.floor(Math.random() * arr.length)]
 
-		const shapes = [
-			'', // default, old french
-			'swiss',
-			'french',
-			'papal',
-			'spanish'
-		]
-		const divisions = [
-			'', // default, solid field
-			'party per pale',
-			'party per fess',
-			'party per quartely'
-		]
-		const ordinaries = [
-			'', // default, solid field
-			'cross',
-			'fess',
-			'pale',
-			'bend',
-			'bend-sinister',
-			'chief'
-		]
-		const designs = ['ordered', 'divided']
-		const patterns = [
-			'',
-			'fleur-de-lys',
-			'star',
-			'chevron',
-			'masoned',
-			'lozengy'
-		]
+			const shapes = [
+				'', // default, old french
+				'swiss',
+				'french',
+				'papal',
+				'spanish'
+			]
+			const divisions = [
+				'', // default, solid field
+				'party per pale',
+				'party per fess',
+				'party per quartely'
+			]
+			const ordinaries = [
+				'', // default, solid field
+				'cross',
+				'fess',
+				'pale',
+				'bend',
+				'bend-sinister',
+				'chief'
+			]
+			const designs = ['ordered', 'divided']
+			const patterns = [
+				'',
+				'fleur-de-lys',
+				'star',
+				'chevron',
+				'masoned',
+				'lozengy'
+			]
 
-		this.setState({
-			shape: random(shapes),
-			design: random(designs),
-			divisions: random(divisions),
-			ordinaries: random(ordinaries),
-			seme: random(patterns),
-			chargeCount: Math.max(1, Math.floor(Math.random() * 10)),
-			charge: emoji(this.state.emojiSource),
-			colors: colors()
-		})
+			this.setState({
+				shape: random(shapes),
+				design: random(designs),
+				divisions: random(divisions),
+				ordinaries: random(ordinaries),
+				seme: random(patterns),
+				chargeCount: Math.max(1, Math.floor(Math.random() * 10)),
+				charge: emoji(this.state.emojiSource),
+				colors: colors()
+			})
+		}
+	}
+
+	save () {
+		// Clone the node to alter it in place without damaging the react app
+		const svg = document.getElementsByTagName('svg')[0].cloneNode(true)
+		const image = new Image()
+
+		// convert UTF-16 emojis into escaped characters
+		svg.outerHTML = sanitizeEmoji(svg.outerHTML)
+
+		const serial = new XMLSerializer().serializeToString(svg)
+		const data = btoa(unescape(encodeURIComponent(serial)))
+		const header = 'data:image/svg+xml;base64,'
+		const image64 = header + data
+
+		// add the source to the image for display and download
+		image.src = image64
+
+		saveSvgAsPng(svg, `eschucheon_${Date.now()}.png`)
 	}
 
 	render () {
