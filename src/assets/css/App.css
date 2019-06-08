@@ -92,3 +92,8 @@ a {
   main span { font-size: 100px}
   #shield { max-width: 400px}
 }
+
+@media (min-width: 1050px) and (min-height: 800px) {
+  #shield { width: 700px}
+}
+
