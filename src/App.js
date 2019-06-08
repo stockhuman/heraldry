@@ -12,7 +12,7 @@ function App() {
 				<p>Press any key / tap to generate</p>
 			</header>
 			<main>
-				<span role="img" style={{display: 'block', textAlign: 'center', fontSize: 150}} aria-label="crown">👑</span>
+				<span role="img" aria-label="crown">👑</span>
 				<Generator />
 			</main>
 			<footer>Made with honour and chivalry by <a href="https://michaelhemingway.com">Michael Hemingway</a></footer>
