@@ -93,19 +93,9 @@ export default class Generator extends Component {
 	save () {
 		// Clone the node to alter it in place without damaging the react app
 		const svg = document.getElementsByTagName('svg')[0].cloneNode(true)
-		const image = new Image()
 
 		// convert UTF-16 emojis into escaped characters
 		svg.outerHTML = sanitizeEmoji(svg.outerHTML)
-
-		const serial = new XMLSerializer().serializeToString(svg)
-		const data = btoa(unescape(encodeURIComponent(serial)))
-		const header = 'data:image/svg+xml;base64,'
-		const image64 = header + data
-
-		// add the source to the image for display and download
-		image.src = image64
-
 		saveSvgAsPng(svg, `eschucheon_${Date.now()}.png`)
 	}
 
