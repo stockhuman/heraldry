@@ -85,6 +85,7 @@ export default function Charges({ state, count = 1, alt }) {
 						]
 					]
 					if (shape === 'swiss') { // too skinny
+						placements[4] = adjustX(placements[5], 'in', 25)
 						placements[5] = adjustX(placements[5], 'in', 25)
 					}
 					maxCharges = 6
