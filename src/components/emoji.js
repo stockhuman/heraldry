@@ -60,12 +60,14 @@ export default function emojis (subset = 'all') {
 			'⚙',
 			'⚖',
 			'🔗',
-			'✝',
-			'☪',
-			'🔯',
+			'🐬',
+			'🖖🏿',
+			'🦉',
 			'☦',
 			'⚜',
-			'⚫'
+			'⚫',
+			'💎',
+			'🙃'
 		]
 		return e[Math.floor(Math.random() * e.length)]
 	} else if (subset === 'alt') {
@@ -78,7 +80,12 @@ export default function emojis (subset = 'all') {
 			'🍆',
 			'😂',
 			'🍑',
-			'🤑'
+			'🤑',
+			'🥑',
+			'🧻',
+			'🦵',
+			'🤠',
+			'👽'
 		]
 		return e[Math.floor(Math.random() * e.length)]
 	}
