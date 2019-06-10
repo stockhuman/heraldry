@@ -43,7 +43,7 @@ export default function Charges({ state, count = 1, alt }) {
 		maxCharges = 1
 		placements = [
 			// central
-			[{x:300, y:360, size: 200}]
+			[{x:301, y:360, size: 200}]
 		]
 	} else {
 		// the field has a design on it
@@ -72,21 +72,21 @@ export default function Charges({ state, count = 1, alt }) {
 							{x:440, y:160, size: 90},
 							{x:440, y:330, size: 90},
 							{x:440, y:500, size: 90},
-							{x:160, y:250, size: 150, useAlt: true},
-							{x:160, y:470, size: 150, useAlt: true}
+							{x:150, y:250, size: 150, useAlt: true},
+							{x:150, y:470, size: 150, useAlt: true}
 						],
 						[ // 2 columns mirrored
-							{x:440, y:160, size: 90},
-							{x:440, y:330, size: 90},
-							{x:440, y:500, size: 90},
-							{x:160, y:160, size: 90, useAlt: true},
-							{x:160, y:330, size: 90, useAlt: true},
-							{x:160, y:500, size: 90, useAlt: true}
+							{x:450, y:160, size: 90},
+							{x:450, y:330, size: 90},
+							{x:450, y:500, size: 90},
+							{x:150, y:160, size: 90, useAlt: true},
+							{x:150, y:330, size: 90, useAlt: true},
+							{x:150, y:500, size: 90, useAlt: true}
 						]
 					]
-					if (shape === 'swiss') { // too skinny
-						placements[4] = adjustX(placements[5], 'in', 25)
-						placements[5] = adjustX(placements[5], 'in', 25)
+					if (shape === 'swiss' || shape === 'papal') { // too skinny
+						placements[4] = adjustX(placements[4], 'in', 30)
+						placements[5] = adjustX(placements[5], 'in', 30)
 					}
 					maxCharges = 6
 				break;
@@ -97,17 +97,18 @@ export default function Charges({ state, count = 1, alt }) {
 						// central
 						[{x:300, y:390, size: 300}],
 						// distrubuted horizontal overtop
-						[{x:160, y:200}, {x:440, y:200}],
+						[{x:160, y:195}, {x:440, y:195}],
 						// distrubuted horizontal overtop x3
-						[{x:130, y:200}, {x:300, y:200}, {x:470, y:200}],
+						[{x:130, y:195}, {x:300, y:195}, {x:470, y:195}],
 						// ante + large bottom
 						[
-							{x:130, y:200},
-							{x:300, y:200},
-							{x:470, y:200},
+							{x:130, y:190},
+							{x:300, y:190},
+							{x:470, y:190},
 							{x:300, y:520, size: 200, useAlt: true},
 						]
 					]
+					chargeSize = 100
 					if (shape === 'papal') {
 						chargeSize = 120
 					}
@@ -149,6 +150,10 @@ export default function Charges({ state, count = 1, alt }) {
 					maxCharges = 5
 					if (shape === 'papal') {
 						placements[4] = adjustX(placements[4], 'in', 15)
+					}
+					if (shape === '') {
+						placements[3] = adjustX(placements[3], 'out', 15)
+						placements[4] = adjustX(placements[4], 'out', 15)
 					}
 				break;
 				default: console.log('No division specified')
