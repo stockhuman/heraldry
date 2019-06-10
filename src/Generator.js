@@ -6,22 +6,21 @@ import Charges from './components/charge'
 import emoji from './components/emoji'
 import colors from './components/colors'
 
-import { sanitizeEmoji } from './components/util/strings'
-
 export default class Generator extends Component {
 
 	constructor (props) {
 		super(props)
 		this.state = {
-			shape: 'swiss',
+			shape: '',
 			design: 'divided',
-			divisions: 'party per pale',
-			ordinaries: 'chief',
+			divisions: '',
+			ordinaries: '',
 			seme: 'fleur-de-lys',
-			chargeCount: 6,
+			chargeCount: 2,
 			charge: emoji('recommended'),
 			colors: ['#2c6', '#ddd', '#c61'],
-			emojiSource: 'recommended'
+			emojiSource: 'recommended',
+			description: ''
 		}
 		this.randomise = this.randomise.bind(this)
 	}
@@ -42,6 +41,8 @@ export default class Generator extends Component {
 		// catch the 's' key / two finger tap and save instead of randomising
 		if ((event.touches && event.touches.length === 2) || event.key === 's') {
 			this.save()
+		} else if (event.key === 'd') {
+			this.describe()
 		} else {
 			const random = arr => arr[Math.floor(Math.random() * arr.length)]
 
@@ -90,20 +91,47 @@ export default class Generator extends Component {
 		}
 	}
 
-	save () {
-		// Clone the node to alter it in place without damaging the react app
-		const svg = document.getElementsByTagName('svg')[0].cloneNode(true)
+	async save () {
+		const svg = document.getElementsByTagName('svg')[0]
 
-		// convert UTF-16 emojis into escaped characters
-		svg.outerHTML = sanitizeEmoji(svg.outerHTML)
-		saveSvgAsPng(svg, `eschucheon_${Date.now()}.png`)
+		await saveSvgAsPng(svg, `eschucheon_${Date.now()}.png`)
+	}
+
+	describe() {
+		// via https://en.wikipedia.org/wiki/Blazon
+		const { colors, design, divisions, ordinaries, seme, charge } = this.state
+		let isPlain = false // plain field
+		let variation = ''
+		let blazon
+
+		if (design === 'divided' && divisions === '') { isPlain = true }
+		if (design === 'ordered' && ordinaries === '') { isPlain = true }
+
+		if (seme) {
+			switch (seme) {
+				case 'masoned': variation = ` masoned ${colors[2]}`; break
+				case 'fleur-de-lys': variation = ` semé-de-lys Or and ${colors[1]}`; break
+				default: variation = ` semé of ${seme} ${colors[2]} and ${colors[1]}`
+			}
+		}
+
+		if (isPlain) {
+			blazon = `${colors[0]}${variation}, ${charge}`
+		} else {
+			if (design === 'divided') {
+				blazon = `${divisions} ${colors[0]} and ${colors[1]}, `
+			} else {
+				blazon = `${colors[0]}${variation}, ${ordinaries}`
+			}
+		}
+		console.log(blazon)
 	}
 
 	render () {
-		const { shape, chargeCount, colors, seme, divisions, ordinaries, design } = this.state
+		const { shape, chargeCount, colors, seme, divisions, ordinaries, design, description } = this.state
 		return (
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" id="shield"
-			 viewBox="0 0 603 704" enableBackground="new 0 0 603 704">
+			 viewBox="0 0 603 704" enableBackground="new 0 0 603 704" data-description={description}>
 				<clipPath id="escutcheon"><use xlinkHref="#clipMain"/></clipPath>
 				<use clipPath="url(#shieldPath)" />
 
