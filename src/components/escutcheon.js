@@ -63,7 +63,7 @@ export function Divisions({ type, colors, pattern = null }) {
 			</g>
 		); break;
 		default: division = ( // plain field
-			<rect clipPath="url(#escutcheon)" width="700" height="800" fill={ colors[0] }></rect>
+			<rect clipPath="url(#escutcheon)" width="700" height="800" fill={ fill }></rect>
 		);
 	}
 
@@ -72,7 +72,8 @@ export function Divisions({ type, colors, pattern = null }) {
 
 
 export function Ordinaries({ type, colors, pattern = null }) {
-	let ordinary;
+	let ordinary
+	let fill = (pattern) ? `url(#${pattern})` : colors[0]
 
 	switch (type) {
 		case 'bend': ordinary = (
@@ -108,7 +109,7 @@ export function Ordinaries({ type, colors, pattern = null }) {
 
 	return (
 		<g clipPath="url(#escutcheon)">
-			<rect width="700" height="800" fill={ colors[0] }></rect>
+			<rect width="700" height="800" fill={ fill }></rect>
 			{ ordinary }
 		</g>
 	)
