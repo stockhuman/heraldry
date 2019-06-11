@@ -124,7 +124,7 @@ export function Ordinaries({ type, colors, pattern = null }) {
  */
 export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#111' }) {
 	if (charge) {
-		return <text x={x} y={y} textAnchor="middle" style={{ fontSize: size, fill: color, fontFamily: 'Segoe UI Emoji' }}>{ charge }</text>
+		return <text x={x} y={y} textAnchor="middle" style={{ fontSize: size, fill: color, fontFamily: 'Segoe UI Emoji' }}>{ charge[0] }</text>
 	} else return null
 }
 
@@ -151,10 +151,7 @@ export function Seme ({ type, colors = ['#331', '#ddd', '#c61'] }) {
 		)
 		break;
 
-		case 'star': pattern = <polygon transform="matrix(1 0 0 1 8 5)" points="0,0 4,10 0,20 10,16 20,20 16,10 20,0 10,4" fill={colors[0]}/>
-		break;
-
-		case 'chevron': pattern = (
+		case 'barry-dancetty': pattern = (
 		<g transform="scale(4)">
 			<path d="M0  0l5  3v5l-5 -3z" fill={colors[2]} />
 			<path d="M10 0l-5 3v5l5  -3" fill={colors[2]} />

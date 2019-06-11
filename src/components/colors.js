@@ -53,12 +53,43 @@ export function namedColors () {
 // Includes only valid tincture / metal combinations and accurate historical colors
 export function heraldicColors () {
 	const colorpairs = [
-		['#0a6319', '#f4f4f4'], // Vert, argent
-		['#0a3b84', '#f4f4f4'], // Azur, argent
+		['#56e39f', '#f4f4f4'], // Vert, argent
+		['#0a3b84', '#f4f4f4'], // Azure, argent
 		['#f4f4f4', '#0f0f0f'], // Argent, sable
 		['#d8d063', '#0f0f0f'], // Or, sable
 		['#491984', '#d8d063'], // Purpure, Or
 		['#b20505', '#f4f4f4'], // Gules, Argent
 	]
 	return colorpairs[Math.floor(Math.random() * colorpairs.length)]
+}
+
+export function match (hex) {
+	let name, type
+	const tinctures = [
+		['#56e39f', 'Vert'],
+		['#0a3b84', 'Azure'],
+		['#491984', 'Purpure'],
+		['#b20505', 'Gules'],
+		['#0f0f0f', 'Sable']
+	]
+	const metals = [
+		['#d8d063', 'Or'],
+		['#f4f4f4', 'Argent']
+	]
+
+	for (let i = 0; i < tinctures.length; i++) {
+		if (tinctures[i][0] === hex) {
+			name = tinctures[i][1]
+			type = 'tincture'
+		}
+	}
+
+	for (let i = 0; i < metals.length; i++) {
+		if (metals[i][0] === hex) {
+			name = metals[i][1]
+			type = 'metal'
+		}
+	}
+
+	return { name, type }
 }

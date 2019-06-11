@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { saveSvgAsPng } from 'save-svg-as-png'
 
 import { Shape, Divisions, Ordinaries, Seme } from './components/escutcheon'
+import { heraldicColors as colors } from './components/colors'
 import Charges from './components/charge'
 import emoji from './components/emoji'
-import colors from './components/colors'
+import blazon from './components/blazon'
 
 export default class Generator extends Component {
 
@@ -13,12 +14,13 @@ export default class Generator extends Component {
 		this.state = {
 			shape: '',
 			design: 'divided',
-			divisions: '',
+			divisions: 'party per pale',
 			ordinaries: '',
-			seme: 'fleur-de-lys',
-			chargeCount: 2,
+			seme: '',
+			chargeCount: 5,
 			charge: emoji('recommended'),
-			colors: ['#2c6', '#ddd', '#c61'],
+			altCharge: emoji('alt'),
+			colors: ['#56e39f', '#f4f4f4', '#0f0f0f'],
 			emojiSource: 'recommended',
 			description: ''
 		}
@@ -35,7 +37,7 @@ export default class Generator extends Component {
 		document.removeEventListener('keydown', this.randomise)
 		document.removeEventListener('click', this.randomise)
 		window.removeEventListener('touchstart', this.randomise)
-  }
+	}
 
 	randomise (event) {
 		// catch the 's' key / two finger tap and save instead of randomising
@@ -72,8 +74,7 @@ export default class Generator extends Component {
 			const patterns = [
 				'',
 				'fleur-de-lys',
-				'star',
-				'chevron',
+				'barry-dancetty',
 				'masoned',
 				'lozengy'
 			]
@@ -86,6 +87,7 @@ export default class Generator extends Component {
 				seme: random(patterns),
 				chargeCount: Math.max(1, Math.floor(Math.random() * 10)),
 				charge: emoji(this.state.emojiSource),
+				altCharge: emoji('alt'),
 				colors: colors()
 			})
 		}
@@ -98,37 +100,24 @@ export default class Generator extends Component {
 	}
 
 	describe() {
-		// via https://en.wikipedia.org/wiki/Blazon
-		const { colors, design, divisions, ordinaries, seme, charge } = this.state
-		let isPlain = false // plain field
-		let variation = ''
-		let blazon
-
-		if (design === 'divided' && divisions === '') { isPlain = true }
-		if (design === 'ordered' && ordinaries === '') { isPlain = true }
-
-		if (seme) {
-			switch (seme) {
-				case 'masoned': variation = ` masoned ${colors[2]}`; break
-				case 'fleur-de-lys': variation = ` semé-de-lys Or and ${colors[1]}`; break
-				default: variation = ` semé of ${seme} ${colors[2]} and ${colors[1]}`
-			}
-		}
-
-		if (isPlain) {
-			blazon = `${colors[0]}${variation}, ${charge}`
-		} else {
-			if (design === 'divided') {
-				blazon = `${divisions} ${colors[0]} and ${colors[1]}, `
-			} else {
-				blazon = `${colors[0]}${variation}, ${ordinaries}`
-			}
-		}
-		console.log(blazon)
+		// via https://en.wikipedia.org/wiki/Blazon and
+		// https://heraldry.sca.org/armory/bruce.html
+		this.description = blazon(this.state)
 	}
 
 	render () {
-		const { shape, chargeCount, colors, seme, divisions, ordinaries, design, description } = this.state
+		const {
+			shape,
+			chargeCount,
+			altCharge,
+			colors,
+			seme,
+			divisions,
+			ordinaries,
+			design,
+			description
+		} = this.state
+
 		return (
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" id="shield"
 			 viewBox="0 0 603 704" enableBackground="new 0 0 603 704" data-description={description}>
@@ -141,10 +130,10 @@ export default class Generator extends Component {
 				</defs>
 
 				{ design === 'ordered'
-					? <Ordinaries type={ordinaries} colors={colors} />
-					: <Divisions type={divisions} colors={colors} pattern={seme}/>
+					? <Ordinaries type={ordinaries} colors={colors} pattern={seme} />
+					: <Divisions type={divisions} colors={colors} pattern={seme} />
 				}
-				<Charges state={this.state} count={chargeCount} alt={emoji('alt')}/>
+				<Charges state={this.state} count={chargeCount} alt={altCharge}/>
 			</svg>
 		)
 	}

@@ -30,6 +30,30 @@ export default function Charges({ state, count = 1, alt }) {
 			if (e.size) {
 				e.size *= size
 			}
+			a[i] = e
+		}
+
+		return a
+	}
+
+	const adjustY = (array, direction, adjustment) => {
+		let a = array
+
+		for (let i = a.length - 1; i >= 0; i--) {
+			let e = a[i] // a placement object
+
+			if (direction === 'in') {
+				if (e.y < 350) e.y += adjustment
+				if (e.y > 350) e.y -= adjustment
+			}
+			if (direction === 'out') {
+				if (e.y < 350) e.y -= adjustment
+				if (e.y > 350) e.y += adjustment
+			}
+			if (direction === '') {
+				e.y += adjustment // adjust all in one direction
+			}
+			a[i] = e
 		}
 
 		return a
@@ -58,9 +82,9 @@ export default function Charges({ state, count = 1, alt }) {
 						// distrubuted horizontal
 						[{x:160, y:360}, {x:440, y:360}],
 						[ // three along dexter
-							{x:440, y:160, size: 90},
+							{x:440, y:175, size: 90},
 							{x:440, y:350, size: 90},
-							{x:440, y:540, size: 90}
+							{x:440, y:525, size: 90}
 						],
 						[ // ante + large on sinister
 							{x:440, y:160, size: 90},
@@ -72,8 +96,8 @@ export default function Charges({ state, count = 1, alt }) {
 							{x:440, y:160, size: 90},
 							{x:440, y:330, size: 90},
 							{x:440, y:500, size: 90},
-							{x:150, y:250, size: 150, useAlt: true},
-							{x:150, y:470, size: 150, useAlt: true}
+							{x:150, y:232, size: 125, useAlt: true},
+							{x:150, y:446, size: 125, useAlt: true}
 						],
 						[ // 2 columns mirrored
 							{x:450, y:160, size: 90},
@@ -87,6 +111,13 @@ export default function Charges({ state, count = 1, alt }) {
 					if (shape === 'swiss' || shape === 'papal') { // too skinny
 						placements[4] = adjustX(placements[4], 'in', 30)
 						placements[5] = adjustX(placements[5], 'in', 30)
+					}
+					if (shape === 'swiss') { // too skinny at tip
+						for (let i = 1; i < placements.length; i++) {
+							placements[i] = adjustX(placements[i], 'in', 10)
+							placements[i] = adjustY(placements[i], 'in', 30)
+							placements[i] = adjustY(placements[i], '', -30)
+						}
 					}
 					maxCharges = 6
 				break;
