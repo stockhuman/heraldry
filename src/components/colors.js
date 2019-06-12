@@ -66,15 +66,15 @@ export function heraldicColors () {
 export function match (hex) {
 	let name, type
 	const tinctures = [
-		['#56e39f', 'Vert'],
-		['#0a3b84', 'Azure'],
-		['#491984', 'Purpure'],
-		['#b20505', 'Gules'],
-		['#0f0f0f', 'Sable']
+		['#56e39f', 'vert'],
+		['#0a3b84', 'azure'],
+		['#491984', 'purpure'],
+		['#b20505', 'gules'],
+		['#0f0f0f', 'sable']
 	]
 	const metals = [
 		['#d8d063', 'Or'],
-		['#f4f4f4', 'Argent']
+		['#f4f4f4', 'argent']
 	]
 
 	for (let i = 0; i < tinctures.length; i++) {
