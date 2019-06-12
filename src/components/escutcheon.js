@@ -45,8 +45,8 @@ export function Divisions({ type, colors, pattern = null }) {
 	switch (type) {
 		case 'party per pale': division = (
 			<g clipPath="url(#escutcheon)">
-			<rect width="700" height="800" fill={ colors[0] }></rect>
-			<rect width="300" height="800" fill={ fill }></rect>
+				<rect width="700" height="800" fill={ colors[0] }></rect>
+				<rect width="300" height="800" x="301" fill={ fill }></rect>
 			</g>
 		); break;
 		case 'party per fess': division = (
