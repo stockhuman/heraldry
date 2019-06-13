@@ -40,25 +40,25 @@ export function Shape({ type }) {
 export function Divisions({ type, colors, pattern = null }) {
 
 	let division
-	let fill = (pattern) ? `url(#${pattern})` : colors[2]
+	let fill = (pattern) ? `url(#${pattern})` : colors[0]
 
 	switch (type) {
 		case 'party per pale': division = (
 			<g clipPath="url(#escutcheon)">
-				<rect width="700" height="800" fill={ colors[0] }></rect>
+				<rect width="700" height="800" fill={ colors[1] }></rect>
 				<rect width="300" height="800" x="301" fill={ fill }></rect>
 			</g>
 		); break;
 		case 'party per fess': division = (
 			<g clipPath="url(#escutcheon)">
-				<rect width="700" height="700" fill={ colors[0] }></rect>
+				<rect width="700" height="700" fill={ colors[1] }></rect>
 				<rect width="700" height="300" fill={ fill }></rect>
 			</g>
 		); break;
 		case 'party per quartely': division = (
 			<g clipPath="url(#escutcheon)">
-				<rect width="700" height="800" fill={ colors[0] }></rect>
-				<rect x="-10" width="312" height="360" fill={ colors[1] } />
+				<rect width="700" height="800" fill={ colors[1] }></rect>
+				<rect x="-10" width="312" height="360" fill={ colors[0] } />
 				<rect x="302" y="360" width="312" height="360" fill={ fill }/>
 			</g>
 		); break;
@@ -97,7 +97,7 @@ export function Ordinaries({ type, colors, pattern = null }) {
 		);
 			break;
 		case 'saltire': ordinary = (
-			<polygon kind="saltire" points="783.06 96.75 686.84 0.53 391.8 295.58 96.75 0.53 0.53 96.75 295.58 391.8 0.53 686.84 96.75 783.06 391.8 488.01 686.84 783.06 783.06 686.84 488.01 391.8 783.06 96.75" fill={ colors[1] } />
+			<polygon kind="saltire" transform="translate(-90 -60)" points="783.06 96.75 686.84 0.53 391.8 295.58 96.75 0.53 0.53 96.75 295.58 391.8 0.53 686.84 96.75 783.06 391.8 488.01 686.84 783.06 783.06 686.84 488.01 391.8 783.06 96.75" fill={ colors[1] } />
 		);
 			break;
 		case 'chief': ordinary = (
