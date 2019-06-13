@@ -43,8 +43,6 @@ export default class Generator extends Component {
 		// catch the 's' key / two finger tap and save instead of randomising
 		if ((event.touches && event.touches.length === 2) || event.key === 's') {
 			this.save()
-		} else if (event.key === 'd') {
-			this.describe()
 		} else {
 			const random = arr => arr[Math.floor(Math.random() * arr.length)]
 
@@ -88,7 +86,8 @@ export default class Generator extends Component {
 				chargeCount: Math.max(1, Math.floor(Math.random() * 10)),
 				charge: emoji(this.state.emojiSource),
 				altCharge: emoji('alt'),
-				colors: colors()
+				colors: colors(),
+				description: blazon(this.state)
 			})
 		}
 	}
@@ -97,12 +96,6 @@ export default class Generator extends Component {
 		const svg = document.getElementsByTagName('svg')[0]
 
 		await saveSvgAsPng(svg, `eschucheon_${Date.now()}.png`)
-	}
-
-	describe() {
-		// via https://en.wikipedia.org/wiki/Blazon and
-		// https://heraldry.sca.org/armory/bruce.html
-		this.description = blazon(this.state)
 	}
 
 	render () {

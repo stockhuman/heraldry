@@ -1,6 +1,8 @@
 import { blazonEmoji as describe } from './emoji'
 import { match } from './colors'
 
+// via https://en.wikipedia.org/wiki/Blazon and
+// https://heraldry.sca.org/armory/bruce.html
 export default function blazon (state) {
 	const { colors, design, divisions, ordinaries, charge, altCharge, chargeCount } = state
 
@@ -138,7 +140,12 @@ export default function blazon (state) {
 		}
 	}
 
-	blazon = blazon.replace(/(\s)+/g, ' ') // catch double spaces
+	// capitalizes first letter and trims double spaces
+	const prep = string => {
+		string = string.replace(/(\s)+/g, ' ') // catch double spaces
+		if (string.length > 280) { console.warn('String too long for twitter!') }
+		return string.charAt(0).toUpperCase() + string.slice(1)
+	}
 
-	return blazon
+	return prep(blazon)
 }
