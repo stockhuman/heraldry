@@ -6,7 +6,6 @@ export default function blazon (state) {
 
 	const colorA = match(colors[0]).name
 	const colorB = match(colors[1]).name
-	const colorC = match(colors[2]).name || colorA
 
 	let plain = false // no divisions or ordinaries on field
 	let variation = '' // variations of the field
@@ -45,7 +44,7 @@ export default function blazon (state) {
 
 	// determine field
 	if (plain) {
-		blazon = `${variation ? variation : colorA}, ${describe(charge, 1)}`
+		blazon = `${variation ? variation : colorA}, ${describe(charge)}`
 	} else {
 		if (design === 'divided') {
 			let d = ''
@@ -54,7 +53,7 @@ export default function blazon (state) {
 					setCharges(6, 4)
 					d = `Per pale ${colorB} and ${colorA}, `;
 					if (chargeCount === 1) {
-						d += `overtop ${describe(charge, 1)}`
+						d += `overtop ${describe(charge)}`
 					} else {
 						d += `in sinister ${describe(charge, charges)}`
 						if (chargeCount > 3) {
@@ -64,14 +63,16 @@ export default function blazon (state) {
 					break
 
 				case 'party per fess':
-					setCharges(4, 4)
+					setCharges(7, 4)
 					d = `Per fess ${colorA} and ${colorB}, `
 					if (chargeCount === 1) {
-						d += `overtop ${describe(charge, 1)}`
+						d += `overtop ${describe(charge)}`
 					} else {
-						d += `in chief ${describe(charge, charges)}`
-						if (chargeCount > 3) {
-							d += `, in base ${describe(altCharge, 1)}`
+						d += `in chief ${describe(charge, chargeCount === 6 ? 2 : charges)}`
+						if (chargeCount > 6) {
+							d += ` and ${describe(altCharge, 3)} alterny`
+						} else if (chargeCount > 3) {
+							d += `, in base ${describe(altCharge, altCharges)}`
 						}
 					}
 					break
@@ -90,27 +91,47 @@ export default function blazon (state) {
 			}
 			blazon = `${d}`
 		} else if (design === 'ordered') {
-			let d = ''
-			switch (divisions) {
-				case 'party per pale':
-					setCharges(6, 4)
-					d = `Per pale ${colorB} and ${colorA}, `;
+			let d = `${colorA}, `
+			switch (ordinaries) {
+				case 'saltire':
+					d += `a saltire ${colorB} charged with ${describe(charge)}`;
+					break
+				case 'bend':
 					if (chargeCount === 1) {
-						d += `overtop ${describe(charge, 1)}`
-					} else {
-						d += `in sinister ${describe(charge, charges)}`
-						if (chargeCount > 4) {
-							d += `, in dexter ${describe(altCharge, altCharges)}`
-						}
+						d += `a bend ${colorB}, overall ${describe(charge)}`
+					}
+					if (chargeCount === 2) {
+						d += `a bend ${colorB} between ${describe(altCharge)} and ${describe(charge)}`
+					}
+					if (chargeCount >= 3) {
+						d += `in a bend ${colorB}, ${describe(charge, 3)}`
 					}
 					break
-				case 'bend': break
-				case 'bend-sinister': break
-				case 'pale': break
-				case 'fess': break
-				case 'cross': break
-				case 'saltire': break
-				case 'chief': break
+				case 'bend-sinister':
+					if (chargeCount === 1) {
+						d += `a bend ${colorB}, overall ${describe(charge)}`
+					}
+					if (chargeCount === 2) {
+						d += `a bend ${colorB} between ${describe(charge)} and ${describe(altCharge)}`
+					}
+					break
+				case 'pale':
+					setCharges(3, 9)
+					d += `in a pale ${colorB}, ${describe(charge, charges)}`
+					break
+				case 'cross':
+					d += `a cross ${colorB}, ${describe(charge)}`
+					break
+				case 'chief':
+					setCharges(4, 4)
+					let reversedDesign = chargeCount >= 4 ? true : false
+					d += `${describe(reversedDesign ? altCharge : charge, reversedDesign ? altCharges : charges)}`
+					if (chargeCount <= 3) {
+						d += `, a chief ${colorB}`
+					} else {
+						d += `, in chief ${describe(charge, 3)}`
+					}
+					break
 				// no default
 			}
 			blazon = `${d}`
@@ -119,5 +140,5 @@ export default function blazon (state) {
 
 	blazon = blazon.replace(/(\s)+/g, ' ') // catch double spaces
 
-	console.log(blazon, {chargeCount, charges, altCharges, state})
+	return blazon
 }
