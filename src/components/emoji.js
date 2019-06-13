@@ -25,6 +25,7 @@ export default function emojis (subset = 'all') {
  			['💚', 'heart# of vert'],
 			['💙', 'heart# of azure'],
 			['🖤', 'heart# of sable'],
+			['💛', 'heart# of Or'],
 			['💯', 'one hundred emoji# gules', true],
 			['💣', 'bomb# sable'],
 			['🖐', 'hand# palmate Or'],
@@ -35,45 +36,46 @@ export default function emojis (subset = 'all') {
 			['🙏', 'Folded Hands Or sleeved azure', true],
 			['⭐', 'mullet# Or'],
 			['💪', '[an]arm# embowed fesseways Or'],
-			['👂', 'ear# Or'],
+			['👂', '[an]ear# Or'],
 			['👁️', '[an]eye pupiled gules'],
 			['🧜‍♀️', 'mermaid# proper'],
 			['👣', 'footprints gules', true],
-			['📖', 'open book# proper'],
-			['🦊', "fox's head cabossed proper", true],
-			['🐮', "cow's head cabossed proper", true],
-			['🌷', 'tulip slipped and leaved proper'],
+			['📖', '[an]open book# proper'],
+			['🦊', "fox's head# cabossed proper", true],
+			['🐮', "cow's head# cabossed proper", true],
+			['🌷', 'tulip# slipped and leaved proper'],
 			['🏵️', 'rosette proper'],
 			['💮', 'cherry blossom argent'],
 			['🍀', 'four-leaf clover# proper'],
-			['🌲', 'evergreen tree# proper'],
+			['🌲', '[an]evergreen tree# proper'],
 			['🍍', 'pineapple# bendwise'],
 			['🍎', '[an]apple# gules'],
 			['🦐', 'shrimp embowed proper', true],
 			['🦞', 'lobster# gules'],
 			['🏔️', 'snow-capped mountain# proper'],
-			['⚓', 'anchor# argent'],
+			['⚓', '[an]anchor# argent'],
  			['🌚', 'moon# sable'],
 			['☁', 'cloud# argent'],
  			['🌫', 'fountain# argent'],
 			['♦️', 'lozengy gules', true],
-			['📯', 'bugle Or tasselled gules'],
+			['📯', 'bugle# Or tasselled gules'],
 			['💰', 'bag# of money Or, marked vert'],
 			['🖋️', 'pen# bendwise sinister sable'],
 			['🗝', 'key# fesswise, wards to sinister Or'],
-			['🗡', 'dagger# bendwise proper'],
-			['⚔', 'pair# of swords crossed proper'],
+			['🗡️', 'dagger# bendwise inverted proper'],
+			['⚔️', 'pair# of swords in saltire proper'],
 			['🏹', 'bow# tensed gules and attached arrow# argent, bendwise to chief'],
 			['🤔', 'thinking face emoji# Or'],
-			['🛡️', 'escutcheons# gules, party per pale indented argent'],
-			['⚙', 'gear# argent'],
- 			['⚖', 'scales Or', true],
+			['🛡️', '[an]escutcheon# gules, party per pale indented argent'],
+			['⚙️', 'gear# argent'],
+			['⚖️', 'standing balance# Or'],
  			['🔗', 'pair# of chainlinks bendwise to chief argent'],
 			['🐬', 'dolphin# sautant azure'],
 			['🖖🏿', "Moor's Palm# palmate splayed of thumb, middle, and ring proper"],
 			['🦉', 'owl# overt guardant'],
- 			['⚜', 'fleur-de-lys Or', true],
- 			['⚫', 'pellet#'],
+			['⚜️', 'fleur-de-lys Or', true],
+			['⚫', 'pellet#'],
+			['🔴', 'pomme#'],
  			['💎', 'diamond# azure'],
 			['🙃', '[an]upside-down smile emoji#']
  		]
@@ -82,9 +84,9 @@ export default function emojis (subset = 'all') {
 		const e = [
 			['😩', 'weary face emoji# proper'],
 			['💁‍♀️', "maiden's bust# vested purpure, with dexter arm raised and hand splayed fesswise, proper"],
-			['😍', 'heart eyes face# proper'],
+			['😍', 'heart-eyes face# proper'],
 			['💩', 'smiling turd emoji# proper'],
-			['💦', 'trio of drops azure'],
+			['💦', 'trio# of drops azure'],
 			['🍆', '[an]eggplant# purpure'],
 			['😂', 'laughing crying emoji# proper'],
 			['🍑', 'peach# proper'],
@@ -106,37 +108,45 @@ export default function emojis (subset = 'all') {
  */
 export function blazonEmoji(charge, count = 1) {
 	let data = charge[1]
+	let hasArticle = false
+	let number
 
-		switch (count) {
-			case 2: number = 'two'; break
-			case 3: number = 'three'; break
-			case 4: number = 'four'; break
-			case 5: number = 'five'; break
-			case 6: number = 'six'; break
-			case 7: number = 'seven'; break
-			case 8: number = 'eight'; break
-			default: number = ''
+	switch (count) {
+		case 2: number = 'two'; break
+		case 3: number = 'three'; break
+		case 4: number = 'four'; break
+		case 5: number = 'five'; break
+		case 6: number = 'six'; break
+		case 7: number = 'seven'; break
+		case 8: number = 'eight'; break
+		default: number = ''
+	}
+
+	let a = RegExp(/[[?\]]/g) // search for [an] or [the]
+	if (a.test(data)) {
+		hasArticle = true
+		if (count === 1) {
+			// replace brackets with spaces
+			data = data.replace(/[[?\]]/g, ' ')
+		} else {
+			// remove article
+			data = data.replace(/\[([\d\w]+)\]/g, '')
 		}
+	}
 
 	// string contains '#' to be replaced as a plural placeholder
 	if (RegExp(/#/g).test(data)) {
 		if (count === 1) {
-			// search for [an] or [the]
-			let article = data.search(/\[(.*?)\]/g)
-			if (article !== -1) {
-				// replace brackets with spaces
-				data = data.replace(/\[\]/g, ' ')
-			} else {
+			if (!hasArticle) {
 				// add 'a' to singular
 				data = 'a ' + data.replace(/#/g, '')
+			} else {
+				data = data.replace(/#/g, '')
 			}
-		} else if (count > 1) {
-			data = data.replace(/#/g, 's')
 		} else {
-			data = 'a ' + data.replace(/#/g, '')
+			data = data.replace(/#/g, 's')
 		}
 	}
-
 
 	return `${number} ${data}`
 }
