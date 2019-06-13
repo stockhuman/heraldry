@@ -59,7 +59,7 @@ export function heraldicColors () {
 		['#d8d063', '#0f0f0f'], // Or, sable
 		['#491984', '#d8d063'], // Purpure, Or
 		['#b20505', '#f4f4f4'], // Gules, Argent
-		['#d8d063', '#b20505'], // Or, gules
+		['#0a3b84', '#d8d063'], // Azure, Or
 	]
 	return colorpairs[Math.floor(Math.random() * colorpairs.length)]
 }
