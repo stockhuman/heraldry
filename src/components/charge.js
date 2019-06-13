@@ -71,7 +71,6 @@ export default function Charges({ state, count = 1, alt }) {
 		]
 	} else {
 		// the field has a design on it
-
 		if (design === 'divided') {
 			switch (divisions) {
 				// divides along the middle
@@ -86,26 +85,26 @@ export default function Charges({ state, count = 1, alt }) {
 							{x:440, y:350, size: 90},
 							{x:440, y:525, size: 90}
 						],
-						[ // ante + large on sinister
-							{x:440, y:160, size: 90},
-							{x:440, y:330, size: 90},
-							{x:440, y:500, size: 90},
-							{x:160, y:360, size: 190, useAlt: true}
+						[ // ante + large on dexter
+							{x:160, y:160, size: 90},
+							{x:160, y:330, size: 90},
+							{x:160, y:500, size: 90},
+							{x:440, y:360, size: 190, useAlt: true}
 						],
-						[ // ante + 2 large on sinister
-							{x:440, y:160, size: 90},
-							{x:440, y:330, size: 90},
-							{x:440, y:500, size: 90},
-							{x:150, y:232, size: 125, useAlt: true},
-							{x:150, y:446, size: 125, useAlt: true}
+						[ // ante + 2 large on dexter
+							{x:160, y:160, size: 90},
+							{x:160, y:330, size: 90},
+							{x:160, y:500, size: 90},
+							{x:430, y:232, size: 125, useAlt: true},
+							{x:430, y:446, size: 125, useAlt: true}
 						],
 						[ // 2 columns mirrored
-							{x:450, y:160, size: 90},
-							{x:450, y:330, size: 90},
-							{x:450, y:500, size: 90},
-							{x:150, y:160, size: 90, useAlt: true},
-							{x:150, y:330, size: 90, useAlt: true},
-							{x:150, y:500, size: 90, useAlt: true}
+							{x:150, y:160, size: 90},
+							{x:150, y:330, size: 90},
+							{x:150, y:500, size: 90},
+							{x:450, y:160, size: 90, useAlt: true},
+							{x:450, y:330, size: 90, useAlt: true},
+							{x:450, y:500, size: 90, useAlt: true}
 						]
 					]
 					if (shape === 'swiss' || shape === 'papal') { // too skinny
@@ -274,6 +273,14 @@ export default function Charges({ state, count = 1, alt }) {
 					if (shape === 'swiss') {
 						maxCharges = 1 // few options look good
 					}
+				break;
+
+				case 'saltire':
+					placements = [
+						[{x:300, y:380, size: 160}]
+					]
+					chargeSize = 100
+					maxCharges = 1
 				break;
 
 				// like a larger fess

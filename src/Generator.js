@@ -13,9 +13,9 @@ export default class Generator extends Component {
 		super(props)
 		this.state = {
 			shape: '',
-			design: 'divided',
-			divisions: 'party per pale',
-			ordinaries: '',
+			design: 'ordered',
+			divisions: '',
+			ordinaries: 'saltire',
 			seme: '',
 			chargeCount: 5,
 			charge: emoji('recommended'),
@@ -68,15 +68,16 @@ export default class Generator extends Component {
 				'pale',
 				'bend',
 				'bend-sinister',
-				'chief'
+				'chief',
+				'saltire'
 			]
 			const designs = ['ordered', 'divided']
 			const patterns = [
-				'',
-				'fleur-de-lys',
-				'barry-dancetty',
-				'masoned',
-				'lozengy'
+				'', // disabled semees for now
+				// 'fleur-de-lys',
+				// 'barry-dancetty',
+				// 'masoned',
+				// 'lozengy'
 			]
 
 			this.setState({
