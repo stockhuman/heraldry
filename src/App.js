@@ -9,7 +9,7 @@ function App() {
 		<div className="App">
 			<header>
 				<h1>Heraldry.io</h1>
-				<p>Press any key / tap to generate</p>
+				<p>Press any key / tap to generate<br /><i>'S' to save</i></p>
 			</header>
 			<main>
 				<span role="img" aria-label="crown">👑</span>
