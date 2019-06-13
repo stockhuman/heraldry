@@ -76,24 +76,20 @@ export function Ordinaries({ type, colors, pattern = null }) {
 	let fill = (pattern) ? `url(#${pattern})` : colors[0]
 
 	switch (type) {
-		case 'bend': ordinary = (
+		case 'bend-sinister': ordinary = (
 			<rect kind="bend" x="-93.5" y="203" width="970" height="136" transform="rotate(-45 391 391)" fill={ colors[1] } />
 		);
 			break;
-		case 'bend-sinister': ordinary = (
-			<rect kind="bend-sinister" x="0" y="-50" width="970" height="136" transform="rotate(45)" fill={ colors[1] } />
+		case 'bend': ordinary = (
+			<rect kind="bend" x="0" y="-70" width="970" height="136" transform="rotate(45)" fill={ colors[1] } />
 		);
 			break;
 		case 'pale': ordinary = (
 			<rect kind="pale" x="-266" y="467" width="738" height="204" transform="translate(-267.11 472.61) rotate(-90)" fill={ colors[1] } />
 		);
 			break;
-		case 'fess': ordinary = (
-			<rect kind="fess" x="0" y="0" width="970" height="136" fill={ colors[1] } />
-		);
-			break;
 		case 'cross': ordinary = (
-			<polygon kind="cross" transform="translate(-148 -130)" points="905.52 376.88 529.01 376.88 529.01 0.38 376.88 0.38 376.88 376.88 0.38 376.88 0.38 529.01 376.88 529.01 376.88 905.52 529.01 905.52 529.01 529.01 905.52 529.01 905.52 376.88" fill={ colors[1] } />
+			<polygon kind="cross" transform="translate(-150 -130)" points="905.52 376.88 529.01 376.88 529.01 0.38 376.88 0.38 376.88 376.88 0.38 376.88 0.38 529.01 376.88 529.01 376.88 905.52 529.01 905.52 529.01 529.01 905.52 529.01 905.52 376.88" fill={ colors[1] } />
 		);
 			break;
 		case 'saltire': ordinary = (
@@ -101,7 +97,7 @@ export function Ordinaries({ type, colors, pattern = null }) {
 		);
 			break;
 		case 'chief': ordinary = (
-			<rect x="0" y="0" width="693" height="289" fill={ colors[1] } />
+			<rect kind="chief" x="0" y="0" width="970" height="136" fill={colors[1]} />
 		);
 			break;
 		default: ordinary = null

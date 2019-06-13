@@ -119,30 +119,60 @@ export default function Charges({ state, count = 1, alt }) {
 						}
 					}
 					maxCharges = 6
-				break;
+					break
 
 				// divides horizontally
 				case 'party per fess':
 					placements = [
-						// central
-						[{x:300, y:390, size: 300}],
-						// distrubuted horizontal overtop
-						[{x:160, y:195}, {x:440, y:195}],
-						// distrubuted horizontal overtop x3
-						[{x:130, y:195}, {x:300, y:195}, {x:470, y:195}],
-						// ante + large bottom
+						[{ x: 300, y: 340, size: 160 }],
+						// distrubuted horizontal
+						[{ x: 160, y: 200 }, { x: 440, y: 200 }],
+						// three horizontal
 						[
-							{x:130, y:190},
-							{x:300, y:190},
-							{x:470, y:190},
-							{x:300, y:520, size: 200, useAlt: true},
+							{ x: 130, y: 180, size: 100 },
+							{ x: 300, y: 180, size: 100 },
+							{ x: 470, y: 180, size: 100 }
+						],
+						// Ante + larger
+						[
+							{ x: 130, y: 180, size: 100 },
+							{ x: 300, y: 180, size: 100 },
+							{ x: 470, y: 180, size: 100 },
+							{ x: 300, y: 530, size: 200, useAlt: true }
+						],
+						// Ante + larger x2
+						[
+							{ x: 130, y: 180, size: 100 },
+							{ x: 300, y: 180, size: 100 },
+							{ x: 470, y: 180, size: 100 },
+							{ x: 200, y: 500, size: 140, useAlt: true },
+							{ x: 400, y: 500, size: 140, useAlt: true }
+						],
+						// Ante + larger x3
+						[
+							{ x: 130, y: 180, size: 100 },
+							{ x: 300, y: 180, size: 100 },
+							{ x: 470, y: 180, size: 100 },
+							{ x: 200, y: 500, size: 140, useAlt: true },
+							{ x: 200, y: 500, size: 140, useAlt: true },
+							{ x: 400, y: 500, size: 140, useAlt: true }
+						],
+						// five across fess, large lower
+						[
+							{ x: 130, y: 130, size: 90 },
+							{ x: 300, y: 130, size: 90, useAlt: true },
+							{ x: 470, y: 130, size: 90 },
+							{ x: 215, y: 250, size: 90, useAlt: true },
+							{ x: 215, y: 250, size: 90, useAlt: true },
+							{ x: 390, y: 250, size: 90, useAlt: true },
+							{ x: 300, y: 530, size: 200, useAlt: true }
 						]
 					]
+					maxCharges = 7
 					chargeSize = 100
 					if (shape === 'papal') {
 						chargeSize = 120
 					}
-					maxCharges = 4
 				break;
 
 				// divides into quarters
@@ -199,13 +229,13 @@ export default function Charges({ state, count = 1, alt }) {
 				break;
 
 				// bar across the top
-				case 'fess':
+				case 'chief':
 					placements = [
 						// central
 						[{x:300, y:370}],
 						// distrubuted horizontal
 						[{x:160, y:360}, {x:440, y:360}],
-						// three zig-zag
+						// three zig-zag in base
 						[
 							{x:160, y:340},
 							{x:440, y:340},
@@ -246,17 +276,23 @@ export default function Charges({ state, count = 1, alt }) {
 				// sash
 				case 'bend':
 					placements = [
-						[{x:300, y:360, size: 160}],
+						[{x:300, y:355, size: 160}],
 						[
-							{x:140, y:160},
-							{x:440, y:560, useAlt: true}
+							{ x: 440, y: 160 },
+							{ x: 160, y: 490, useAlt: true },
+						],
+						[
+							{ x: 140, y: 170, size: 85 },
+							{ x: 300, y: 325, size: 85 },
+							{ x: 460, y: 490, size: 85 },
 						]
 					]
 					if (shape === 'swiss') {
-						placements[1] = adjustX(placements[1], 'in', 80)
+						placements[1] = adjustX(placements[1], 'in', 20)
+						placements[1] = adjustY(placements[1], '', 10)
 					}
 					chargeSize = 100
-					maxCharges = 2
+					maxCharges = 3
 				break;
 
 				// same but reversed
@@ -264,8 +300,8 @@ export default function Charges({ state, count = 1, alt }) {
 					placements = [
 						[{x:300, y:360, size: 160}],
 						[
-							{x:440, y:160, size: 120},
-							{x:190, y:530, useAlt: true}
+							{x:190, y:160, size: 120},
+							{x:440, y:530, useAlt: true}
 						]
 					]
 					chargeSize = 100
@@ -281,43 +317,6 @@ export default function Charges({ state, count = 1, alt }) {
 					]
 					chargeSize = 100
 					maxCharges = 1
-				break;
-
-				// like a larger fess
-				case 'chief':
-					placements = [
-						[{x:300, y:340, size: 160}],
-						// distrubuted horizontal
-						[{x:160, y:200}, {x:440, y:200}],
-						// three horizontal
-						[
-							{x:130, y:180, size: 100},
-							{x:300, y:180, size: 100},
-							{x:470, y:180, size: 100}
-						],
-						// Ante + larger
-						[ {x:130, y:180, size: 100},
-							{x:300, y:180, size: 100},
-							{x:470, y:180, size: 100},
-							{x:300, y:530, size: 200, useAlt: true}
-						],
-						// Ante + larger x2
-						[ {x:130, y:180, size: 100},
-							{x:300, y:180, size: 100},
-							{x:470, y:180, size: 100},
-							{x:200, y:500, size: 140, useAlt: true},
-							{x:400, y:500, size: 140, useAlt: true}
-						],
-						// five across fess, large lower
-						[ {x:130, y:130, size: 90},
-							{x:300, y:130, size: 90},
-							{x:470, y:130, size: 90},
-							{x:215, y:250, size: 90},
-							{x:390, y:250, size: 90},
-							{x:300, y:530, size: 200, useAlt: true}
-						]
-					]
-					maxCharges = 6
 				break;
 				default: console.log('No ordinary specified');
 			}

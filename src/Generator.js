@@ -12,12 +12,12 @@ export default class Generator extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
-			shape: '',
+			shape: 'spanish',
 			design: 'ordered',
 			divisions: '',
-			ordinaries: 'saltire',
+			ordinaries: 'chief',
 			seme: '',
-			chargeCount: 5,
+			chargeCount: 4,
 			charge: emoji('recommended'),
 			altCharge: emoji('alt'),
 			colors: ['#56e39f', '#f4f4f4', '#0f0f0f'],
@@ -64,7 +64,6 @@ export default class Generator extends Component {
 			const ordinaries = [
 				'', // default, solid field
 				'cross',
-				'fess',
 				'pale',
 				'bend',
 				'bend-sinister',
