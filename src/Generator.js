@@ -87,9 +87,10 @@ export default class Generator extends Component {
 				chargeCount: Math.max(1, Math.floor(Math.random() * 10)),
 				charge: emoji(this.state.emojiSource),
 				altCharge: emoji('alt'),
-				colors: colors(),
-				description: blazon(this.state)
+				colors: colors()
 			})
+
+			this.setState({ description: blazon(this.state)})
 		}
 	}
 
