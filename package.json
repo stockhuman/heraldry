@@ -14,7 +14,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://www.michaelhemingway.com/projects/heraldry",
+  "homepage": "https://stockhuman.github.io/heraldry/",
   "eslintConfig": {
     "extends": "react-app"
   },
