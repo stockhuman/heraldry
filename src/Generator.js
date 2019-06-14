@@ -31,6 +31,7 @@ export default class Generator extends Component {
 		document.addEventListener('keydown', this.randomise)
 		document.addEventListener('click', this.randomise)
 		window.addEventListener('touchstart', this.randomise)
+		this.randomise()
   }
 
   componentWillUnmount() {
@@ -41,7 +42,7 @@ export default class Generator extends Component {
 
 	randomise (event) {
 		// catch the 's' key / two finger tap and save instead of randomising
-		if ((event.touches && event.touches.length === 2) || event.key === 's') {
+		if (event && ((event.touches && event.touches.length === 2) || event.key === 's')) {
 			this.save()
 		} else {
 			const random = arr => arr[Math.floor(Math.random() * arr.length)]
