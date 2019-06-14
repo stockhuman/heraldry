@@ -113,7 +113,7 @@ export default function blazon (state) {
 					if (chargeCount === 1) {
 						d += `a bend ${colorB}, overall ${describe(charge)}`
 					}
-					if (chargeCount === 2) {
+					if (chargeCount >= 2) {
 						d += `a bend ${colorB} between ${describe(charge)} and ${describe(altCharge)}`
 					}
 					break
