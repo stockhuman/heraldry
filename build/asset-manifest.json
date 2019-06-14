@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/projects/heraldry/static/css/main.2bd7568b.chunk.css",
-    "main.js": "/projects/heraldry/static/js/main.c2c22b60.chunk.js",
-    "main.js.map": "/projects/heraldry/static/js/main.c2c22b60.chunk.js.map",
-    "runtime~main.js": "/projects/heraldry/static/js/runtime~main.5959fb04.js",
-    "runtime~main.js.map": "/projects/heraldry/static/js/runtime~main.5959fb04.js.map",
-    "static/js/2.b30db0e7.chunk.js": "/projects/heraldry/static/js/2.b30db0e7.chunk.js",
-    "static/js/2.b30db0e7.chunk.js.map": "/projects/heraldry/static/js/2.b30db0e7.chunk.js.map",
-    "index.html": "/projects/heraldry/index.html",
-    "precache-manifest.48670a1ee57958baa872e4e7d92fd334.js": "/projects/heraldry/precache-manifest.48670a1ee57958baa872e4e7d92fd334.js",
-    "service-worker.js": "/projects/heraldry/service-worker.js",
-    "static/css/main.2bd7568b.chunk.css.map": "/projects/heraldry/static/css/main.2bd7568b.chunk.css.map",
-    "static/media/App.css": "/projects/heraldry/static/media/seguiemj.adbb78af.ttf"
+    "main.css": "/heraldry/static/css/main.8d65a6b1.chunk.css",
+    "main.js": "/heraldry/static/js/main.b47a78d1.chunk.js",
+    "main.js.map": "/heraldry/static/js/main.b47a78d1.chunk.js.map",
+    "runtime~main.js": "/heraldry/static/js/runtime~main.958f50b8.js",
+    "runtime~main.js.map": "/heraldry/static/js/runtime~main.958f50b8.js.map",
+    "static/js/2.b30db0e7.chunk.js": "/heraldry/static/js/2.b30db0e7.chunk.js",
+    "static/js/2.b30db0e7.chunk.js.map": "/heraldry/static/js/2.b30db0e7.chunk.js.map",
+    "index.html": "/heraldry/index.html",
+    "precache-manifest.e2c2f9a359bc6000d53447be103b9249.js": "/heraldry/precache-manifest.e2c2f9a359bc6000d53447be103b9249.js",
+    "service-worker.js": "/heraldry/service-worker.js",
+    "static/css/main.8d65a6b1.chunk.css.map": "/heraldry/static/css/main.8d65a6b1.chunk.css.map",
+    "static/media/App.css": "/heraldry/static/media/seguiemj.adbb78af.ttf"
   }
 }
