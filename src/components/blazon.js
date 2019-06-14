@@ -72,7 +72,7 @@ export default function blazon (state) {
 					} else {
 						d += `in chief ${describe(charge, chargeCount === 6 ? 2 : charges)}`
 						if (chargeCount > 6) {
-							d += ` and ${describe(altCharge, 3)} alterny`
+							d += ` and ${describe(altCharge, 3)} in alterny`
 						} else if (chargeCount > 3) {
 							d += `, in base ${describe(altCharge, altCharges)}`
 						}

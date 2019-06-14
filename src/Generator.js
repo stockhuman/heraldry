@@ -78,7 +78,7 @@ export default class Generator extends Component {
 				// 'lozengy'
 			]
 
-			this.setState({
+			let state = {
 				shape: random(shapes),
 				design: random(designs),
 				divisions: random(divisions),
@@ -88,9 +88,9 @@ export default class Generator extends Component {
 				charge: emoji(this.state.emojiSource),
 				altCharge: emoji('alt'),
 				colors: colors()
-			})
+			}
 
-			this.setState({ description: blazon(this.state)})
+			this.setState({ ...state, description: blazon(state)})
 		}
 	}
 
