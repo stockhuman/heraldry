@@ -52,29 +52,42 @@ export function namedColors () {
 
 // Includes only valid tincture / metal combinations and accurate historical colors
 export function heraldicColors () {
-	const colorpairs = [
-		['#56e39f', '#f4f4f4'], // Vert, argent
-		['#0a3b84', '#f4f4f4'], // Azure, argent
-		['#f4f4f4', '#0f0f0f'], // Argent, sable
-		['#d8d063', '#0f0f0f'], // Or, sable
-		['#491984', '#d8d063'], // Purpure, Or
-		['#b20505', '#f4f4f4'], // Gules, Argent
-		['#0a3b84', '#d8d063'], // Azure, Or
+	const tinctures = [
+		'#2dd86c',
+		'#0a3b84',
+		'#491984',
+		'#b20505',
+		'#0f0f0f'
 	]
-	return colorpairs[Math.floor(Math.random() * colorpairs.length)]
+	const metals = [ '#D4AF37', '#f4f4f4' ]
+
+	// Double tilde is a bitwise equivalent to Math.floor()
+	let tincture = tinctures[~~(Math.random() * tinctures.length)]
+	let metal = metals[~~(Math.random() * metals.length)]
+
+	// change metal for silver in this specific combo, as it looks horrid
+	if (metal === '#D4AF37' && tincture === '#2dd86c') {
+		metal = '#f4f4f4'
+	}
+
+	if (Math.random() > 0.5) {
+		return [metal, tincture]
+	} else {
+		return [tincture, metal]
+	}
 }
 
 export function match (hex) {
 	let name, type
 	const tinctures = [
-		['#56e39f', 'vert'],
+		['#2dd86c', 'vert'],
 		['#0a3b84', 'azure'],
 		['#491984', 'purpure'],
 		['#b20505', 'gules'],
 		['#0f0f0f', 'sable']
 	]
 	const metals = [
-		['#d8d063', 'Or'],
+		['#D4AF37', 'Or'],
 		['#f4f4f4', 'argent']
 	]
 
