@@ -4,7 +4,7 @@ import { match } from './colors'
 // via https://en.wikipedia.org/wiki/Blazon and
 // https://heraldry.sca.org/armory/bruce.html
 export default function blazon (state) {
-	const { colors, design, divisions, ordinaries, charge, altCharge, chargeCount } = state
+	const { colors, design, divisions, ordinaries, charge, altCharge, chargeCount, shape } = state
 
 	const colorA = match(colors[0]).name
 	const colorB = match(colors[1]).name
@@ -72,7 +72,7 @@ export default function blazon (state) {
 					} else {
 						d += `in chief ${describe(charge, chargeCount === 6 ? 2 : charges)}`
 						if (chargeCount > 6) {
-							d += ` and ${describe(altCharge, 3)} in alterny`
+							d += ` and ${describe(altCharge, 3)} in alterny, in base ${describe(altCharge)}`
 						} else if (chargeCount > 3) {
 							d += `, in base ${describe(altCharge, altCharges)}`
 						}
@@ -103,18 +103,18 @@ export default function blazon (state) {
 						d += `a bend ${colorB}, overall ${describe(charge)}`
 					}
 					if (chargeCount === 2) {
-						d += `a bend ${colorB} between ${describe(altCharge)} and ${describe(charge)}`
+						d += `a bend ${colorB} between ${describe(charge)} and ${describe(altCharge)}`
 					}
-					if (chargeCount >= 3) {
+					if (chargeCount >= 3 && (shape !== 'swiss' || shape !== 'rn2')) {
 						d += `in a bend ${colorB}, ${describe(charge, 3)}`
 					}
 					break
 				case 'bend-sinister':
-					if (chargeCount === 1) {
-						d += `a bend ${colorB}, overall ${describe(charge)}`
+					if (chargeCount === 1 || (shape === 'swiss' || shape === 'rn2')) {
+						d += `a bend sinister ${colorB}, overall ${describe(charge)}`
 					}
-					if (chargeCount >= 2) {
-						d += `a bend ${colorB} between ${describe(charge)} and ${describe(altCharge)}`
+					if (chargeCount >= 2 && (shape !== 'swiss' || shape !== 'rn2')) {
+						d += `a bend sinister ${colorB} between ${describe(charge)} and ${describe(altCharge)}`
 					}
 					break
 				case 'pale':
