@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/heraldry/build/static/css/main.b9ec4647.chunk.css",
-    "main.js": "/heraldry/build/static/js/main.27145554.chunk.js",
-    "main.js.map": "/heraldry/build/static/js/main.27145554.chunk.js.map",
+    "main.css": "/heraldry/build/static/css/main.1c7533b9.chunk.css",
+    "main.js": "/heraldry/build/static/js/main.9f26b887.chunk.js",
+    "main.js.map": "/heraldry/build/static/js/main.9f26b887.chunk.js.map",
     "runtime~main.js": "/heraldry/build/static/js/runtime~main.d632988f.js",
     "runtime~main.js.map": "/heraldry/build/static/js/runtime~main.d632988f.js.map",
     "static/js/2.e9c06cc0.chunk.js": "/heraldry/build/static/js/2.e9c06cc0.chunk.js",
     "static/js/2.e9c06cc0.chunk.js.map": "/heraldry/build/static/js/2.e9c06cc0.chunk.js.map",
     "index.html": "/heraldry/build/index.html",
-    "precache-manifest.2c098e0019dcf324c1efddb791f4ba67.js": "/heraldry/build/precache-manifest.2c098e0019dcf324c1efddb791f4ba67.js",
+    "precache-manifest.43bbd61644949b3eae8d932e024023cb.js": "/heraldry/build/precache-manifest.43bbd61644949b3eae8d932e024023cb.js",
     "service-worker.js": "/heraldry/build/service-worker.js",
-    "static/css/main.b9ec4647.chunk.css.map": "/heraldry/build/static/css/main.b9ec4647.chunk.css.map",
+    "static/css/main.1c7533b9.chunk.css.map": "/heraldry/build/static/css/main.1c7533b9.chunk.css.map",
     "static/media/App.css": "/heraldry/build/static/media/seguiemj.adbb78af.ttf"
   }
 }
