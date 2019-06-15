@@ -11,7 +11,6 @@ function App() {
 				<span role="img" aria-label="crown">👑</span>
 				<Generator />
 			</main>
-			<footer>Made with honour and chivalry by <a href="https://michaelhemingway.com">Michael Hemingway</a></footer>
 		</div>
 	);
 }
