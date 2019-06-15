@@ -52,7 +52,9 @@ export default class Generator extends Component {
 				'swiss',
 				'french',
 				'papal',
-				'spanish'
+				'spanish',
+				'renaissance',
+				'rn2'
 			]
 			const divisions = [
 				'', // default, solid field
