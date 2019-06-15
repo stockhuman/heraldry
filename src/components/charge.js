@@ -118,6 +118,19 @@ export default function Charges({ state, count = 1, alt }) {
 							placements[i] = adjustY(placements[i], '', -30)
 						}
 					}
+					if (shape === 'rn2') {
+						for (let i = 0; i < placements.length; i++) {
+							placements[i] = adjustX(placements[i], 'in', 35)
+							placements[i] = adjustY(placements[i], 'in', 10)
+							placements[i] = adjustY(placements[i], '', -10)
+							placements[5][i].size = 75
+						}
+					}
+					if (shape === 'renaissance') {
+						for (let i = 0; i < placements.length; i++) {
+							placements[i] = adjustX(placements[i], 'in', 20)
+						}
+					}
 					maxCharges = 6
 					break
 
@@ -126,7 +139,7 @@ export default function Charges({ state, count = 1, alt }) {
 					placements = [
 						[{ x: 300, y: 340, size: 160 }],
 						// distrubuted horizontal
-						[{ x: 160, y: 200 }, { x: 440, y: 200 }],
+						[{ x: 160, y: 200, size: 120 }, { x: 440, y: 200, size: 120 }],
 						// three horizontal
 						[
 							{ x: 130, y: 180, size: 100 },
@@ -173,6 +186,11 @@ export default function Charges({ state, count = 1, alt }) {
 					if (shape === 'papal') {
 						chargeSize = 120
 					}
+					// shrink large guys near pointed base
+					if (shape === 'rn2') {
+						placements[4][3].size = 120
+						placements[4][4].size = 120
+					}
 				break;
 
 				// divides into quarters
@@ -204,12 +222,17 @@ export default function Charges({ state, count = 1, alt }) {
 							{x:210, y:140, size: 60},
 							{x:210, y:240, size: 60},
 							{x:110, y:240, size: 60},
-							{x:450, y:230, size: 150, useAlt: true},
+							{x:445, y:230, size: 150, useAlt: true},
 						],
 					]
 					maxCharges = 5
 					if (shape === 'papal') {
 						placements[4] = adjustX(placements[4], 'in', 15)
+					}
+					if (shape === 'renaissance') {
+						for (let i = 0; i < placements.length; i++) {
+							placements[i] = adjustX(placements[i], 'in', 15)
+						}
 					}
 					if (shape === '') {
 						placements[3] = adjustX(placements[3], 'out', 15)
@@ -287,12 +310,13 @@ export default function Charges({ state, count = 1, alt }) {
 							{ x: 460, y: 490, size: 85 },
 						]
 					]
-					if (shape === 'swiss') {
+					maxCharges = 3
+					if (shape === 'swiss' || shape === 'rn2') {
 						placements[1] = adjustX(placements[1], 'in', 20)
-						placements[1] = adjustY(placements[1], '', 10)
+						placements[1] = adjustY(placements[1], '', -10)
+						maxCharges = 2
 					}
 					chargeSize = 100
-					maxCharges = 3
 				break;
 
 				// same but reversed
@@ -306,14 +330,14 @@ export default function Charges({ state, count = 1, alt }) {
 					]
 					chargeSize = 100
 					maxCharges = 2
-					if (shape === 'swiss') {
+					if (shape === 'swiss' || shape === 'rn2') {
 						maxCharges = 1 // few options look good
 					}
 				break;
 
 				case 'saltire':
 					placements = [
-						[{x:300, y:380, size: 160}]
+						[{x:302, y:380, size: 160}]
 					]
 					chargeSize = 100
 					maxCharges = 1
