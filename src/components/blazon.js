@@ -131,7 +131,7 @@ export default function blazon (state) {
 					if (chargeCount <= 3) {
 						d += `, a chief ${colorB}`
 					} else {
-						d += `, in chief ${describe(charge, 3)}`
+						d += `, in chief ${colorB}, ${describe(charge, 3)}`
 					}
 					break
 				// no default
