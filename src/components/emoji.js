@@ -77,8 +77,9 @@ export default function emojis (subset = 'all') {
 			['⚫', 'pellet#'],
 			['🔴', 'pomme#'],
  			['💎', 'diamond# azure'],
-			['🙃', '[an]upside-down smile emoji#']
- 		]
+			['🙃', '[an]upside-down smile emoji#'],
+			['🥕', 'carrot# bednwise sinister proper']
+		]
 		return e[Math.floor(Math.random() * e.length)]
 	} else if (subset === 'alt') {
 		const e = [
@@ -91,11 +92,14 @@ export default function emojis (subset = 'all') {
 			['😂', 'laughing crying emoji# proper'],
 			['🍑', 'peach fruit# leaved proper'],
 			['🤑', 'money face emoji# proper'],
-			['🥑', '[an]avocado# proper'],
+			['🥑', 'halved avocado# bendwise proper'],
 			['🧻', 'toilet paper roll# proper'],
 			['🦵', 'leg# embowed Or'],
 			['🤠', 'cowboy face# proper'],
-			['👽', 'alien# vert with eyes sable']
+			['👽', 'alien# vert with eyes sable'],
+			['🍉', 'watermelon slice# bendwise proper'],
+			['🤡', 'clown face# argent, lips, nose and hair of gules, eyes azure'],
+			['🎅🏿', 'moorish Santa Claus emoji# proper']
 		]
 		return e[Math.floor(Math.random() * e.length)]
 	}
