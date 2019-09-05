@@ -13,11 +13,11 @@ export default class Generator extends Component {
 		super(props)
 		this.state = {
 			shape: 'spanish',
-			design: 'ordered',
-			divisions: '',
-			ordinaries: 'chief',
+			design: 'divided',
+			divisions: 'party per fess',
+			ordinaries: '',
 			seme: '',
-			chargeCount: 4,
+			chargeCount: 7,
 			charge: emoji('recommended'),
 			altCharge: emoji('alt'),
 			colors: ['#56e39f', '#f4f4f4', '#0f0f0f'],
@@ -87,8 +87,9 @@ export default class Generator extends Component {
 				charge: emoji(this.state.emojiSource),
 				altCharge: emoji('alt'),
 				colors: colors(),
-				description: blazon(this.state)
 			})
+
+			this.setState({ description: blazon(this.state) })
 		}
 	}
 
