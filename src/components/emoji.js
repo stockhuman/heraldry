@@ -78,7 +78,8 @@ export default function emojis (subset = 'all') {
 			['🔴', 'pomme#'],
  			['💎', 'diamond# azure'],
 			['🙃', '[an]upside-down smile emoji#'],
-			['🥕', 'carrot# bednwise sinister proper']
+			['🥕', 'carrot# bendwise sinister proper'],
+			['🧺', 'basket# argent with contents azur']
 		]
 		return e[Math.floor(Math.random() * e.length)]
 	} else if (subset === 'alt') {
@@ -99,7 +100,11 @@ export default function emojis (subset = 'all') {
 			['👽', 'alien# vert with eyes sable'],
 			['🍉', 'watermelon slice# bendwise proper'],
 			['🤡', 'clown face# argent, lips, nose and hair of gules, eyes azure'],
-			['🎅🏿', 'moorish Santa Claus emoji# proper']
+			['🎅🏿', 'moorish Santa Claus emoji# proper'],
+			['🌯', 'burrito# bendwise proper'],
+			['🌭', 'hotdog# bendwise sinister proper'],
+			['🌮', 'taco# fesswise Or, condiments vert'],
+			['🐍', 'coiled snake# ward sinister vert of eye sable and tongue gules']
 		]
 		return e[Math.floor(Math.random() * e.length)]
 	}
