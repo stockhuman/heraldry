@@ -120,7 +120,23 @@ export function Ordinaries({ type, colors, pattern = null }) {
  */
 export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#111' }) {
 	if (charge) {
-		return <text x={x} y={y} textAnchor="middle" style={{ fontSize: size, fill: color, fontFamily: 'Segoe UI Emoji' }}>{ charge[0] }</text>
+		return (
+			<text
+				x={x}
+				y={y}
+				textAnchor="middle"
+				style={
+					{
+						fontSize: size,
+						fill: color,
+						filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.1))',
+						fontFamily: 'Segoe UI Emoji',
+					}
+				}
+			>
+				{ charge[0] }
+			</text>
+		)
 	} else return null
 }
 
