@@ -36,7 +36,7 @@ export default function emojis (subset = 'all') {
 			['⭐', 'mullet# Or'],
 			['💪', '[an]arm# embowed fesseways Or'],
 			['👂', '[an]ear# Or'],
-			['👁️', '[an]eye pupiled gules'],
+			['👁️', '[an]eye# pupiled gules'],
 			['🧜‍♀️', 'mermaid# proper'],
 			['👣', 'footprints gules'],
 			['📖', '[an]open book# proper'],
