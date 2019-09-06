@@ -1,3 +1,4 @@
+// Hand-picked, pretty but innacurate color combinatinos
 export default function colors () {
 	const colorpairs = [
 		['#ebf2fa','#427aa1','#a5be00'],
@@ -29,52 +30,44 @@ export default function colors () {
 	return colorpairs[Math.floor(Math.random() * colorpairs.length)]
 }
 
-// Returns HTML (x11) named colors (rather ugly)
-export function namedColors () {
-	const colorpairs = [
-		['Crimson', 'Gold', 'Indigo'],
-		['Purple', 'Black', 'Gold'],
-		['Teal', 'Gray', 'Wheat'],
-		['Silver', 'Black', 'Snow'],
-		['Lavender', 'Snow', 'Gray'],
-		['Orchid', 'Olive', 'Azure'],
-		['Chocolate', 'White', 'Beige'],
-		['Blue', 'Silver', 'Ivory'],
-		['Pink', 'Khaki', 'Indigo'],
-		['Tan', 'Navy', 'Brown'],
-		['Black', 'Coral', 'Thistle'],
-		['Bisque', 'Black', 'Indigo'],
-		['Tan', 'Navy', 'Sienna'],
-		['Maroon', 'White', 'Black'],
-	]
-	return colorpairs[Math.floor(Math.random() * colorpairs.length)]
-}
-
 // Includes only valid tincture / metal combinations and accurate historical colors
 export function heraldicColors () {
-	const colorpairs = [
-		['#56e39f', '#f4f4f4'], // Vert, argent
-		['#0a3b84', '#f4f4f4'], // Azure, argent
-		['#f4f4f4', '#0f0f0f'], // Argent, sable
-		['#d8d063', '#0f0f0f'], // Or, sable
-		['#491984', '#d8d063'], // Purpure, Or
-		['#b20505', '#f4f4f4'], // Gules, Argent
-		['#0a3b84', '#d8d063'], // Azure, Or
+	const tinctures = [
+		'#52de9a', // vert
+		'#0a3b84', // azure
+		'#491984', // purpure
+		'#b20505', // gules
+		'#0f0f0f', // sable
 	]
-	return colorpairs[Math.floor(Math.random() * colorpairs.length)]
+	const metals = [
+		'#e6dd65', // Or
+		'#f4f4f4', // Argent
+	]
+
+	if (Math.random() > 0.5) {
+		return [
+			tinctures[Math.floor(Math.random() * 5)],
+			metals[Math.floor(Math.random() * 2)]
+		]
+	} else {
+		return [
+			metals[Math.floor(Math.random() * 2)],
+			tinctures[Math.floor(Math.random() * 5)]
+		]
+	}
 }
 
 export function match (hex) {
 	let name, type
 	const tinctures = [
-		['#56e39f', 'vert'],
+		['#52de9a', 'vert'],
 		['#0a3b84', 'azure'],
 		['#491984', 'purpure'],
 		['#b20505', 'gules'],
 		['#0f0f0f', 'sable']
 	]
 	const metals = [
-		['#d8d063', 'Or'],
+		['#e6dd65', 'Or'],
 		['#f4f4f4', 'argent']
 	]
 
