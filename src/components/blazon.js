@@ -110,11 +110,12 @@ export default function blazon (state) {
 					}
 					break
 				case 'bend-sinister':
+					setCharges(2, 1)
 					if (chargeCount === 1) {
-						d += `a bend ${colorB}, overall ${describe(charge)}`
+						d += `a bend sinister ${colorB}, overall ${describe(charge)}`
 					}
-					if (chargeCount === 2) {
-						d += `a bend ${colorB} between ${describe(charge)} and ${describe(altCharge)}`
+					if (chargeCount > 2) {
+						d += `a bend sinister ${colorB} between ${describe(charge)} and ${describe(altCharge)}`
 					}
 					break
 				case 'pale':
