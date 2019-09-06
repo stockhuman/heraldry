@@ -66,6 +66,12 @@ export function Divisions({ type, colors, pattern = null }) {
 				<rect x="302" y="360" width="312" height="360" fill={ fill }/>
 			</g>
 		); break;
+		case 'party per chevron': division = (
+			<g clipPath="url(#escutcheon)">
+				<rect width="700" height="800" fill={colors[1]}></rect>
+				<rect x="-48" y="302" width="400" height="400" fill={fill} transform="rotate(-45 391 391)" />
+			</g>
+		); break;
 		default: division = ( // plain field
 			<rect clipPath="url(#escutcheon)" width="700" height="800" fill={ fill }></rect>
 		);
@@ -124,7 +130,23 @@ export function Ordinaries({ type, colors, pattern = null }) {
  */
 export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#111' }) {
 	if (charge) {
-		return <text x={x} y={y} textAnchor="middle" style={{ fontSize: size, fill: color, fontFamily: 'Segoe UI Emoji' }}>{ charge[0] }</text>
+		return (
+			<text
+				x={x}
+				y={y}
+				textAnchor="middle"
+				style={
+					{
+						fontSize: size,
+						fill: color,
+						filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))',
+						fontFamily: 'Segoe UI Emoji',
+					}
+				}
+			>
+				{ charge[0] }
+			</text>
+		)
 	} else return null
 }
 

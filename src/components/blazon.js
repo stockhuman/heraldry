@@ -70,10 +70,8 @@ export default function blazon (state) {
 					if (chargeCount === 1) {
 						d += `overtop ${describe(charge)}`
 					} else {
-						d += `in chief ${describe(charge, chargeCount === 6 ? 2 : charges)}`
-						if (chargeCount > 6) {
-							d += ` and ${describe(altCharge, 3)} in alterny, in base ${describe(altCharge)}`
-						} else if (chargeCount > 3) {
+						d += `in chief ${describe(charge, charges)}`
+						if (chargeCount > 3) {
 							d += `, in base ${describe(altCharge, altCharges)}`
 						}
 					}
@@ -87,6 +85,19 @@ export default function blazon (state) {
 						d += ` III ${colorB}, IV ${colorA}`
 					} else {
 						d += ` II and III ${colorB}, IV ${colorA}`
+					}
+					break
+
+				case 'party per chevron':
+					setCharges(4, 4)
+					if (chargeCount === 1) {
+						// This could be blazoned differently, but most emoji render as the central, primary charge
+						d = `${colorB}, ${describe(charge)} above a chevron ${colorA}`
+					} else {
+						d = `Per chevron ${colorA} and ${colorB}, ${describe(charge, charges)} per fess`
+						if (chargeCount > 3) {
+							d += `, in chevron ${describe(altCharge)}`
+						}
 					}
 					break
 				// no default
@@ -110,10 +121,11 @@ export default function blazon (state) {
 					}
 					break
 				case 'bend-sinister':
-					if (chargeCount === 1 || (shape === 'swiss' || shape === 'rn2')) {
+					setCharges(2, 1)
+					if (chargeCount === 1) {
 						d += `a bend sinister ${colorB}, overall ${describe(charge)}`
 					}
-					if (chargeCount >= 2 && (shape !== 'swiss' || shape !== 'rn2')) {
+					if (chargeCount > 2) {
 						d += `a bend sinister ${colorB} between ${describe(charge)} and ${describe(altCharge)}`
 					}
 					break

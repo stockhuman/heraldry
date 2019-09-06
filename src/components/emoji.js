@@ -2,8 +2,7 @@
  * Returns an array with elements:
  * [0] - the emoji in unicode,
  * [1] - a heraldic description, with # as placeholders for plural endings
- * [2] - a boolean denoting that the description is already plural,
- * and does not take an automatic 's' at the end.
+ * [2] - An optional plural form if the blazon differs from singular
  *
  * Words in brackets are to be placed if singular (ie: an avocado)
  * Descriptions have been compiled and adapted from many places.
@@ -11,99 +10,109 @@
  * A debt to r/heraldry and to http://roa.sca-caid.org/Royalty.php
  * ought be acknowledged.
  *
- * Descriptions match Microsoft Segoe UI Emojis as of June 2019
+ * @since June 2019 - Descriptions match Microsoft Segoe UI Emojis
+ * @since Aug 2019 = Descriptions match Twitter 'Twemoji' Emojis
  *
  * @param {string} subset The subset of all emojis that could be retrieved
  */
-export default function emojis (subset = 'all') {
-	if (subset === 'all') {
-		return null // temp, I can't support this now
+export default function emojis (subset = 'reccomended') {
+	let e = []
+	if (subset === 'deprecated') {
+		e = [
+			['👂', '[an]ear# Or'], // removed as it looks ugly
+			['🛡️', '[an]escutcheon# azure, party per pale azure'], // removed with switch as it broke tincture
+			['🌫', 'fountain# argent'], // removed after switching to Twitter Emoji
+		]
 	} else if (subset === 'recommended') {
-		const e = [
-			['🌞', 'sun# in splendor'],
-			['💘', 'heart# of gules pierced bendwise sinister azure'],
+		e = [
+			['🌞', 'sun# in their splendor'],
+			['💘', 'heart# of gules pierced bendwise sinister Or'],
  			['💚', 'heart# of vert'],
 			['💙', 'heart# of azure'],
 			['🖤', 'heart# of sable'],
 			['💛', 'heart# of Or'],
-			['💯', 'one hundred emoji# gules', true],
+			['💯', 'one hundred emoji# gules'],
 			['💣', 'bomb# sable'],
 			['🖐', 'hand# palmate Or'],
-			['👌', '[an]OK Hand# Or'],
-			['🤘', 'Sign of the Horns Or', true],
+			['👌', 'OK Hand# Or'],
+			['🤘', 'Sign of the Horns Or'],
 			['🖕', 'Reversed Hand# With Middle Finger Extended Or'],
 			['✊', 'Raised Fist Or'],
-			['🙏', 'Folded Hands Or sleeved azure', true],
+			['🙏', 'Folded Hands Or sleeved azure'],
 			['⭐', 'mullet# Or'],
 			['💪', '[an]arm# embowed fesseways Or'],
-			['👂', '[an]ear# Or'],
-			['👁️', '[an]eye pupiled gules'],
-			['🧜‍♀️', 'mermaid# proper'],
-			['💿', '[an]optical disk# argent'],
-			['👣', 'footprints gules', true],
+			['👁️', '[an]eye# pupiled azur'],
+			['🧜‍♀️', 'mermaid# Or vested gules of hair azure, dexter arm raised'],
+			['🧜‍♂️', 'triton# without trident of hair and scales azure'],
+			['👣', 'footprints gules'],
 			['📖', '[an]open book# proper'],
-			['🦊', "fox's head# cabossed proper", true],
-			['🐮', "cow's head# cabossed proper", true],
+			['🦊', "fox's head# cabossed proper"],
+			['🐻', "bear's head# cabossed proper"],
+			['🐺', "wolf's head# cabossed argent of eyes and nose sable"],
+			['🐮', "cow's head# cabossed proper"],
 			['🌷', 'tulip# slipped and leaved proper'],
 			['🏵️', 'rosette# proper'],
 			['💮', 'cherry blossom argent'],
-			['🍀', 'four-leaf clover# proper'],
+			['🍀', 'four-leaf clover# vert'],
 			['🌲', '[an]evergreen tree# proper'],
 			['🍍', 'pineapple# bendwise proper'],
 			['🍎', '[an]apple# gules'],
-			['🦐', 'shrimp embowed proper', true],
 			['🦞', 'lobster# gules'],
+			['🐙', 'polypus affronty purpure', 'polypi affronty purpure'],
 			['🏔️', 'snow-capped mountain# proper'],
-			['⚓', '[an]anchor# argent'],
- 			['🌚', 'moon# sable'],
+			['⚓', '[an]anchor# azure'],
+			['🌚', 'moon# in their plentitude'], // https://mistholme.com/dictionary/moon/
 			['☁', 'cloud# argent'],
- 			['🌫', 'fountain# argent'],
-			['♦️', 'lozengy gules', true],
+			['♦️', 'lozengy gules'],
 			['📯', 'bugle# Or tasselled gules'],
-			['💰', 'bag# of money Or, marked vert'],
+			['💰', 'bag# of money Or, marked sable'],
 			['🖋️', 'pen# bendwise sinister sable'],
 			['🗝', 'key# fesswise, wards to sinister Or'],
 			['🗡️', 'dagger# bendwise inverted proper'],
 			['⚔️', 'pair# of swords in saltire proper'],
 			['🏹', 'bow# tensed gules and attached arrow# argent, bendwise to chief'],
 			['🤔', 'thinking face emoji# Or'],
-			['🛡️', '[an]escutcheon# gules, party per pale indented argent'],
-			['⚙️', 'gear# argent'],
+			['⚙️', 'gear# sable'],
 			['⚖️', 'standing balance# Or'],
  			['🔗', 'pair# of chainlinks bendwise to chief argent'],
 			['🐬', 'dolphin# sautant azure'],
 			['🖖🏿', "Moor's Palm# palmate splayed of thumb, middle, and ring proper"],
-			['🦉', 'owl# overt guardant'],
-			['⚜️', 'fleur-de-lys Or', true],
+			['🦉', 'owl# overt guardant proper'],
+			['⚜️', 'fleur-de-lys purpure'],
 			['⚫', 'pellet#'],
 			['🔴', 'pomme#'],
+			['🧪', 'test tube bendwise argent filled vert'],
  			['💎', 'diamond# azure'],
-			['🙃', '[an]upside-down smile emoji#'],
-			['🥕', 'carrot# bednwise sinister proper']
- 		]
-		return e[Math.floor(Math.random() * e.length)]
+			['🙃', '[an]upside-down smile emoji# Or'],
+			['🥕', 'carrot# bendwise sinister proper'],
+			['🧺', 'basket# gules'],
+			['🐍', 'coiled snake# ward sinister vert of eye sable and tongue gules']
+		]
 	} else if (subset === 'alt') {
-		const e = [
+		e = [
 			['😩', 'weary face emoji# proper'],
 			['💁‍♀️', "maiden's bust# vested purpure, with dexter arm raised and hand splayed fesswise, proper"],
 			['😍', 'heart-eyes face# proper'],
 			['💩', 'smiling turd emoji# proper'],
-			['💦', 'trio# of drops azure'],
+			['💦', 'trio# of drops falling bendwise azure'],
 			['🍆', '[an]eggplant# purpure'],
 			['😂', 'laughing crying emoji# proper'],
 			['🍑', 'peach fruit# leaved proper'],
 			['🤑', 'money face emoji# proper'],
 			['🥑', 'halved avocado# bendwise proper'],
-			['🧻', 'toilet paper roll# proper'],
+			['🧻', 'toilet paper roll# argent'],
 			['🦵', 'leg# embowed Or'],
 			['🤠', 'cowboy face# proper'],
-			['👽', 'alien# vert with eyes sable'],
-			['🍉', 'watermelon slice# bendwise proper'],
-			['🤡', 'clown face# argent, lips, nose and hair of gules, eyes azure'],
-			['🎅🏿', 'moorish Santa Claus emoji# proper']
+			['👽', 'alien head# cabossed argent with eyes sable'],
+			['🍉', 'watermelon slice# tilted bendwise proper'],
+			['🤡', 'clown face emoji# proper'],
+			['🎅🏿', 'moorish Santa Claus emoji# proper'],
+			['🌭', 'hotdog# bendwise sinister proper'],
+			['🌮', 'taco# fesswise Or, condiments proper'],
+			['🦐', 'shrimp embowed gules'],
 		]
-		return e[Math.floor(Math.random() * e.length)]
 	}
+	return e[Math.floor(Math.random() * e.length)]
 }
 
 /**
@@ -125,6 +134,11 @@ export function blazonEmoji(charge, count = 1) {
 		case 7: number = 'seven'; break
 		case 8: number = 'eight'; break
 		default: number = ''
+	}
+
+	// if the charge has a prescribed plural, set it instead.
+	if (charge[2] && count > 1) {
+		return `${number} ${charge[2]}`
 	}
 
 	let a = RegExp(/[[?\]]/g) // search for [an] or [the]

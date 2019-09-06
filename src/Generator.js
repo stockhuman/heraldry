@@ -13,11 +13,11 @@ export default class Generator extends Component {
 		super(props)
 		this.state = {
 			shape: 'spanish',
-			design: 'ordered',
-			divisions: '',
-			ordinaries: 'chief',
+			design: 'divided',
+			divisions: 'party per fess',
+			ordinaries: '',
 			seme: '',
-			chargeCount: 4,
+			chargeCount: 7,
 			charge: emoji('recommended'),
 			altCharge: emoji('alt'),
 			colors: ['#56e39f', '#f4f4f4', '#0f0f0f'],
@@ -60,7 +60,8 @@ export default class Generator extends Component {
 				'', // default, solid field
 				'party per pale',
 				'party per fess',
-				'party per quartely'
+				'party per quartely',
+				'party per chevron'
 			]
 			const ordinaries = [
 				'', // default, solid field
@@ -89,10 +90,23 @@ export default class Generator extends Component {
 				chargeCount: Math.max(1, Math.floor(Math.random() * 8)),
 				charge: emoji(this.state.emojiSource),
 				altCharge: emoji('alt'),
-				colors: colors()
+				colors: colors(),
 			}
 
-			this.setState({ ...state, description: blazon(state)})
+			// DEBUG
+			// this.setState({
+			// 	shape: 'spanish',
+			// 	design: 'divided',
+			// 	divisions: 'party per chevron',
+			// 	ordinaries: 'saltire',
+			// 	chargeCount: 5,
+			// 	charge: emoji(this.state.emojiSource),
+			// 	altCharge: emoji('alt'),
+			// 	colors: colors(),
+			// })
+
+			// State must be set to properly blazon
+			this.setState({ ...state, description: blazon(this.state) })
 		}
 	}
 

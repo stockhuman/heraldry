@@ -137,9 +137,10 @@ export default function Charges({ state, count = 1, alt }) {
 				// divides horizontally
 				case 'party per fess':
 					placements = [
+						// central
 						[{ x: 300, y: 340, size: 160 }],
-						// distrubuted horizontal
-						[{ x: 160, y: 200, size: 120 }, { x: 440, y: 200, size: 120 }],
+						// distrubuted horizontal in chief
+						[{ x: 160, y: 200 }, { x: 440, y: 200 }],
 						// three horizontal
 						[
 							{ x: 130, y: 180, size: 100 },
@@ -161,24 +162,24 @@ export default function Charges({ state, count = 1, alt }) {
 							{ x: 200, y: 500, size: 140, useAlt: true },
 							{ x: 400, y: 500, size: 140, useAlt: true }
 						],
-						// Ante + larger x3
+						// Three across fess, three below it
 						[
 							{ x: 130, y: 180, size: 100 },
 							{ x: 300, y: 180, size: 100 },
 							{ x: 470, y: 180, size: 100 },
-							{ x: 200, y: 500, size: 140, useAlt: true },
-							{ x: 200, y: 500, size: 140, useAlt: true },
-							{ x: 400, y: 500, size: 140, useAlt: true }
+							{ x: 180, y: 460, size: 100, useAlt: true },
+							{ x: 420, y: 460, size: 100, useAlt: true },
+							{ x: 300, y: 560, size: 100, useAlt: true }
 						],
-						// five across fess, large lower
+						// Ante + 1 below
 						[
-							{ x: 130, y: 130, size: 90 },
-							{ x: 300, y: 130, size: 90, useAlt: true },
-							{ x: 470, y: 130, size: 90 },
-							{ x: 215, y: 250, size: 90, useAlt: true },
-							{ x: 215, y: 250, size: 90, useAlt: true },
-							{ x: 390, y: 250, size: 90, useAlt: true },
-							{ x: 300, y: 530, size: 200, useAlt: true }
+							{ x: 130, y: 180, size: 100 },
+							{ x: 300, y: 180, size: 100 },
+							{ x: 470, y: 180, size: 100 },
+							{ x: 180, y: 490, size: 90, useAlt: true },
+							{ x: 420, y: 490, size: 90, useAlt: true },
+							{ x: 300, y: 590, size: 90, useAlt: true },
+							{ x: 300, y: 390, size: 90, useAlt: true }
 						]
 					]
 					maxCharges = 7
@@ -239,6 +240,35 @@ export default function Charges({ state, count = 1, alt }) {
 						placements[4] = adjustX(placements[4], 'out', 15)
 					}
 				break;
+
+				// divides horizontally, similarly to per pale
+				case 'party per chevron':
+					placements = [
+						// central
+						[{ x: 300, y: 300, size: 200 }],
+						// distrubuted horizontal in chief
+						[{ x: 160, y: 200 }, { x: 440, y: 200 }],
+						// three horizontal
+						[
+							{ x: 130, y: 180, size: 100 },
+							{ x: 300, y: 180, size: 100 },
+							{ x: 470, y: 180, size: 100 }
+						],
+						// Ante + larger
+						[
+							{ x: 130, y: 180, size: 100 },
+							{ x: 300, y: 180, size: 100 },
+							{ x: 470, y: 180, size: 100 },
+							{ x: 300, y: 530, size: 120, useAlt: true }
+						]
+					]
+					maxCharges = 4
+					chargeSize = 100
+					if (shape === 'papal') {
+						chargeSize = 120
+					}
+					break;
+
 				default: console.log('No division specified')
 			}
 		}
