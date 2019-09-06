@@ -5,7 +5,8 @@
 
 @font-face {
   font-family: 'Segoe UI Emoji';
-  src: local('Segoe UI Emoji'), url('../seguiemj.ttf');
+  /* src: local('Segoe UI Emoji'), url('../seguiemj.ttf'); */
+  src: url('../TwitterColorEmoji-SVGinOT.ttf');
 }
 
 
@@ -96,4 +97,3 @@ a {
 @media (min-width: 1050px) and (min-height: 800px) {
   #shield { width: 700px}
 }
-

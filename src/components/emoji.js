@@ -10,17 +10,23 @@
  * A debt to r/heraldry and to http://roa.sca-caid.org/Royalty.php
  * ought be acknowledged.
  *
- * Descriptions match Microsoft Segoe UI Emojis as of June 2019
+ * @since June 2019 - Descriptions match Microsoft Segoe UI Emojis
+ * @since Aug 2019 = Descriptions match Twitter 'Twemoji' Emojis
  *
  * @param {string} subset The subset of all emojis that could be retrieved
  */
-export default function emojis (subset = 'all') {
-	if (subset === 'all') {
-		return null // temp, I can't support this now
+export default function emojis (subset = 'reccomended') {
+	let e = []
+	if (subset === 'deprecated') {
+		e = [
+			['👂', '[an]ear# Or'], // removed as it looks ugly
+			['🛡️', '[an]escutcheon# azure, party per pale azure'], // removed with switch as it broke tincture
+			['🌫', 'fountain# argent'], // removed after switching to Twitter Emoji
+		]
 	} else if (subset === 'recommended') {
-		const e = [
-			['🌞', 'sun# in splendor'],
-			['💘', 'heart# of gules pierced bendwise sinister azure'],
+		e = [
+			['🌞', 'sun# in their splendor'],
+			['💘', 'heart# of gules pierced bendwise sinister Or'],
  			['💚', 'heart# of vert'],
 			['💙', 'heart# of azure'],
 			['🖤', 'heart# of sable'],
@@ -35,9 +41,9 @@ export default function emojis (subset = 'all') {
 			['🙏', 'Folded Hands Or sleeved azure'],
 			['⭐', 'mullet# Or'],
 			['💪', '[an]arm# embowed fesseways Or'],
-			['👂', '[an]ear# Or'],
-			['👁️', '[an]eye# pupiled gules'],
-			['🧜‍♀️', 'mermaid# proper'],
+			['👁️', '[an]eye# pupiled azur'],
+			['🧜‍♀️', 'mermaid# Or vested gules of hair azure, dexter arm raised'],
+			['🧜‍♂️', 'triton# without trident of hair and scales azure'],
 			['👣', 'footprints gules'],
 			['📖', '[an]open book# proper'],
 			['🦊', "fox's head# cabossed proper"],
@@ -49,67 +55,64 @@ export default function emojis (subset = 'all') {
 			['💮', 'cherry blossom argent'],
 			['🍀', 'four-leaf clover# vert'],
 			['🌲', '[an]evergreen tree# proper'],
-			['🍍', 'pineapple# bendwise'],
+			['🍍', 'pineapple# bendwise proper'],
 			['🍎', '[an]apple# gules'],
-			['🦐', 'shrimp embowed proper'],
 			['🦞', 'lobster# gules'],
-			['🐙', '[an]octopus affronty gules', 'octopuses affronty gules'],
+			['🐙', 'polypus affronty purpure', 'polypi affronty purpure'],
 			['🏔️', 'snow-capped mountain# proper'],
-			['⚓', '[an]anchor# argent'],
- 			['🌚', 'moon# sable'],
+			['⚓', '[an]anchor# azure'],
+			['🌚', 'moon# in their plentitude'], // https://mistholme.com/dictionary/moon/
 			['☁', 'cloud# argent'],
- 			['🌫', 'fountain# argent'],
 			['♦️', 'lozengy gules'],
 			['📯', 'bugle# Or tasselled gules'],
-			['💰', 'bag# of money Or, marked vert'],
+			['💰', 'bag# of money Or, marked sable'],
 			['🖋️', 'pen# bendwise sinister sable'],
 			['🗝', 'key# fesswise, wards to sinister Or'],
 			['🗡️', 'dagger# bendwise inverted proper'],
 			['⚔️', 'pair# of swords in saltire proper'],
 			['🏹', 'bow# tensed gules and attached arrow# argent, bendwise to chief'],
 			['🤔', 'thinking face emoji# Or'],
-			['🛡️', '[an]escutcheon# gules, party per pale indented argent'],
-			['⚙️', 'gear# argent'],
+			['⚙️', 'gear# sable'],
 			['⚖️', 'standing balance# Or'],
  			['🔗', 'pair# of chainlinks bendwise to chief argent'],
 			['🐬', 'dolphin# sautant azure'],
 			['🖖🏿', "Moor's Palm# palmate splayed of thumb, middle, and ring proper"],
-			['🦉', 'owl# overt guardant'],
-			['⚜️', 'fleur-de-lys Or'],
+			['🦉', 'owl# overt guardant proper'],
+			['⚜️', 'fleur-de-lys purpure'],
 			['⚫', 'pellet#'],
 			['🔴', 'pomme#'],
+			['🧪', 'test tube bendwise argent filled vert'],
  			['💎', 'diamond# azure'],
-			['🙃', '[an]upside-down smile emoji#'],
+			['🙃', '[an]upside-down smile emoji# Or'],
 			['🥕', 'carrot# bendwise sinister proper'],
-			['🧺', 'basket# argent with contents azur']
+			['🧺', 'basket# gules'],
+			['🐍', 'coiled snake# ward sinister vert of eye sable and tongue gules']
 		]
-		return e[Math.floor(Math.random() * e.length)]
 	} else if (subset === 'alt') {
-		const e = [
+		e = [
 			['😩', 'weary face emoji# proper'],
 			['💁‍♀️', "maiden's bust# vested purpure, with dexter arm raised and hand splayed fesswise, proper"],
 			['😍', 'heart-eyes face# proper'],
 			['💩', 'smiling turd emoji# proper'],
-			['💦', 'trio# of drops azure'],
+			['💦', 'trio# of drops falling bendwise azure'],
 			['🍆', '[an]eggplant# purpure'],
 			['😂', 'laughing crying emoji# proper'],
 			['🍑', 'peach fruit# leaved proper'],
 			['🤑', 'money face emoji# proper'],
 			['🥑', 'halved avocado# bendwise proper'],
-			['🧻', 'toilet paper roll# proper'],
+			['🧻', 'toilet paper roll# argent'],
 			['🦵', 'leg# embowed Or'],
 			['🤠', 'cowboy face# proper'],
-			['👽', 'alien# vert with eyes sable'],
-			['🍉', 'watermelon slice# bendwise proper'],
-			['🤡', 'clown face# argent, lips, nose and hair of gules, eyes azure'],
+			['👽', 'alien head# cabossed argent with eyes sable'],
+			['🍉', 'watermelon slice# tilted bendwise proper'],
+			['🤡', 'clown face emoji# proper'],
 			['🎅🏿', 'moorish Santa Claus emoji# proper'],
-			['🌯', 'burrito# bendwise proper'],
 			['🌭', 'hotdog# bendwise sinister proper'],
-			['🌮', 'taco# fesswise Or, condiments vert'],
-			['🐍', 'coiled snake# ward sinister vert of eye sable and tongue gules']
+			['🌮', 'taco# fesswise Or, condiments proper'],
+			['🦐', 'shrimp embowed gules'],
 		]
-		return e[Math.floor(Math.random() * e.length)]
 	}
+	return e[Math.floor(Math.random() * e.length)]
 }
 
 /**
