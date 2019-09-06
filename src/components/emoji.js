@@ -2,6 +2,7 @@
  * Returns an array with elements:
  * [0] - the emoji in unicode,
  * [1] - a heraldic description, with # as placeholders for plural endings
+ * [2] - An optional plural form if the blazon differs from singular
  *
  * Words in brackets are to be placed if singular (ie: an avocado)
  * Descriptions have been compiled and adapted from many places.
@@ -46,12 +47,13 @@ export default function emojis (subset = 'all') {
 			['🌷', 'tulip# slipped and leaved proper'],
 			['🏵️', 'rosette# proper'],
 			['💮', 'cherry blossom argent'],
-			['🍀', 'four-leaf clover# proper'],
+			['🍀', 'four-leaf clover# vert'],
 			['🌲', '[an]evergreen tree# proper'],
 			['🍍', 'pineapple# bendwise'],
 			['🍎', '[an]apple# gules'],
 			['🦐', 'shrimp embowed proper'],
 			['🦞', 'lobster# gules'],
+			['🐙', '[an]octopus affronty gules', 'octopuses affronty gules'],
 			['🏔️', 'snow-capped mountain# proper'],
 			['⚓', '[an]anchor# argent'],
  			['🌚', 'moon# sable'],
@@ -129,6 +131,11 @@ export function blazonEmoji(charge, count = 1) {
 		case 7: number = 'seven'; break
 		case 8: number = 'eight'; break
 		default: number = ''
+	}
+
+	// if the charge has a prescribed plural, set it instead.
+	if (charge[2] && count > 1) {
+		return `${number} ${charge[2]}`
 	}
 
 	let a = RegExp(/[[?\]]/g) // search for [an] or [the]
