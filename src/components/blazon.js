@@ -87,6 +87,19 @@ export default function blazon (state) {
 						d += ` II and III ${colorB}, IV ${colorA}`
 					}
 					break
+
+				case 'party per chevron':
+					setCharges(4, 4)
+					if (chargeCount === 1) {
+						// This could be blazoned differently, but most emoji render as the central, primary charge
+						d = `${colorB}, ${describe(charge)} above a chevron ${colorA}`
+					} else {
+						d = `Per chevron ${colorA} and ${colorB}, ${describe(charge, charges)} per fess`
+						if (chargeCount > 3) {
+							d += `, in chevron ${describe(altCharge)}`
+						}
+					}
+					break
 				// no default
 			}
 			blazon = `${d}`

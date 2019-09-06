@@ -57,7 +57,8 @@ export default class Generator extends Component {
 				'', // default, solid field
 				'party per pale',
 				'party per fess',
-				'party per quartely'
+				'party per quartely',
+				'party per chevron'
 			]
 			const ordinaries = [
 				'', // default, solid field
@@ -89,6 +90,19 @@ export default class Generator extends Component {
 				colors: colors(),
 			})
 
+			// DEBUG
+			// this.setState({
+			// 	shape: 'spanish',
+			// 	design: 'divided',
+			// 	divisions: 'party per chevron',
+			// 	ordinaries: 'saltire',
+			// 	chargeCount: 5,
+			// 	charge: emoji(this.state.emojiSource),
+			// 	altCharge: emoji('alt'),
+			// 	colors: colors(),
+			// })
+
+			// State must be set to properly blazon
 			this.setState({ description: blazon(this.state) })
 		}
 	}

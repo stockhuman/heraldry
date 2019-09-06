@@ -217,6 +217,35 @@ export default function Charges({ state, count = 1, alt }) {
 						placements[4] = adjustX(placements[4], 'out', 15)
 					}
 				break;
+
+				// divides horizontally, similarly to per pale
+				case 'party per chevron':
+					placements = [
+						// central
+						[{ x: 300, y: 300, size: 200 }],
+						// distrubuted horizontal in chief
+						[{ x: 160, y: 200 }, { x: 440, y: 200 }],
+						// three horizontal
+						[
+							{ x: 130, y: 180, size: 100 },
+							{ x: 300, y: 180, size: 100 },
+							{ x: 470, y: 180, size: 100 }
+						],
+						// Ante + larger
+						[
+							{ x: 130, y: 180, size: 100 },
+							{ x: 300, y: 180, size: 100 },
+							{ x: 470, y: 180, size: 100 },
+							{ x: 300, y: 530, size: 120, useAlt: true }
+						]
+					]
+					maxCharges = 4
+					chargeSize = 100
+					if (shape === 'papal') {
+						chargeSize = 120
+					}
+					break;
+
 				default: console.log('No division specified')
 			}
 		}
