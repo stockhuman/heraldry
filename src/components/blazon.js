@@ -70,10 +70,8 @@ export default function blazon (state) {
 					if (chargeCount === 1) {
 						d += `overtop ${describe(charge)}`
 					} else {
-						d += `in chief ${describe(altCharge, chargeCount === 6 ? 2 : charges)}`
-						if (chargeCount > 6) {
-							d += ` and ${describe(charge, 2)} alterny`
-						} else if (chargeCount > 3) {
+						d += `in chief ${describe(charge, charges)}`
+						if (chargeCount > 3) {
 							d += `, in base ${describe(altCharge, altCharges)}`
 						}
 					}
