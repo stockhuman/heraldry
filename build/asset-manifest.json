@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/heraldry/build/static/css/main.1c8fd020.chunk.css",
-    "main.js": "/heraldry/build/static/js/main.13ff8199.chunk.js",
-    "main.js.map": "/heraldry/build/static/js/main.13ff8199.chunk.js.map",
+    "main.css": "/heraldry/build/static/css/main.2b1fbe47.chunk.css",
+    "main.js": "/heraldry/build/static/js/main.d5a3177b.chunk.js",
+    "main.js.map": "/heraldry/build/static/js/main.d5a3177b.chunk.js.map",
     "runtime~main.js": "/heraldry/build/static/js/runtime~main.d632988f.js",
     "runtime~main.js.map": "/heraldry/build/static/js/runtime~main.d632988f.js.map",
     "static/js/2.b30db0e7.chunk.js": "/heraldry/build/static/js/2.b30db0e7.chunk.js",
     "static/js/2.b30db0e7.chunk.js.map": "/heraldry/build/static/js/2.b30db0e7.chunk.js.map",
     "index.html": "/heraldry/build/index.html",
-    "precache-manifest.541fd703c4eadf69862b0f2ac0671b04.js": "/heraldry/build/precache-manifest.541fd703c4eadf69862b0f2ac0671b04.js",
+    "precache-manifest.f849bd25b04b401c09a47ccdd39f372f.js": "/heraldry/build/precache-manifest.f849bd25b04b401c09a47ccdd39f372f.js",
     "service-worker.js": "/heraldry/build/service-worker.js",
-    "static/css/main.1c8fd020.chunk.css.map": "/heraldry/build/static/css/main.1c8fd020.chunk.css.map",
-    "static/media/App.css": "/heraldry/build/static/media/TwitterColorEmoji-SVGinOT.1d983b6f.ttf"
+    "static/css/main.2b1fbe47.chunk.css.map": "/heraldry/build/static/css/main.2b1fbe47.chunk.css.map",
+    "static/media/App.css": "/heraldry/build/static/media/TwemojiMozilla.633b2b81.ttf"
   }
 }
