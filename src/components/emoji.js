@@ -107,7 +107,7 @@ export default function emojis (subset = 'reccomended') {
 			['🍉', 'watermelon slice# tilted bendwise proper'],
 			['🤡', 'clown face emoji# proper'],
 			['🎅🏿', 'moorish Santa Claus emoji# proper'],
-			['🌭', 'hotdog# bendwise sinister proper'],
+			['🌭', 'hotdog# bendwise proper'],
 			['🌮', 'taco# fesswise Or, condiments proper'],
 			['🦐', 'shrimp embowed gules'],
 		]
