@@ -33,14 +33,14 @@ export default function colors () {
 // Includes only valid tincture / metal combinations and accurate historical colors
 export function heraldicColors () {
 	const tinctures = [
-		'#52de9a', // vert
-		'#0a3b84', // azure
+		'#42c784', // vert
+		'#0a47a3', // azure
 		'#491984', // purpure
 		'#b20505', // gules
 		'#0f0f0f', // sable
 	]
 	const metals = [
-		'#e6dd65', // Or
+		'#faf170', // Or
 		'#f4f4f4', // Argent
 	]
 
@@ -60,14 +60,14 @@ export function heraldicColors () {
 export function match (hex) {
 	let name, type
 	const tinctures = [
-		['#52de9a', 'vert'],
-		['#0a3b84', 'azure'],
+		['#42c784', 'vert'],
+		['#0a47a3', 'azure'],
 		['#491984', 'purpure'],
 		['#b20505', 'gules'],
 		['#0f0f0f', 'sable']
 	]
 	const metals = [
-		['#e6dd65', 'Or'],
+		['#faf170', 'Or'],
 		['#f4f4f4', 'argent']
 	]
 
