@@ -49,6 +49,12 @@ export function Divisions({ type, colors, pattern = null }) {
 				<rect width="300" height="800" x="301" fill={ fill }></rect>
 			</g>
 		); break;
+		case 'party per pale indented': division = (
+			<g clipPath="url(#escutcheon)">
+				<rect width="700" height="800" fill={colors[1]}></rect>
+				<polygon transform="translate(290)" fill={fill} points="52 0 329 0 329 704 27.5 796 52 704 0 616 52 528 0 440 52 352 0 264 52 176 0 88 52 0 52 0"/>
+			</g>
+		); break;
 		case 'party per fess': division = (
 			<g clipPath="url(#escutcheon)">
 				<rect width="700" height="700" fill={ colors[1] }></rect>
@@ -104,6 +110,9 @@ export function Ordinaries({ type, colors, pattern = null }) {
 			break;
 		case 'chief': ordinary = (
 			<rect kind="chief" x="0" y="0" width="970" height="136" fill={colors[1]} />
+		);
+		case 'pile': ordinary = (
+			<polygon points="0.76 0.5 302.26 700 603.76 0.52 0.76 0.5" kind="pile" x="0" y="0" width="970" height="136" fill={colors[1]}/>
 		);
 			break;
 		default: ordinary = null

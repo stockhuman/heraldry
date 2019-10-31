@@ -58,7 +58,8 @@ export default class Generator extends Component {
 				'party per pale',
 				'party per fess',
 				'party per quartely',
-				'party per chevron'
+				'party per chevron',
+				'party per pale indented'
 			]
 			const ordinaries = [
 				'', // default, solid field
@@ -67,7 +68,8 @@ export default class Generator extends Component {
 				'bend',
 				'bend-sinister',
 				'chief',
-				'saltire'
+				'saltire',
+				'pile'
 			]
 			const designs = ['ordered', 'divided']
 			const patterns = [

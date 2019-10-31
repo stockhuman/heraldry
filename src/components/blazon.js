@@ -64,6 +64,20 @@ export default function blazon (state) {
 					}
 					break
 
+				case 'party per pale indented':
+					setCharges(6, 4)
+					d = `Per pale indented ${colorB} and ${colorA}, `;
+					if (chargeCount === 1) {
+						d += `overtop ${describe(charge)}`
+					} else {
+						d += `in sinister ${describe(charge, charges)}`
+						if (chargeCount > 3) {
+							d += `, in dexter ${describe(altCharge, altCharges)}`
+						}
+					}
+					break
+
+
 				case 'party per fess':
 					setCharges(7, 4)
 					d = `Per fess ${colorA} and ${colorB}, `
@@ -145,6 +159,14 @@ export default function blazon (state) {
 					} else {
 						d += `, in chief ${describe(charge, 3)}`
 					}
+					break
+				case 'pile':
+					setCharges(3, 1)
+					d += `in a pile ${colorB} ${describe(charge, 1)}`
+					if (chargeCount > 1) {
+						d += `, in chief ${describe(altCharge, altCharges)}`
+					}
+
 					break
 				// no default
 			}
