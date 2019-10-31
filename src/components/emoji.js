@@ -30,6 +30,7 @@ export default function emojis (subset = 'reccomended') {
 			['👂', '[an]ear# Or'], // removed as it looks ugly
 			['🛡️', '[an]escutcheon# azure, party per pale azure', azure], // removed with switch as it broke tincture
 			['🌫', 'fountain# argent'], // removed after switching to Twitter Emoji
+			['💁‍♀️', "maiden's bust# vested purpure, with dexter arm raised and hand splayed fesswise, proper"], // ugly
 		]
 	} else if (subset === 'recommended') {
 		e = [
@@ -46,7 +47,7 @@ export default function emojis (subset = 'reccomended') {
 			['👌', 'OK Hand# Or', or],
 			['🤘', 'Sign of the Horns Or', or],
 			['🖕', 'Reversed Hand# With Middle Finger Extended Or', or],
-			['✊', 'Raised Fist Or', or],
+			['✊', 'Raised Fist# Or', or],
 			['🙏', 'Folded Hands Or sleeved azure'],
 			['⭐', 'mullet# Or', or],
 			['💪', '[an]arm# embowed fesseways Or', or],
@@ -103,12 +104,13 @@ export default function emojis (subset = 'reccomended') {
 			['🪓', '[an]axe# bendwise'],
 			['🧅', '[an]onion# Or', or],
 			['🧄', 'head# of garlic argent', argent],
-			['🦨', 'skunk# statant proper', sable]
+			['🦨', 'skunk# statant proper', sable],
+			['🐣', 'chick# Or guardant issuant from [an]eggshell# argent'],
+			['🐓', 'cock#']
 		]
 	} else if (subset === 'alt') {
 		e = [
 			['😩', 'weary face emoji# Or', or],
-			['💁‍♀️', "maiden's bust# vested purpure, with dexter arm raised and hand splayed fesswise, proper"],
 			['😍', 'heart-eyes emoji# proper', or],
 			['💩', 'smiling turd emoji# proper'],
 			['💦', 'trio# of drops falling bendwise azure', azure],
@@ -163,7 +165,7 @@ export function blazonEmoji(charge, count = 1) {
 	}
 
 	// if the charge has a prescribed plural, set it instead.
-	if (charge[2] && count > 1) {
+	if (charge[3] && count > 1) {
 		return `${number} ${charge[2]}`
 	}
 
