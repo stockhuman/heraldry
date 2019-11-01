@@ -5,7 +5,9 @@
 
 @font-face {
   font-family: 'Segoe UI Emoji';
-  src: local('Segoe UI Emoji'), url('../seguiemj.ttf');
+  /* src: local('Segoe UI Emoji'), url('../seguiemj.ttf'); */
+  /* src: url('../TwemojiMozilla.ttf'); */
+  src: url('../TwitterColorEmoji-SVGinOT.ttf')
 }
 
 
@@ -15,9 +17,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
+  background-color:#1d2026;/* #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -96,4 +98,3 @@ a {
 @media (min-width: 1050px) and (min-height: 800px) {
   #shield { width: 700px}
 }
-

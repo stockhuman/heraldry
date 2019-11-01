@@ -1,3 +1,4 @@
+// Hand-picked, pretty but innacurate color combinatinos
 export default function colors () {
 	const colorpairs = [
 		['#ebf2fa','#427aa1','#a5be00'],
@@ -29,65 +30,44 @@ export default function colors () {
 	return colorpairs[Math.floor(Math.random() * colorpairs.length)]
 }
 
-// Returns HTML (x11) named colors (rather ugly)
-export function namedColors () {
-	const colorpairs = [
-		['Crimson', 'Gold', 'Indigo'],
-		['Purple', 'Black', 'Gold'],
-		['Teal', 'Gray', 'Wheat'],
-		['Silver', 'Black', 'Snow'],
-		['Lavender', 'Snow', 'Gray'],
-		['Orchid', 'Olive', 'Azure'],
-		['Chocolate', 'White', 'Beige'],
-		['Blue', 'Silver', 'Ivory'],
-		['Pink', 'Khaki', 'Indigo'],
-		['Tan', 'Navy', 'Brown'],
-		['Black', 'Coral', 'Thistle'],
-		['Bisque', 'Black', 'Indigo'],
-		['Tan', 'Navy', 'Sienna'],
-		['Maroon', 'White', 'Black'],
-	]
-	return colorpairs[Math.floor(Math.random() * colorpairs.length)]
-}
-
 // Includes only valid tincture / metal combinations and accurate historical colors
 export function heraldicColors () {
 	const tinctures = [
-		'#2dd86c',
-		'#0a3b84',
-		'#491984',
-		'#b20505',
-		'#0f0f0f'
+		'#42c784', // vert
+		'#0a47a3', // azure
+		'#491984', // purpure
+		'#b20505', // gules
+		'#0f0f0f', // sable
 	]
-	const metals = [ '#D4AF37', '#f4f4f4' ]
-
-	// Double tilde is a bitwise equivalent to Math.floor()
-	let tincture = tinctures[~~(Math.random() * tinctures.length)]
-	let metal = metals[~~(Math.random() * metals.length)]
-
-	// change metal for silver in this specific combo, as it looks horrid
-	if (metal === '#D4AF37' && tincture === '#2dd86c') {
-		metal = '#f4f4f4'
-	}
+	const metals = [
+		'#faf170', // Or
+		'#f4f4f4', // Argent
+	]
 
 	if (Math.random() > 0.5) {
-		return [metal, tincture]
+		return [
+			tinctures[Math.floor(Math.random() * 5)],
+			metals[Math.floor(Math.random() * 2)]
+		]
 	} else {
-		return [tincture, metal]
+		return [
+			metals[Math.floor(Math.random() * 2)],
+			tinctures[Math.floor(Math.random() * 5)]
+		]
 	}
 }
 
 export function match (hex) {
 	let name, type
 	const tinctures = [
-		['#2dd86c', 'vert'],
-		['#0a3b84', 'azure'],
+		['#42c784', 'vert'],
+		['#0a47a3', 'azure'],
 		['#491984', 'purpure'],
 		['#b20505', 'gules'],
 		['#0f0f0f', 'sable']
 	]
 	const metals = [
-		['#D4AF37', 'Or'],
+		['#faf170', 'Or'],
 		['#f4f4f4', 'argent']
 	]
 
