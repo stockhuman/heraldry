@@ -20,7 +20,7 @@ export default class Generator extends Component {
 			chargeCount: 7,
 			charge: emoji('recommended'),
 			altCharge: emoji('alt'),
-			colors: ['#56e39f', '#f4f4f4', '#0f0f0f'],
+			colors: ['#0a47a3', '#f4f4f4', '#0f0f0f'],
 			emojiSource: 'recommended',
 			description: ''
 		}
