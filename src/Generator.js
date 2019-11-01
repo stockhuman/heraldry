@@ -83,17 +83,17 @@ export default class Generator extends Component {
 				// 'lozengy'
 			]
 
-			let state = {
+			this.setState({
 				shape: random(shapes),
 				design: random(designs),
 				divisions: random(divisions),
 				ordinaries: random(ordinaries),
 				seme: random(patterns),
-				chargeCount: Math.max(1, Math.floor(Math.random() * 8)),
+				chargeCount: Math.max(1, Math.floor(Math.random() * 10)),
 				charge: emoji(this.state.emojiSource),
 				altCharge: emoji('alt'),
 				colors: colors(),
-			}
+			})
 
 			// DEBUG
 			// this.setState({
