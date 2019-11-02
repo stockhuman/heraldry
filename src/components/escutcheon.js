@@ -11,6 +11,7 @@
  * the field and division/ordinary may be modified in several ways
  */
 import React from 'react';
+import { match } from './colors'
 
 
 export function Shape({ type }) {
@@ -38,39 +39,38 @@ export function Shape({ type }) {
 
 
 export function Divisions({ type, colors, pattern = null }) {
-
 	let division
-	let fill = (pattern) ? `url(#${pattern})` : colors[0]
+	let fill = (pattern) ? `url(#${pattern})` : match(colors[0]).hex
 
 	switch (type) {
 		case 'party per pale': division = (
 			<g clipPath="url(#escutcheon)">
-				<rect width="700" height="800" fill={ colors[1] }></rect>
+				<rect width="700" height="800" fill={match(colors[1]).hex}></rect>
 				<rect width="300" height="800" x="301" fill={ fill }></rect>
 			</g>
 		); break;
 		case 'party per pale indented': division = (
 			<g clipPath="url(#escutcheon)">
-				<rect width="700" height="800" fill={colors[1]}></rect>
+				<rect width="700" height="800" fill={match(colors[1]).hex}></rect>
 				<polygon transform="translate(290)" fill={fill} points="52 0 329 0 329 704 27.5 796 52 704 0 616 52 528 0 440 52 352 0 264 52 176 0 88 52 0 52 0"/>
 			</g>
 		); break;
 		case 'party per fess': division = (
 			<g clipPath="url(#escutcheon)">
-				<rect width="700" height="700" fill={ colors[1] }></rect>
+				<rect width="700" height="700" fill={match(colors[1]).hex}></rect>
 				<rect width="700" height="300" fill={ fill }></rect>
 			</g>
 		); break;
 		case 'party per quartely': division = (
 			<g clipPath="url(#escutcheon)">
-				<rect width="700" height="800" fill={ colors[1] }></rect>
-				<rect x="-10" width="312" height="360" fill={ colors[0] } />
+				<rect width="700" height="800" fill={match(colors[1]).hex}></rect>
+				<rect x="-10" width="312" height="360" fill={ match(colors[0]).hex } />
 				<rect x="302" y="360" width="312" height="360" fill={ fill }/>
 			</g>
 		); break;
 		case 'party per chevron': division = (
 			<g clipPath="url(#escutcheon)">
-				<rect width="700" height="800" fill={colors[1]}></rect>
+				<rect width="700" height="800" fill={match(colors[1]).hex}></rect>
 				<rect x="-48" y="302" width="400" height="400" fill={fill} transform="rotate(-45 391 391)" />
 			</g>
 		); break;
@@ -85,34 +85,35 @@ export function Divisions({ type, colors, pattern = null }) {
 
 export function Ordinaries({ type, colors, pattern = null }) {
 	let ordinary
-	let fill = (pattern) ? `url(#${pattern})` : colors[0]
+	let fill = (pattern) ? `url(#${pattern})` : match(colors[0]).hex
 
 	switch (type) {
 		case 'bend-sinister': ordinary = (
-			<rect kind="bend" x="-93.5" y="203" width="970" height="136" transform="rotate(-45 391 391)" fill={ colors[1] } />
+			<rect kind="bend" x="-93.5" y="203" width="970" height="136" transform="rotate(-45 391 391)" fill={ match(colors[1]).hex } />
 		);
 			break;
 		case 'bend': ordinary = (
-			<rect kind="bend" x="0" y="-70" width="970" height="136" transform="rotate(45)" fill={ colors[1] } />
+			<rect kind="bend" x="0" y="-70" width="970" height="136" transform="rotate(45)" fill={ match(colors[1]).hex } />
 		);
 			break;
 		case 'pale': ordinary = (
-			<rect kind="pale" x="-266" y="467" width="738" height="204" transform="translate(-267.11 472.61) rotate(-90)" fill={ colors[1] } />
+			<rect kind="pale" x="-266" y="467" width="738" height="204" transform="translate(-267.11 472.61) rotate(-90)" fill={ match(colors[1]).hex } />
 		);
 			break;
 		case 'cross': ordinary = (
-			<polygon kind="cross" transform="translate(-150 -130)" points="905.52 376.88 529.01 376.88 529.01 0.38 376.88 0.38 376.88 376.88 0.38 376.88 0.38 529.01 376.88 529.01 376.88 905.52 529.01 905.52 529.01 529.01 905.52 529.01 905.52 376.88" fill={ colors[1] } />
+			<polygon kind="cross" transform="translate(-150 -130)" points="905.52 376.88 529.01 376.88 529.01 0.38 376.88 0.38 376.88 376.88 0.38 376.88 0.38 529.01 376.88 529.01 376.88 905.52 529.01 905.52 529.01 529.01 905.52 529.01 905.52 376.88" fill={ match(colors[1]).hex } />
 		);
 			break;
 		case 'saltire': ordinary = (
-			<polygon kind="saltire" transform="translate(-90 -60)" points="783.06 96.75 686.84 0.53 391.8 295.58 96.75 0.53 0.53 96.75 295.58 391.8 0.53 686.84 96.75 783.06 391.8 488.01 686.84 783.06 783.06 686.84 488.01 391.8 783.06 96.75" fill={ colors[1] } />
+			<polygon kind="saltire" transform="translate(-90 -60)" points="783.06 96.75 686.84 0.53 391.8 295.58 96.75 0.53 0.53 96.75 295.58 391.8 0.53 686.84 96.75 783.06 391.8 488.01 686.84 783.06 783.06 686.84 488.01 391.8 783.06 96.75" fill={ match(colors[1]).hex } />
 		);
 			break;
 		case 'chief': ordinary = (
-			<rect kind="chief" x="0" y="0" width="970" height="136" fill={colors[1]} />
+			<rect kind="chief" x="0" y="0" width="970" height="136" fill={match(colors[1]).hex} />
 		);
+		break;
 		case 'pile': ordinary = (
-			<polygon points="0.76 0.5 302.26 700 603.76 0.52 0.76 0.5" kind="pile" x="0" y="0" width="970" height="136" fill={colors[1]}/>
+			<polygon points="0.76 0.5 302.26 700 603.76 0.52 0.76 0.5" kind="pile" x="0" y="0" width="970" height="136" fill={match(colors[1]).hex}/>
 		);
 			break;
 		default: ordinary = null
@@ -133,7 +134,7 @@ export function Ordinaries({ type, colors, pattern = null }) {
  * as a heraldic charge in armory.
  * Charges can be animals, objects, or geometric shapes.
  */
-export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#111' }) {
+export function Charge ({ charge, x = 300, y = 360, size = 140, color = 'sable', inverted = false }) {
 	if (charge) {
 		return (
 			<text
@@ -143,8 +144,8 @@ export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#111' }
 				style={
 					{
 						fontSize: size,
-						fill: color,
-						filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))',
+						fill: match(color).hex,
+						filter: `drop-shadow(0px 0px 5px rgba(0,0,0,0.2))${inverted ? ' invert()' : ''}`,
 						fontFamily: 'Segoe UI Emoji',
 					}
 				}
@@ -160,33 +161,33 @@ export function Charge ({ charge, x = 300, y = 360, size = 140, color = '#111' }
  * @param {string} options.type     The named type of pattern, corresponds to ID
  * @param {Array}  options.colors   The colors of the whole design, two used in pattern
  */
-export function Seme ({ type, colors = ['#331', '#ddd', '#c61'] }) {
+export function Seme ({ type, colors = ['vert', 'sable', 'argent'] }) {
 	let pattern
 	switch (type) {
 		case 'lozengy': pattern = (
 			<g>
-				<rect width='30' height='30' fill={colors[1]}/>
-				<rect x="16" y="-14" width='28' height='28' transform='rotate(45)' fill={colors[2]}/>
+				<rect width='30' height='30' fill={match(colors[1]).hex}/>
+				<rect x="16" y="-14" width='28' height='28' transform='rotate(45)' fill={match(colors[2]).hex}/>
 			</g>
 		)
 		break;
 
 		case 'fleur-de-lys': pattern = (
 			<g>
-				<text style={{ fontSize: 25, fill: colors[2], fontFamily: 'Segoe UI Emoji'}} transform="matrix(1 0 0 1 0 25)">⚜</text>
+				<text style={{ fontSize: 25, fill: match(colors[2]).hex, fontFamily: 'Segoe UI Emoji'}} transform="matrix(1 0 0 1 0 25)">⚜</text>
 			</g>
 		)
 		break;
 
 		case 'barry-dancetty': pattern = (
 		<g transform="scale(4)">
-			<path d="M0  0l5  3v5l-5 -3z" fill={colors[2]} />
-			<path d="M10 0l-5 3v5l5  -3" fill={colors[2]} />
+			<path d="M0  0l5  3v5l-5 -3z" fill={match(colors[2]).hex} />
+			<path d="M10 0l-5 3v5l5  -3" fill={match(colors[2]).hex} />
 		</g>
 		)
 		break;
 
-		case 'masoned': pattern = <g fillRule="evenodd"><path fill={colors[2]} d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/></g>;
+		case 'masoned': pattern = <g fillRule="evenodd"><path fill={match(colors[2]).hex} d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/></g>;
 		break;
 
 		default: pattern = null
@@ -194,7 +195,7 @@ export function Seme ({ type, colors = ['#331', '#ddd', '#c61'] }) {
 
 	return (
 		<pattern id={ type } width="40" height="40" patternUnits="userSpaceOnUse">
-			<rect width="40" height="40" fill={ colors[1] } />
+			<rect width="40" height="40" fill={ match(colors[1]).hex } />
 			{ pattern }
 		</pattern>
 	)
