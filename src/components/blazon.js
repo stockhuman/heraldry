@@ -1,13 +1,12 @@
 import { blazonEmoji as describe } from './emoji'
-import { match } from './colors'
 
 // via https://en.wikipedia.org/wiki/Blazon and
 // https://heraldry.sca.org/armory/bruce.html
 export default function blazon (state) {
 	const { colors, design, divisions, ordinaries, charge, altCharge, chargeCount, shape } = state
 
-	const colorA = match(colors[0]).name
-	const colorB = match(colors[1]).name
+	const colorA = colors[0]
+	const colorB = colors[1]
 
 	let plain = false // no divisions or ordinaries on field
 	let variation = '' // variations of the field
@@ -161,7 +160,7 @@ export default function blazon (state) {
 					}
 					break
 				case 'pile':
-					setCharges(3, 1)
+					setCharges(2, 1)
 					d += `in a pile ${colorB} ${describe(charge, 1)}`
 					if (chargeCount > 1) {
 						d += `, in chief ${describe(altCharge, altCharges)}`

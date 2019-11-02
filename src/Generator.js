@@ -20,7 +20,7 @@ export default class Generator extends Component {
 			chargeCount: 7,
 			charge: emoji('recommended'),
 			altCharge: emoji('alt'),
-			colors: ['#0a47a3', '#f4f4f4', '#0f0f0f'],
+			colors: ['vert', 'argent', 'sable'],
 			emojiSource: 'recommended',
 			description: ''
 		}
@@ -98,12 +98,12 @@ export default class Generator extends Component {
 			// DEBUG
 			// this.setState({
 			// 	shape: 'spanish',
-			// 	design: 'divided',
+			// 	design: 'ordered',
 			// 	divisions: 'party per chevron',
-			// 	ordinaries: 'saltire',
-			// 	chargeCount: 5,
+			// 	ordinaries: 'pile',
+			// 	chargeCount: 3,
 			// 	charge: emoji(this.state.emojiSource),
-			// 	altCharge: emoji('alt'),
+			// 	altCharge: emoji('inverted'),
 			// 	colors: colors(),
 			// })
 
