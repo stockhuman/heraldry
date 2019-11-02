@@ -90,7 +90,7 @@ export default function emojis (subset = 'reccomended') {
 			['🦉', 'owl# overt guardant proper'],
 			['⚜️', 'fleur-de-lys purpure', purpure],
 			['⚫', 'pellet#', sable],
-			['🔴', 'tourteau#', gules],
+			['🔴', 'torteau#', gules],
 			['🟣', 'golpe#', purpure],
 			['⚪', 'plate#', argent],
 			['🟡', 'besant#', or],
@@ -132,12 +132,12 @@ export default function emojis (subset = 'reccomended') {
 		]
 	} else if (subset === 'inverted') {
 		e = [
-			['🐍', 'coiled snake# ward sinister purpure of eye argent and tongue azure', purpure],
-			['🐻', "bear's head# cabossed azure", azure],
-			['🍀', 'four-leaf clover# purpure', purpure],
-			['💪', '[an]arm# embowed fesseways azure', azure],
-			['⚖️', 'standing balance# azure', azure],
-			['⚜️', 'fleur-de-lys vert', vert],
+			['🐍', 'coiled snake# ward sinister purpure of eye argent and tongue azure', purpure, {inverted: true}],
+			['🐻', "bear's head# cabossed azure", azure, {inverted: true}],
+			['🍀', 'four-leaf clover# purpure', purpure, {inverted: true}],
+			['💪', '[an]arm# embowed fesseways azure', azure, {inverted: true}],
+			['⚖️', 'standing balance# azure', azure, {inverted: true}],
+			['⚜️', 'fleur-de-lys vert', vert, {inverted: true}],
 		]
 	}
 	return e[Math.floor(Math.random() * e.length)]
@@ -165,7 +165,7 @@ export function blazonEmoji(charge, count = 1) {
 	}
 
 	// if the charge has a prescribed plural, set it instead.
-	if (charge[3] && count > 1) {
+	if (charge[4] && count > 1) {
 		return `${number} ${charge[2]}`
 	}
 
