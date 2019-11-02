@@ -358,8 +358,8 @@ export default function Charges({ state, count = 1, alt }) {
 						],
 						[
 							{ x: 300, y: 380, size: 160 },
-							{ x: 160, y: 200, useAlt: true },
-							{ x: 440, y: 200, useAlt: true }
+							{ x: 160, y: 150, useAlt: true },
+							{ x: 440, y: 150, useAlt: true }
 						],
 						[
 							{ x: 300, y: 380, size: 160 },
