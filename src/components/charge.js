@@ -74,6 +74,7 @@ export default function Charges({ state, count = 1, alt }) {
 		if (design === 'divided') {
 			switch (divisions) {
 				// divides along the middle
+				case 'party per pale indented':
 				case 'party per pale':
 					placements = [
 						// central
@@ -139,8 +140,8 @@ export default function Charges({ state, count = 1, alt }) {
 					placements = [
 						// central
 						[{ x: 300, y: 340, size: 160 }],
-						// distrubuted horizontal in chief
-						[{ x: 160, y: 200 }, { x: 440, y: 200 }],
+						// distrubuted horizontal
+						[{ x: 160, y: 200, size: 120 }, { x: 440, y: 200, size: 120 }],
 						// three horizontal
 						[
 							{ x: 130, y: 180, size: 100 },
@@ -372,6 +373,29 @@ export default function Charges({ state, count = 1, alt }) {
 					chargeSize = 100
 					maxCharges = 1
 				break;
+				case 'pile':
+					placements = [
+						[{ x: 300, y: 340, size: 160 }],
+						[
+							{ x: 300, y: 380 },
+							{ x: 300, y: 130, useAlt: true },
+						],
+						[
+							{ x: 300, y: 380, size: 160 },
+							{ x: 160, y: 150, useAlt: true },
+							{ x: 440, y: 150, useAlt: true }
+						],
+						[
+							{ x: 300, y: 380, size: 160 },
+							{ x: 130, y: 130, useAlt: true},
+							{ x: 300, y: 130, useAlt: true},
+							{ x: 470, y: 130, useAlt: true}
+						],
+
+					]
+					chargeSize = 100
+					maxCharges = 4
+					break;
 				default: console.log('No ordinary specified');
 			}
 		}

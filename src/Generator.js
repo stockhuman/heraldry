@@ -20,7 +20,7 @@ export default class Generator extends Component {
 			chargeCount: 7,
 			charge: emoji('recommended'),
 			altCharge: emoji('alt'),
-			colors: ['#56e39f', '#f4f4f4', '#0f0f0f'],
+			colors: ['vert', 'argent', 'sable'],
 			emojiSource: 'recommended',
 			description: ''
 		}
@@ -61,7 +61,8 @@ export default class Generator extends Component {
 				'party per pale',
 				'party per fess',
 				'party per quartely',
-				'party per chevron'
+				'party per chevron',
+				'party per pale indented'
 			]
 			const ordinaries = [
 				'', // default, solid field
@@ -70,7 +71,8 @@ export default class Generator extends Component {
 				'bend',
 				'bend-sinister',
 				'chief',
-				'saltire'
+				'saltire',
+				'pile'
 			]
 			const designs = ['ordered', 'divided']
 			const patterns = [
@@ -87,7 +89,7 @@ export default class Generator extends Component {
 				divisions: random(divisions),
 				ordinaries: random(ordinaries),
 				seme: random(patterns),
-				chargeCount: Math.max(1, Math.floor(Math.random() * 8)),
+				chargeCount: Math.max(1, Math.floor(Math.random() * 10)),
 				charge: emoji(this.state.emojiSource),
 				altCharge: emoji('alt'),
 				colors: colors(),
@@ -96,12 +98,12 @@ export default class Generator extends Component {
 			// DEBUG
 			// this.setState({
 			// 	shape: 'spanish',
-			// 	design: 'divided',
+			// 	design: 'ordered',
 			// 	divisions: 'party per chevron',
-			// 	ordinaries: 'saltire',
-			// 	chargeCount: 5,
+			// 	ordinaries: 'pile',
+			// 	chargeCount: 3,
 			// 	charge: emoji(this.state.emojiSource),
-			// 	altCharge: emoji('alt'),
+			// 	altCharge: emoji('inverted'),
 			// 	colors: colors(),
 			// })
 

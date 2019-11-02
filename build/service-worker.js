@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/heraldry/build/precache-manifest.f849bd25b04b401c09a47ccdd39f372f.js"
+  "/heraldry/build/precache-manifest.ec5aa9eef4e89bc62bfab6aa91fca55b.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -34,6 +34,6 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/heraldry/build/index.html"), {
-  
-  blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
+
+  blacklist: [/^\/_/,/\/[^\/?]+\.[^\/]+$/],
 });

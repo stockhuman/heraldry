@@ -16,35 +16,45 @@
  * @param {string} subset The subset of all emojis that could be retrieved
  */
 export default function emojis (subset = 'reccomended') {
+	// allows me to get some syntax highlighting and change the scheme, should I need to
+	let or = 'or',
+		gules = 'gules',
+		vert = 'vert',
+		azure = 'azure',
+		purpure = 'purpure',
+		sable = 'sable',
+		argent = 'argent'
 	let e = []
 	if (subset === 'deprecated') {
 		e = [
 			['👂', '[an]ear# Or'], // removed as it looks ugly
-			['🛡️', '[an]escutcheon# azure, party per pale azure'], // removed with switch as it broke tincture
+			['🛡️', '[an]escutcheon# azure, party per pale azure', azure], // removed with switch as it broke tincture
 			['🌫', 'fountain# argent'], // removed after switching to Twitter Emoji
+			['💁‍♀️', "maiden's bust# vested purpure, with dexter arm raised and hand splayed fesswise, proper"], // ugly
 		]
 	} else if (subset === 'recommended') {
 		e = [
-			['🌞', 'sun# in their splendor'],
-			['💘', 'heart# of gules pierced bendwise sinister Or'],
- 			['💚', 'heart# of vert'],
-			['💙', 'heart# of azure'],
-			['🖤', 'heart# of sable'],
-			['💛', 'heart# of Or'],
-			['💯', 'one hundred emoji# gules'],
-			['💣', 'bomb# sable'],
-			['🖐', 'hand# palmate Or'],
-			['👌', 'OK Hand# Or'],
-			['🤘', 'Sign of the Horns Or'],
-			['🖕', 'Reversed Hand# With Middle Finger Extended Or'],
-			['✊', 'Raised Fist Or'],
+			['🌞', 'sun# in their splendor', or],
+			['💘', 'heart# of gules pierced bendwise sinister Or', gules],
+ 			['💚', 'heart# of vert', vert],
+			['💙', 'heart# of azure', azure],
+			['🖤', 'heart# of sable', sable],
+			['💛', 'heart# of Or', sable],
+			['🤍', 'heart# of argent', argent],
+			['💯', 'one hundred emoji# gules', gules],
+			['💣', 'bomb# sable', sable],
+			['🖐', 'hand# palmate Or', or],
+			['👌', 'OK Hand# Or', or],
+			['🤘', 'Sign of the Horns Or', or],
+			['🖕', 'Reversed Hand# With Middle Finger Extended Or', or],
+			['✊', 'Raised Fist# Or', or],
 			['🙏', 'Folded Hands Or sleeved azure'],
-			['⭐', 'mullet# Or'],
-			['💪', '[an]arm# embowed fesseways Or'],
-			['👁️', '[an]eye# pupiled azur'],
-			['🧜‍♀️', 'mermaid# Or vested gules of hair azure, dexter arm raised'],
-			['🧜‍♂️', 'triton# without trident of hair and scales azure'],
-			['👣', 'footprints gules'],
+			['⭐', 'mullet# Or', or],
+			['💪', '[an]arm# embowed fesseways Or', or],
+			['👁️', '[an]eye# pupiled azure', argent],
+			['🧜‍♀️', 'mermaid# Or vested gules of hair azure, dexter arm raised', azure],
+			['🧜‍♂️', 'triton# without trident of hair and scales azure', azure],
+			['👣', 'footprints gules', gules],
 			['📖', '[an]open book# proper'],
 			['🦊', "fox's head# cabossed proper"],
 			['🐻', "bear's head# cabossed proper"],
@@ -53,63 +63,81 @@ export default function emojis (subset = 'reccomended') {
 			['🌷', 'tulip# slipped and leaved proper'],
 			['🏵️', 'rosette# proper'],
 			['💮', 'cherry blossom argent'],
-			['🍀', 'four-leaf clover# vert'],
-			['🌲', '[an]evergreen tree# proper'],
-			['🍍', 'pineapple# bendwise proper'],
-			['🍎', '[an]apple# gules'],
-			['🦞', 'lobster# gules'],
+			['🍀', 'four-leaf clover# vert', vert],
+			['🌲', '[an]evergreen tree# proper', vert],
+			['🍍', 'pineapple# bendwise proper', or],
+			['🍎', '[an]apple# gules', gules],
+			['🦞', 'lobster# gules', gules],
 			['🐙', 'polypus affronty purpure', 'polypi affronty purpure'],
-			['🏔️', 'snow-capped mountain# proper'],
-			['⚓', '[an]anchor# azure'],
-			['🌚', 'moon# in their plentitude'], // https://mistholme.com/dictionary/moon/
-			['☁', 'cloud# argent'],
-			['♦️', 'lozengy gules'],
-			['📯', 'bugle# Or tasselled gules'],
-			['💰', 'bag# of money Or, marked sable'],
-			['🖋️', 'pen# bendwise sinister sable'],
+			['🗻', 'snow-capped mountain# of base sable and peak argent', sable],
+			['⚓', '[an]anchor# azure', azure],
+			['🌚', 'moon# in their plentitude', or], // https://mistholme.com/dictionary/moon/
+			['☁', 'cloud# argent', argent],
+			['♦️', 'lozengy gules', gules],
+			['📯', 'bugle# Or tasselled gules', or],
+			['💰', 'bag# of money Or, marked sable', or],
+			['🖋️', 'pen# bendwise sinister sable', sable],
 			['🗝', 'key# fesswise, wards to sinister Or'],
-			['🗡️', 'dagger# bendwise inverted proper'],
+			['🗡️', 'dagger# bendwise inverted'],
 			['⚔️', 'pair# of swords in saltire proper'],
-			['🏹', 'bow# tensed gules and attached arrow# argent, bendwise to chief'],
-			['🤔', 'thinking face emoji# Or'],
-			['⚙️', 'gear# sable'],
-			['⚖️', 'standing balance# Or'],
- 			['🔗', 'pair# of chainlinks bendwise to chief argent'],
-			['🐬', 'dolphin# sautant azure'],
+			['🏹', 'bow# fully drawn and charged with arrows, bendwise to chief'],
+			['🤔', 'thinking face emoji# Or', or],
+			['⚙️', 'gear# sable', sable],
+			['⚖️', 'standing balance# Or', or],
+ 			['🔗', 'pair# of chainlinks bendwise to chief argent', argent],
+			['🐬', 'dolphin# sautant azure', azure],
 			['🖖🏿', "Moor's Palm# palmate splayed of thumb, middle, and ring proper"],
 			['🦉', 'owl# overt guardant proper'],
-			['⚜️', 'fleur-de-lys purpure'],
-			['⚫', 'pellet#'],
-			['🔴', 'pomme#'],
+			['⚜️', 'fleur-de-lys purpure', purpure],
+			['⚫', 'pellet#', sable],
+			['🔴', 'torteau#', gules],
+			['🟣', 'golpe#', purpure],
+			['⚪', 'plate#', argent],
+			['🟡', 'besant#', or],
+			['🟢', 'pomme#', vert],
 			['🧪', 'test tube bendwise argent filled vert'],
- 			['💎', 'diamond# azure'],
-			['🙃', '[an]upside-down smile emoji# Or'],
+ 			['💎', 'diamond# azure', azure],
+			['🙃', '[an]upside-down smile emoji# Or', or],
 			['🥕', 'carrot# bendwise sinister proper'],
-			['🧺', 'basket# gules'],
-			['🐍', 'coiled snake# ward sinister vert of eye sable and tongue gules']
+			['🧺', 'basket# gules', gules],
+			['🐍', 'coiled snake# ward sinister vert of eye sable and tongue gules', vert],
+			['🪓', '[an]axe# bendwise'],
+			['🧅', '[an]onion# Or', or],
+			['🧄', 'head# of garlic argent', argent],
+			['🦨', 'skunk# statant proper', sable],
+			['🐣', 'chick# Or guardant issuant from [an]eggshell# argent'],
+			['🐓', 'cock#']
 		]
 	} else if (subset === 'alt') {
 		e = [
-			['😩', 'weary face emoji# proper'],
-			['💁‍♀️', "maiden's bust# vested purpure, with dexter arm raised and hand splayed fesswise, proper"],
-			['😍', 'heart-eyes face# proper'],
+			['😩', 'weary face emoji# Or', or],
+			['😍', 'heart-eyes emoji# proper', or],
 			['💩', 'smiling turd emoji# proper'],
-			['💦', 'trio# of drops falling bendwise azure'],
-			['🍆', '[an]eggplant# purpure'],
-			['😂', 'laughing crying emoji# proper'],
+			['💦', 'trio# of drops falling bendwise azure', azure],
+			['🍆', '[an]eggplant# purpure', purpure],
+			['😂', 'laughing crying emoji# proper', or],
 			['🍑', 'peach fruit# leaved proper'],
-			['🤑', 'money face emoji# proper'],
-			['🥑', 'halved avocado# bendwise proper'],
-			['🧻', 'toilet paper roll# argent'],
-			['🦵', 'leg# embowed Or'],
-			['🤠', 'cowboy face# proper'],
-			['👽', 'alien head# cabossed argent with eyes sable'],
+			['🤑', 'money face emoji# proper', or],
+			['🥑', 'halved avocado# bendwise proper', vert],
+			['🧻', 'toilet paper roll# argent', argent],
+			['🦵', 'leg# embowed Or', or],
+			['🤠', 'cowboy face# proper', or],
+			['👽', 'alien head# cabossed argent with eyes sable', argent],
 			['🍉', 'watermelon slice# tilted bendwise proper'],
 			['🤡', 'clown face emoji# proper'],
 			['🎅🏿', 'moorish Santa Claus emoji# proper'],
 			['🌭', 'hotdog# bendwise proper'],
-			['🌮', 'taco# fesswise Or, condiments proper'],
-			['🦐', 'shrimp embowed gules'],
+			['🌮', 'taco# fesswise Or, condiments proper', or],
+			['🦐', 'shrimp embowed gules', gules],
+		]
+	} else if (subset === 'inverted') {
+		e = [
+			['🐍', 'coiled snake# ward sinister purpure of eye argent and tongue azure', purpure, {inverted: true}],
+			['🐻', "bear's head# cabossed azure", azure, {inverted: true}],
+			['🍀', 'four-leaf clover# purpure', purpure, {inverted: true}],
+			['💪', '[an]arm# embowed fesseways azure', azure, {inverted: true}],
+			['⚖️', 'standing balance# azure', azure, {inverted: true}],
+			['⚜️', 'fleur-de-lys vert', vert, {inverted: true}],
 		]
 	}
 	return e[Math.floor(Math.random() * e.length)]
@@ -137,7 +165,7 @@ export function blazonEmoji(charge, count = 1) {
 	}
 
 	// if the charge has a prescribed plural, set it instead.
-	if (charge[2] && count > 1) {
+	if (charge[4] && count > 1) {
 		return `${number} ${charge[2]}`
 	}
 
