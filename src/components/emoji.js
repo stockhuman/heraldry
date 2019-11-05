@@ -68,7 +68,7 @@ export default function emojis (subset = 'reccomended') {
 			['🍍', 'pineapple# bendwise proper', or],
 			['🍎', '[an]apple# gules', gules],
 			['🦞', 'lobster# gules', gules],
-			['🐙', 'polypus affronty purpure', 'polypi affronty purpure'],
+			['🐙', 'polypus affronty purpure', purpure, 'polypi affronty purpure'], // TODO: pick a format
 			['🗻', 'snow-capped mountain# of base sable and peak argent', sable],
 			['⚓', '[an]anchor# azure', azure],
 			['🌚', 'moon# in their plentitude', or], // https://mistholme.com/dictionary/moon/
@@ -95,7 +95,7 @@ export default function emojis (subset = 'reccomended') {
 			['⚪', 'plate#', argent],
 			['🟡', 'besant#', or],
 			['🟢', 'pomme#', vert],
-			['🧪', 'test tube bendwise argent filled vert'],
+			['🧪', 'test tube# bendwise argent filled vert'],
  			['💎', 'diamond# azure', azure],
 			['🙃', '[an]upside-down smile emoji# Or', or],
 			['🥕', 'carrot# bendwise sinister proper'],
@@ -166,7 +166,7 @@ export function blazonEmoji(charge, count = 1) {
 
 	// if the charge has a prescribed plural, set it instead.
 	if (charge[4] && count > 1) {
-		return `${number} ${charge[2]}`
+		return `${number} ${charge[3]}`
 	}
 
 	let a = RegExp(/[[?\]]/g) // search for [an] or [the]
