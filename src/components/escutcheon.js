@@ -40,6 +40,7 @@ export function Shape({ type }) {
 
 
 export function Divisions({ type, colors, pattern = null }) {
+
 	let division
 	let fill = (pattern) ? `url(#${pattern})` : match(colors[0]).hex
 
