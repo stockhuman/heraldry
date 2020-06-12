@@ -10,7 +10,8 @@
  * atop a gold field, as these are both metals. Finally, the boundary between
  * the field and division/ordinary may be modified in several ways
  */
-import React from 'react';
+import React, { useMemo } from 'react'
+import twemoji from 'twemoji'
 import { match } from './colors'
 
 
@@ -134,24 +135,20 @@ export function Ordinaries({ type, colors, pattern = null }) {
  * as a heraldic charge in armory.
  * Charges can be animals, objects, or geometric shapes.
  */
-export function Charge ({ charge, x = 300, y = 360, size = 140, color = 'sable', inverted = false }) {
+export function Charge ({ charge, x = 300, y = 360, size = 140 }) {
+	// note, twemoji returns a DOM string...
+	const url = useMemo(() => twemoji.parse(charge, {
+		folder: 'svg',
+		ext: '.svg'
+	}).split('"')[7], [charge]) // ... easily parsed like so
+
+
 	if (charge) {
 		return (
-			<text
-				x={x}
-				y={y}
-				textAnchor="middle"
-				style={
-					{
-						fontSize: size,
-						fill: match(color).hex,
-						filter: `drop-shadow(0px 0px 5px rgba(0,0,0,0.2))${inverted ? ' invert()' : ''}`,
-						fontFamily: 'Segoe UI Emoji',
-					}
-				}
-			>
-				{ charge[0] }
-			</text>
+			<svg x={x} y={y} xmlns="http://www.w3.org/2000/svg"
+				transform={`translate(-${size/2} -${size/2 + 25})`}>
+				<image width={size} height={size} href={url} />
+			</svg>
 		)
 	} else return null
 }
