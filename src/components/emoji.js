@@ -2,13 +2,15 @@
  * Returns an array with elements:
  * [0] - the emoji in unicode,
  * [1] - a heraldic description, with # as placeholders for plural endings
- * [2] - An optional plural form if the blazon differs from singular
+ * [2] - The tincture of the charge
+ * [3] - An optional plural form if the blazon differs from singular
  *
  * Words in brackets are to be placed if singular (ie: an avocado)
  * Descriptions have been compiled and adapted from many places.
  *
  * A debt to r/heraldry and to http://roa.sca-caid.org/Royalty.php
- * ought be acknowledged.
+ * ought be acknowledged. Likewise, one to http://mistholme.com/ for
+ * the immense body of knowledge they've made freely available.
  *
  * @since June 2019 - Descriptions match Microsoft Segoe UI Emojis
  * @since Aug 2019 = Descriptions match Twitter 'Twemoji' Emojis
@@ -64,11 +66,11 @@ export default function emojis (subset = 'reccomended') {
 			['🏵️', 'rosette# proper'],
 			['💮', 'cherry blossom argent'],
 			['🍀', 'four-leaf clover# vert', vert],
-			['🌲', '[an]evergreen tree# proper', vert],
+			['🌲', 'pine tree# proper', vert],
 			['🍍', 'pineapple# bendwise proper', or],
 			['🍎', '[an]apple# gules', gules],
 			['🦞', 'lobster# gules', gules],
-			['🐙', 'polypus affronty purpure', purpure, 'polypi affronty purpure'], // TODO: pick a format
+			['🐙', 'polypus affronty purpure', purpure, 'polypi affronty purpure'],
 			['🗻', 'snow-capped mountain# of base sable and peak argent', sable],
 			['⚓', '[an]anchor# azure', azure],
 			['🌚', 'moon# in their plentitude', or], // https://mistholme.com/dictionary/moon/
@@ -106,7 +108,14 @@ export default function emojis (subset = 'reccomended') {
 			['🧄', 'head# of garlic argent', argent],
 			['🦨', 'skunk# statant proper', sable],
 			['🐣', 'chick# Or guardant issuant from [an]eggshell# argent'],
-			['🐓', 'cock#']
+			['🐓', 'cock#'],
+			['🐻‍❄️', "bear's head# cabossed argent eyes sable", argent],
+			['🪨', 'rock# argent', argent],
+			['🍁', 'maple leaf gules', gules, 'maple leaves gules'],
+			['🌴', 'palm tree# proper'],
+			['🌿', 'sprig# proper'],
+			['💀', 'death’s head# argent', argent],
+			['🔔', 'bell# or', or]
 		]
 	} else if (subset === 'alt') {
 		e = [
@@ -129,15 +138,7 @@ export default function emojis (subset = 'reccomended') {
 			['🌭', 'hotdog# bendwise proper'],
 			['🌮', 'taco# fesswise Or, condiments proper', or],
 			['🦐', 'shrimp embowed gules', gules],
-		]
-	} else if (subset === 'inverted') {
-		e = [
-			['🐍', 'coiled snake# ward sinister purpure of eye argent and tongue azure', purpure, {inverted: true}],
-			['🐻', "bear's head# cabossed azure", azure, {inverted: true}],
-			['🍀', 'four-leaf clover# purpure', purpure, {inverted: true}],
-			['💪', '[an]arm# embowed fesseways azure', azure, {inverted: true}],
-			['⚖️', 'standing balance# azure', azure, {inverted: true}],
-			['⚜️', 'fleur-de-lys vert', vert, {inverted: true}],
+			['📜', '[an]open scroll# or', or]
 		]
 	}
 	return e[Math.floor(Math.random() * e.length)]
@@ -165,7 +166,7 @@ export function blazonEmoji(charge, count = 1) {
 	}
 
 	// if the charge has a prescribed plural, set it instead.
-	if (charge[4] && count > 1) {
+	if (charge[3] && count > 1) {
 		return `${number} ${charge[3]}`
 	}
 
