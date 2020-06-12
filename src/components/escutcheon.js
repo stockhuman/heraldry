@@ -114,7 +114,7 @@ export function Ordinaries({ type, colors, pattern = null }) {
 		);
 		break;
 		case 'pile': ordinary = (
-			<polygon points="0.76 0.5 302.26 700 603.76 0.52 0.76 0.5" kind="pile" x="0" y="0" width="970" height="136" fill={match(colors[1]).hex}/>
+			<polygon points="310.5 710 604 0 0 0 310.5 710" kind="pile" x="0" y="0" fill={match(colors[1]).hex}/>
 		);
 			break;
 		default: ordinary = null
