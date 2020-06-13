@@ -12,10 +12,10 @@ export default class Generator extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
-			shape: 'spanish',
+			shape: 'french',
 			design: 'divided',
-			divisions: 'party per fess',
-			ordinaries: '',
+			divisions: 'party per fess embattled',
+			ordinaries: 'pile',
 			seme: '',
 			chargeCount: 7,
 			charge: emoji('recommended'),
@@ -59,7 +59,8 @@ export default class Generator extends Component {
 				'party per fess',
 				'party per quartely',
 				'party per chevron',
-				'party per pale indented'
+				'party per pale indented',
+				'party per fess embattled',
 			]
 			const ordinaries = [
 				'', // default, solid field

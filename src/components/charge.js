@@ -133,6 +133,7 @@ export default function Charges({ state, count = 1, alt }) {
 					break
 
 				// divides horizontally
+				case 'party per fess embattled':
 				case 'party per fess':
 					placements = [
 						// central
@@ -180,6 +181,10 @@ export default function Charges({ state, count = 1, alt }) {
 					chargeSize = 100
 					if (shape === 'papal') {
 						chargeSize = 120
+					}
+					if (divisions === 'party per fess embattled') {
+						maxCharges = 6
+						placements[5] = placements[6]
 					}
 					break
 
