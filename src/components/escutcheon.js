@@ -63,6 +63,12 @@ export function Divisions({ type, colors, pattern = null }) {
 				<rect width="700" height="300" fill={ fill }></rect>
 			</g>
 		); break;
+		case 'party per fess embattled': division = (
+			<g clipPath="url(#escutcheon)">
+				<rect width="700" height="700" fill={match(colors[1]).hex}></rect>
+				<polygon transform="translate(0 300)" points="565.31 55 565.31 0 489.94 0 489.94 55 414.56 55 414.56 0 339.19 0 339.19 55 263.81 55 263.81 0 188.44 0 188.44 55 113.06 55 113.06 0 37.69 0 37.69 55 0 55 0 423 603 423 603 55 565.31 55" fill={ fill } />
+			</g>
+		); break;
 		case 'party per quartely': division = (
 			<g clipPath="url(#escutcheon)">
 				<rect width="700" height="800" fill={match(colors[1]).hex}></rect>
@@ -86,6 +92,7 @@ export function Divisions({ type, colors, pattern = null }) {
 
 
 export function Ordinaries({ type, colors, pattern = null }) {
+
 	let ordinary
 	let fill = (pattern) ? `url(#${pattern})` : match(colors[0]).hex
 
@@ -160,6 +167,7 @@ export function Charge ({ charge, x = 300, y = 360, size = 140 }) {
  * @param {Array}  options.colors   The colors of the whole design, two used in pattern
  */
 export function Seme ({ type, colors = ['vert', 'sable', 'argent'] }) {
+
 	let pattern
 	switch (type) {
 		case 'lozengy': pattern = (
