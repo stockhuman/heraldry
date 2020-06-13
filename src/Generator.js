@@ -14,10 +14,10 @@ export default class Generator extends Component {
 		this.state = {
 			shape: 'french',
 			design: 'divided',
-			divisions: 'party per fess embattled',
-			ordinaries: 'pile',
+			divisions: 'party per bend',
+			ordinaries: '',
 			seme: '',
-			chargeCount: 7,
+			chargeCount: 2,
 			charge: emoji('recommended'),
 			altCharge: emoji('alt'),
 			colors: ['vert', 'argent', 'sable'],
@@ -55,6 +55,7 @@ export default class Generator extends Component {
 			]
 			const divisions = [
 				'', // default, solid field
+				'party per bend',
 				'party per pale',
 				'party per fess',
 				'party per quartely',
@@ -70,7 +71,8 @@ export default class Generator extends Component {
 				'bend-sinister',
 				'chief',
 				'saltire',
-				'pile'
+				'pile',
+				'gyronny',
 			]
 			const designs = ['ordered', 'divided']
 			const patterns = [
@@ -95,13 +97,13 @@ export default class Generator extends Component {
 
 			// DEBUG
 			// this.setState({
-			// 	shape: 'spanish',
+			// 	shape: '',
 			// 	design: 'ordered',
-			// 	divisions: 'party per chevron',
-			// 	ordinaries: 'pile',
-			// 	chargeCount: 3,
+			// 	divisions: '',
+			// 	ordinaries: 'gyronny',
+			// 	chargeCount:  Math.max(1, Math.floor(Math.random() * 6)),
 			// 	charge: emoji(this.state.emojiSource),
-			// 	altCharge: emoji('inverted'),
+			// 	altCharge: emoji('alt'),
 			// 	colors: colors(),
 			// })
 

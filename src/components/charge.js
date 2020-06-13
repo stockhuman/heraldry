@@ -71,7 +71,7 @@ export default function Charges({ state, count = 1, alt }) {
 		maxCharges = 1
 		placements = [
 			// central
-			[ { x: 301, y: 360, size: 200 } ],
+			[ { x: 301, y: 340, size: 200 } ],
 		]
 	} else {
 		// the field has a design on it
@@ -82,7 +82,7 @@ export default function Charges({ state, count = 1, alt }) {
 				case 'party per pale':
 					placements = [
 						// central
-						[ { x: 300, y: 360, size: 300 } ],
+						[ { x: 300, y: 340, size: 300 } ],
 						// distrubuted horizontal
 						[ { x: 160, y: 360 }, { x: 440, y: 360 } ],
 						[
@@ -130,6 +130,20 @@ export default function Charges({ state, count = 1, alt }) {
 						}
 					}
 					maxCharges = 6
+					break
+
+				case 'party per bend':
+					placements = [
+						[ { x: 300, y: 335, size: 160 } ],
+						[ { x: 440, y: 160 }, { x: 160, y: 490, useAlt: true } ],
+						[ { x: 300, y: 335, size: 160 }, { x: 440, y: 160 }, { x: 160, y: 490, useAlt: true } ],
+					]
+					if (shape === 'swiss') {
+						placements[1] = adjustX(placements[1], 'in', 20)
+						placements[1] = adjustY(placements[1], '', 10)
+					}
+					chargeSize = 120
+					maxCharges = 3
 					break
 
 				// divides horizontally
@@ -194,9 +208,9 @@ export default function Charges({ state, count = 1, alt }) {
 						// top left
 						[ { x: 160, y: 200 } ],
 						// top left x 2
-						[ { x: 120, y: 180, size: 60 }, { x: 200, y: 240, size: 60 } ],
+						[ { x: 120, y: 170, size: 80 }, { x: 200, y: 250, size: 80 } ],
 						// top left x 3
-						[ { x: 110, y: 120, size: 60 }, { x: 210, y: 200, size: 60 }, { x: 110, y: 280, size: 60 } ],
+						[ { x: 110, y: 120, size: 70 }, { x: 210, y: 200, size: 70 }, { x: 110, y: 280, size: 70 } ],
 						// top left x 4
 						[
 							{ x: 110, y: 140, size: 60 },
@@ -286,7 +300,7 @@ export default function Charges({ state, count = 1, alt }) {
 				case 'pale':
 					placements = [
 						// central
-						[ { x: 300, y: 360 } ],
+						[ { x: 300, y: 340 } ],
 						[
 							// two vertically distributed
 							{ x: 300, y: 260 },
@@ -306,7 +320,7 @@ export default function Charges({ state, count = 1, alt }) {
 				// sash
 				case 'bend':
 					placements = [
-						[ { x: 300, y: 355, size: 160 } ],
+						[ { x: 300, y: 335, size: 160 } ],
 						[ { x: 440, y: 160 }, { x: 160, y: 490, useAlt: true } ],
 						[ { x: 140, y: 170, size: 85 }, { x: 300, y: 325, size: 85 }, { x: 460, y: 490, size: 85 } ],
 					]
@@ -332,8 +346,12 @@ export default function Charges({ state, count = 1, alt }) {
 					break
 
 				case 'saltire':
-					placements = [ [ { x: 300, y: 380, size: 160 } ] ]
+					placements = [ [ { x: 300, y: 360, size: 160 } ] ]
 					chargeSize = 100
+					maxCharges = 1
+					break
+				case 'gyronny':
+					placements = [ [ { x: 300, y: 355, size: 220 } ] ]
 					maxCharges = 1
 					break
 				case 'pile':

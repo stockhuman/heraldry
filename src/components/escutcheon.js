@@ -48,13 +48,19 @@ export function Divisions({ type, colors, pattern = null }) {
 		case 'party per pale': division = (
 			<g clipPath="url(#escutcheon)">
 				<rect width="700" height="800" fill={match(colors[1]).hex}></rect>
-				<rect width="300" height="800" x="301" fill={ fill }></rect>
+				<rect width="303" height="800" x="301" fill={ fill }></rect>
 			</g>
 		); break;
 		case 'party per pale indented': division = (
 			<g clipPath="url(#escutcheon)">
 				<rect width="700" height="800" fill={match(colors[1]).hex}></rect>
 				<polygon transform="translate(290)" fill={fill} points="52 0 329 0 329 704 27.5 796 52 704 0 616 52 528 0 440 52 352 0 264 52 176 0 88 52 0 52 0"/>
+			</g>
+		); break;
+		case 'party per bend': division = (
+			<g clipPath="url(#escutcheon)">
+				<rect width="700" height="800" fill={match(colors[1]).hex}></rect>
+				<rect width="800" height="900" x="0" fill={ fill } transform="rotate(-43)"></rect>
 			</g>
 		); break;
 		case 'party per fess': division = (
@@ -124,6 +130,12 @@ export function Ordinaries({ type, colors, pattern = null }) {
 		case 'pile': ordinary = (
 			<polygon points="310.5 710 604 0 0 0 310.5 710" kind="pile" x="0" y="0" fill={match(colors[1]).hex}/>
 		);
+			break;
+		case 'gyronny': ordinary = (
+			<g kind="gyronny">
+				<polygon points="0 0 301.5 337 301.5 0 0 0" fill={match(colors[1]).hex}/><polygon points="0 704 301.5 337 0 337 0 704" fill={match(colors[1]).hex}/><polygon points="603 704 301.5 337 301.5 704 603 704" fill={match(colors[1]).hex}/><polygon points="603 0 301.5 337 603 337 603 0" fill={match(colors[1]).hex}/>
+			</g>
+		)
 			break;
 		default: ordinary = null
 	}
