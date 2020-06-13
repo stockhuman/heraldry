@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9e98e6888ed262b9d66ae2ebde5bb3d0",
+    "revision": "499f6440396045bfea75c87177c8cacd",
     "url": "/heraldry/build/index.html"
   },
   {
-    "revision": "e6e8af14064a03841f65",
+    "revision": "eedef4b463d4e2624469",
     "url": "/heraldry/build/static/css/main.d9c94f89.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/heraldry/build/static/js/2.327da0c8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e6e8af14064a03841f65",
-    "url": "/heraldry/build/static/js/main.ada7b6dc.chunk.js"
+    "revision": "eedef4b463d4e2624469",
+    "url": "/heraldry/build/static/js/main.2e710ebc.chunk.js"
   },
   {
     "revision": "15587fc2839749a4ac76",

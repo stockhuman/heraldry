@@ -109,7 +109,7 @@ export default function emojis (subset = 'reccomended') {
 			['🦨', 'skunk# statant proper', sable],
 			['🐣', 'chick# Or guardant issuant from [an]eggshell# argent'],
 			['🐓', 'cock#'],
-			['🐻‍❄️', "bear's head# cabossed argent eyes sable", argent],
+			// ['🐻‍❄️', "bear's head# cabossed argent eyes sable", argent],
 			['🪨', 'rock# argent', argent],
 			['🍁', 'maple leaf gules', gules, 'maple leaves gules'],
 			['🌴', 'palm tree# proper'],

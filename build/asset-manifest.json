@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/heraldry/build/static/css/main.d9c94f89.chunk.css",
-    "main.js": "/heraldry/build/static/js/main.ada7b6dc.chunk.js",
-    "main.js.map": "/heraldry/build/static/js/main.ada7b6dc.chunk.js.map",
+    "main.js": "/heraldry/build/static/js/main.2e710ebc.chunk.js",
+    "main.js.map": "/heraldry/build/static/js/main.2e710ebc.chunk.js.map",
     "runtime-main.js": "/heraldry/build/static/js/runtime-main.026974f7.js",
     "runtime-main.js.map": "/heraldry/build/static/js/runtime-main.026974f7.js.map",
     "static/js/2.327da0c8.chunk.js": "/heraldry/build/static/js/2.327da0c8.chunk.js",
     "static/js/2.327da0c8.chunk.js.map": "/heraldry/build/static/js/2.327da0c8.chunk.js.map",
     "index.html": "/heraldry/build/index.html",
-    "precache-manifest.b3d4e222009c7b0cd23ced91daa8616a.js": "/heraldry/build/precache-manifest.b3d4e222009c7b0cd23ced91daa8616a.js",
+    "precache-manifest.cfc8a31be2fae15e0792fc060f5e4fdb.js": "/heraldry/build/precache-manifest.cfc8a31be2fae15e0792fc060f5e4fdb.js",
     "service-worker.js": "/heraldry/build/service-worker.js",
     "static/css/main.d9c94f89.chunk.css.map": "/heraldry/build/static/css/main.d9c94f89.chunk.css.map",
     "static/js/2.327da0c8.chunk.js.LICENSE.txt": "/heraldry/build/static/js/2.327da0c8.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.026974f7.js",
     "static/js/2.327da0c8.chunk.js",
     "static/css/main.d9c94f89.chunk.css",
-    "static/js/main.ada7b6dc.chunk.js"
+    "static/js/main.2e710ebc.chunk.js"
   ]
 }

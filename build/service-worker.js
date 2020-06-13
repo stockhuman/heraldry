@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/heraldry/build/precache-manifest.b3d4e222009c7b0cd23ced91daa8616a.js"
+  "/heraldry/build/precache-manifest.cfc8a31be2fae15e0792fc060f5e4fdb.js"
 );
 
 self.addEventListener('message', (event) => {
