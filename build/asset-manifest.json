@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.92b3d24f.chunk.css",
+    "main.js": "/static/js/main.ece16923.chunk.js",
+    "main.js.map": "/static/js/main.ece16923.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.839bafee.js",
+    "runtime-main.js.map": "/static/js/runtime-main.839bafee.js.map",
+    "static/js/2.5323568a.chunk.js": "/static/js/2.5323568a.chunk.js",
+    "static/js/2.5323568a.chunk.js.map": "/static/js/2.5323568a.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ff374c8ef8a966bf9eb52f2ef616728a.js": "/precache-manifest.ff374c8ef8a966bf9eb52f2ef616728a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.92b3d24f.chunk.css.map": "/static/css/main.92b3d24f.chunk.css.map",
+    "static/js/2.5323568a.chunk.js.LICENSE.txt": "/static/js/2.5323568a.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/TwitterColorEmoji-SVGinOT.1d983b6f.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.839bafee.js",
+    "static/js/2.5323568a.chunk.js",
+    "static/css/main.92b3d24f.chunk.css",
+    "static/js/main.ece16923.chunk.js"
+  ]
+}
