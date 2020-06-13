@@ -76,10 +76,36 @@ export default function blazon (state) {
 					}
 					break
 
-
 				case 'party per fess':
 					setCharges(7, 4)
+					d = `Per bend ${colorA} and ${colorB}, `
+					if (chargeCount === 1) {
+						d += `overtop ${describe(charge)}`
+					} else {
+						d += `in chief ${describe(charge, charges)}`
+						if (chargeCount > 3) {
+							d += `, in base ${describe(altCharge, altCharges)}`
+						}
+					}
+					break
+
+
+				case 'party per bend':
+					setCharges(6, 4)
 					d = `Per fess ${colorA} and ${colorB}, `
+					if (chargeCount === 1) {
+						d += `overtop ${describe(charge)}`
+					} else if (chargeCount === 2) {
+						d += `in dexter ${describe(charge)}, in sinister ${describe(altCharge)}`
+					} else {
+						d += `overtop ${describe(charge)}, `
+						+ `in dexter ${describe(charge)}, in sinister ${describe(altCharge)}`
+					}
+					break
+
+				case 'party per fess embattled':
+					setCharges(6, 4)
+					d = `Per fess embattled ${colorA} and ${colorB}, `
 					if (chargeCount === 1) {
 						d += `overtop ${describe(charge)}`
 					} else {
@@ -117,7 +143,7 @@ export default function blazon (state) {
 			}
 			blazon = `${d}`
 		} else if (design === 'ordered') {
-			let d = `${colorA}, `
+			let d = (ordinaries === 'gyronny') ? '' : `${colorA}, `
 			switch (ordinaries) {
 				case 'saltire':
 					d += `a saltire ${colorB} charged with ${describe(charge)}`;
@@ -165,6 +191,11 @@ export default function blazon (state) {
 					if (chargeCount > 1) {
 						d += `, in chief ${describe(altCharge, altCharges)}`
 					}
+
+					break
+				case 'gyronny':
+					setCharges(1, 1)
+					d += `Gyronny ${colorB} and ${colorA}, ${describe(charge, 1)}`
 
 					break
 				// no default

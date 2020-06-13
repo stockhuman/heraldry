@@ -10,7 +10,8 @@
  * atop a gold field, as these are both metals. Finally, the boundary between
  * the field and division/ordinary may be modified in several ways
  */
-import React from 'react';
+import React, { useMemo } from 'react'
+import twemoji from 'twemoji'
 import { match } from './colors'
 
 
@@ -20,7 +21,7 @@ export function Shape({ type }) {
 	switch (type) {
 		case 'swiss': shape = "M8.3,6.4c-0.5,0,98.1,32.3,147.2,32.3S299.2,6.4,302.7,6.4c2.2,0,98.1,32.3,147.2,32.3s145-32.3,147.2-32.3V93 c0,453.1-288,605.9-294.4,605.9c-13.5,0-294.4-150.4-294.4-606V6.4z";
 			break;
-		case 'french': shape = 'M291.81,689.64c-34.68-25.81-76.72-31-119.43-33.36-32.38-1.79-64.83-2.41-97.2-4.44-47.8-3-67.35-22.14-72.33-70.25A479.86,479.86,0,0,1,0,533.07C-.16,366.14.45,0,.45,0h589.2s.07,371.77-.15,543.34c0,14.61-1.71,29.26-3.3,43.82-4.43,40.63-24.79,61-65.73,64.2-30.78,2.42-61.75,2.46-92.52,4.91-26.07,2.08-52.44,4.11-77.83,9.89C331,670.51,313.24,680.75,291.81,689.64Z';
+		case 'french': shape = "M301.83,704a156.39,156.39,0,0,1,44.6-22c32.49-10.11,56.8-9.41,81-10,76.27-1.87,115.27-2.82,141-23,14.32-11.23,38.61-39.45,34-117V0H.57V532c-4.61,77.55,19.68,105.77,34,117,25.73,20.18,64.73,21.13,141,23,24.2.59,48.51-.11,81,10a156.39,156.39,0,0,1,44.6,22";
 			break;
 		case 'papal': shape = 'M306.6,692.9c-1.4,2.7-4.8,3.8-7.5,2.2c-0.5-0.3-0.9-0.6-1-1c-19-38.1-50.6-52.1-91.7-50.1 c-24,1.2-48.2-1.2-72.2,0.5c-51,3.6-81.5-30.9-83.6-81.5c-0.3-6.2,0-12.4,0-18.6c0-142.9-0.9-285.7,0.6-428.5 c0.4-40.2-6.6-75-38.2-100c-1.8-1.4-2.5-3.8-1.6-6l0,0c0.3-0.6,0.9-1.6,1.3-1.6c190-0.1,380.1-0.1,572.5-0.1c4.4,0,6.9,5,4.4,8.5 c-0.7,1-1.5,1.9-2.4,2.7c-25.1,23-34.9,51.3-34.7,85.3c0.7,150.6,0.4,301.2,0.1,451.8c0,12.3-1.1,25-4.5,36.7 c-9.1,31.6-34.2,50.3-67.1,50.9c-27.2,0.5-54.4,1.2-81.5-0.1C358.3,642.1,326,654.9,306.6,692.9z';
 			break;
@@ -43,6 +44,7 @@ export function Shape({ type }) {
 
 
 export function Divisions({ type, colors, pattern = null }) {
+
 	let division
 	let fill = (pattern) ? `url(#${pattern})` : match(colors[0]).hex
 
@@ -50,7 +52,7 @@ export function Divisions({ type, colors, pattern = null }) {
 		case 'party per pale': division = (
 			<g clipPath="url(#escutcheon)">
 				<rect width="700" height="800" fill={match(colors[1]).hex}></rect>
-				<rect width="300" height="800" x="301" fill={ fill }></rect>
+				<rect width="303" height="800" x="301" fill={ fill }></rect>
 			</g>
 		); break;
 		case 'party per pale indented': division = (
@@ -59,10 +61,22 @@ export function Divisions({ type, colors, pattern = null }) {
 				<polygon transform="translate(290)" fill={fill} points="52 0 329 0 329 704 27.5 796 52 704 0 616 52 528 0 440 52 352 0 264 52 176 0 88 52 0 52 0"/>
 			</g>
 		); break;
+		case 'party per bend': division = (
+			<g clipPath="url(#escutcheon)">
+				<rect width="700" height="800" fill={match(colors[1]).hex}></rect>
+				<rect width="800" height="900" x="0" fill={ fill } transform="rotate(-43)"></rect>
+			</g>
+		); break;
 		case 'party per fess': division = (
 			<g clipPath="url(#escutcheon)">
 				<rect width="700" height="700" fill={match(colors[1]).hex}></rect>
 				<rect width="700" height="300" fill={ fill }></rect>
+			</g>
+		); break;
+		case 'party per fess embattled': division = (
+			<g clipPath="url(#escutcheon)">
+				<rect width="700" height="700" fill={match(colors[1]).hex}></rect>
+				<polygon transform="translate(0 300)" points="565.31 55 565.31 0 489.94 0 489.94 55 414.56 55 414.56 0 339.19 0 339.19 55 263.81 55 263.81 0 188.44 0 188.44 55 113.06 55 113.06 0 37.69 0 37.69 55 0 55 0 423 603 423 603 55 565.31 55" fill={ fill } />
 			</g>
 		); break;
 		case 'party per quartely': division = (
@@ -88,6 +102,7 @@ export function Divisions({ type, colors, pattern = null }) {
 
 
 export function Ordinaries({ type, colors, pattern = null }) {
+
 	let ordinary
 	let fill = (pattern) ? `url(#${pattern})` : match(colors[0]).hex
 
@@ -117,8 +132,14 @@ export function Ordinaries({ type, colors, pattern = null }) {
 		);
 		break;
 		case 'pile': ordinary = (
-			<polygon points="0.76 0.5 302.26 700 603.76 0.52 0.76 0.5" kind="pile" x="0" y="0" width="970" height="136" fill={match(colors[1]).hex}/>
+			<polygon points="310.5 710 604 0 0 0 310.5 710" kind="pile" x="0" y="0" fill={match(colors[1]).hex}/>
 		);
+			break;
+		case 'gyronny': ordinary = (
+			<g kind="gyronny">
+				<polygon points="0 0 301.5 337 301.5 0 0 0" fill={match(colors[1]).hex}/><polygon points="0 704 301.5 337 0 337 0 704" fill={match(colors[1]).hex}/><polygon points="603 704 301.5 337 301.5 704 603 704" fill={match(colors[1]).hex}/><polygon points="603 0 301.5 337 603 337 603 0" fill={match(colors[1]).hex}/>
+			</g>
+		)
 			break;
 		default: ordinary = null
 	}
@@ -138,24 +159,20 @@ export function Ordinaries({ type, colors, pattern = null }) {
  * as a heraldic charge in armory.
  * Charges can be animals, objects, or geometric shapes.
  */
-export function Charge ({ charge, x = 300, y = 360, size = 140, color = 'sable', inverted = false }) {
+export function Charge ({ charge, x = 300, y = 360, size = 140 }) {
+	// note, twemoji returns a DOM string...
+	const url = useMemo(() => twemoji.parse(charge, {
+		folder: 'svg',
+		ext: '.svg'
+	}).split('"')[7], [charge]) // ... easily parsed like so
+
+
 	if (charge) {
 		return (
-			<text
-				x={x}
-				y={y}
-				textAnchor="middle"
-				style={
-					{
-						fontSize: size,
-						fill: match(color).hex,
-						filter: `drop-shadow(0px 0px 5px rgba(0,0,0,0.2))${inverted ? ' invert()' : ''}`,
-						fontFamily: 'Segoe UI Emoji',
-					}
-				}
-			>
-				{ charge[0] }
-			</text>
+			<svg x={x} y={y} xmlns="http://www.w3.org/2000/svg"
+				transform={`translate(-${size/2} -${size/2 + 25})`} filter="url(#dropshadow)">
+				<image width={size} height={size} href={url} />
+			</svg>
 		)
 	} else return null
 }
@@ -166,6 +183,7 @@ export function Charge ({ charge, x = 300, y = 360, size = 140, color = 'sable',
  * @param {Array}  options.colors   The colors of the whole design, two used in pattern
  */
 export function Seme ({ type, colors = ['vert', 'sable', 'argent'] }) {
+
 	let pattern
 	switch (type) {
 		case 'lozengy': pattern = (
