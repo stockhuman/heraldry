@@ -335,7 +335,7 @@ export default function Charges({ state, count = 1, alt }) {
 				// same but reversed
 				case 'bend-sinister':
 					placements = [
-						[ { x: 300, y: 360, size: 160 } ],
+						[ { x: 300, y: 340, size: 160 } ],
 						[ { x: 190, y: 160, size: 120 }, { x: 440, y: 530, useAlt: true } ],
 					]
 					chargeSize = 100
