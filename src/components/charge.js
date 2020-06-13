@@ -151,7 +151,7 @@ export default function Charges({ state, count = 1, alt }) {
 				case 'party per fess':
 					placements = [
 						// central
-						[ { x: 300, y: 340, size: 160 } ],
+						[ { x: 300, y: 360, size: 160 } ],
 						// distrubuted horizontal in chief
 						[ { x: 160, y: 200 }, { x: 440, y: 200 } ],
 						// three horizontal
@@ -241,7 +241,7 @@ export default function Charges({ state, count = 1, alt }) {
 				case 'party per chevron':
 					placements = [
 						// central
-						[ { x: 300, y: 300, size: 200 } ],
+						[ { x: 300, y: 340, size: 200 } ],
 						// distrubuted horizontal in chief
 						[ { x: 160, y: 200 }, { x: 440, y: 200 } ],
 						// three horizontal
@@ -320,7 +320,7 @@ export default function Charges({ state, count = 1, alt }) {
 				// sash
 				case 'bend':
 					placements = [
-						[ { x: 300, y: 335, size: 160 } ],
+						[ { x: 300, y: 345, size: 160 } ],
 						[ { x: 440, y: 160 }, { x: 160, y: 490, useAlt: true } ],
 						[ { x: 140, y: 170, size: 85 }, { x: 300, y: 325, size: 85 }, { x: 460, y: 490, size: 85 } ],
 					]
@@ -346,12 +346,12 @@ export default function Charges({ state, count = 1, alt }) {
 					break
 
 				case 'saltire':
-					placements = [ [ { x: 300, y: 360, size: 160 } ] ]
+					placements = [ [ { x: 300, y: 380, size: 160 } ] ]
 					chargeSize = 100
 					maxCharges = 1
 					break
 				case 'gyronny':
-					placements = [ [ { x: 300, y: 355, size: 220 } ] ]
+					placements = [ [ { x: 300, y: 390, size: 220 } ] ]
 					maxCharges = 1
 					break
 				case 'pile':
