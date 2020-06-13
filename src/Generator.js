@@ -147,6 +147,17 @@ export default class Generator extends Component {
 					: <Divisions type={divisions} colors={colors} pattern={seme} />
 				}
 				<Charges state={this.state} count={chargeCount} alt={altCharge}/>
+				<filter id="dropshadow" height="130%">
+					<feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+					<feOffset dx="0" dy="0" result="offsetblur"/>
+					<feComponentTransfer>
+						<feFuncA type="linear" slope="0.5"/>
+					</feComponentTransfer>
+					<feMerge>
+						<feMergeNode/>
+						<feMergeNode in="SourceGraphic"/>
+					</feMerge>
+				</filter>
 			</svg>
 		)
 	}

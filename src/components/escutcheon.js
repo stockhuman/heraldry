@@ -166,7 +166,7 @@ export function Charge ({ charge, x = 300, y = 360, size = 140 }) {
 	if (charge) {
 		return (
 			<svg x={x} y={y} xmlns="http://www.w3.org/2000/svg"
-				transform={`translate(-${size/2} -${size/2 + 25})`}>
+				transform={`translate(-${size/2} -${size/2 + 25})`} filter="url(#dropshadow)">
 				<image width={size} height={size} href={url} />
 			</svg>
 		)
