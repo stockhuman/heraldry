@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.92b3d24f.chunk.css",
-    "main.js": "/static/js/main.ece16923.chunk.js",
-    "main.js.map": "/static/js/main.ece16923.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.839bafee.js",
-    "runtime-main.js.map": "/static/js/runtime-main.839bafee.js.map",
-    "static/js/2.5323568a.chunk.js": "/static/js/2.5323568a.chunk.js",
-    "static/js/2.5323568a.chunk.js.map": "/static/js/2.5323568a.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.ff374c8ef8a966bf9eb52f2ef616728a.js": "/precache-manifest.ff374c8ef8a966bf9eb52f2ef616728a.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.92b3d24f.chunk.css.map": "/static/css/main.92b3d24f.chunk.css.map",
-    "static/js/2.5323568a.chunk.js.LICENSE.txt": "/static/js/2.5323568a.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/static/media/TwitterColorEmoji-SVGinOT.1d983b6f.ttf"
+    "main.css": "/heraldry/build/static/css/main.9eebe8c7.chunk.css",
+    "main.js": "/heraldry/build/static/js/main.adaca12f.chunk.js",
+    "main.js.map": "/heraldry/build/static/js/main.adaca12f.chunk.js.map",
+    "runtime-main.js": "/heraldry/build/static/js/runtime-main.026974f7.js",
+    "runtime-main.js.map": "/heraldry/build/static/js/runtime-main.026974f7.js.map",
+    "static/js/2.5323568a.chunk.js": "/heraldry/build/static/js/2.5323568a.chunk.js",
+    "static/js/2.5323568a.chunk.js.map": "/heraldry/build/static/js/2.5323568a.chunk.js.map",
+    "index.html": "/heraldry/build/index.html",
+    "precache-manifest.4dea30648598c1c47ba51fdb8fc987cf.js": "/heraldry/build/precache-manifest.4dea30648598c1c47ba51fdb8fc987cf.js",
+    "service-worker.js": "/heraldry/build/service-worker.js",
+    "static/css/main.9eebe8c7.chunk.css.map": "/heraldry/build/static/css/main.9eebe8c7.chunk.css.map",
+    "static/js/2.5323568a.chunk.js.LICENSE.txt": "/heraldry/build/static/js/2.5323568a.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/heraldry/build/static/media/TwitterColorEmoji-SVGinOT.1d983b6f.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.839bafee.js",
+    "static/js/runtime-main.026974f7.js",
     "static/js/2.5323568a.chunk.js",
-    "static/css/main.92b3d24f.chunk.css",
-    "static/js/main.ece16923.chunk.js"
+    "static/css/main.9eebe8c7.chunk.css",
+    "static/js/main.adaca12f.chunk.js"
   ]
 }
