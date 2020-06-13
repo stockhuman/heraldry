@@ -63,7 +63,7 @@ export default function emojis (subset = 'reccomended') {
 			['🐺', "wolf's head# cabossed argent of eyes and nose sable"],
 			['🐮', "cow's head# cabossed proper"],
 			['🌷', 'tulip# slipped and leaved proper'],
-			['🏵️', 'rosette# proper'],
+			['🏵️', 'rosette# or', or],
 			['💮', 'cherry blossom argent'],
 			['🍀', 'four-leaf clover# vert', vert],
 			['🌲', 'pine tree# proper', vert],
