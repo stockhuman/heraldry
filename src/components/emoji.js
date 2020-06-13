@@ -116,7 +116,8 @@ export default function emojis (subset = 'reccomended') {
 			['🌿', 'sprig# proper'],
 			['💀', 'death’s head# argent', argent],
 			['🔔', 'bell# or', or],
-			['🦅', '[an]eagle’s head# argent, beaked or, plumed sable']
+			['🦅', '[an]eagle’s head# argent, beaked or, plumed sable', sable],
+			['🦁', "lion's head# cabossed proper"],
 		]
 	} else if (subset === 'alt') {
 		e = [
@@ -141,7 +142,9 @@ export default function emojis (subset = 'reccomended') {
 			['🦐', 'shrimp embowed gules', gules],
 			['📜', '[an]open scroll# or', or],
 			['🐝', 'bee# tergiant proper', argent],
-			['🏰', 'castle# argent spired azure', argent]
+			['🏰', 'castle# argent spired azure', argent],
+			['🩸', 'gout de sang', gules],
+			['🥺', 'pleading emoji# proper', or]
 		]
 	}
 	return e[Math.floor(Math.random() * e.length)]
