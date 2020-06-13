@@ -9,7 +9,7 @@ export default function Charges({ state, count = 1, alt }) {
 	let placements = [] // [] store of possible X/Y values to charges
 	let isPlain = false // is the shield an open field?
 
-	const { shape, design, divisions, ordinaries, charge, colors } = state
+	const { shape, design, divisions, ordinaries, charge } = state
 
 	// adjusts placement of charges to fit better on varying shields
 	const adjustX = (array, direction, adjustment, size = 1) => {

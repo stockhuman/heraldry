@@ -143,7 +143,7 @@ export default function blazon (state) {
 			}
 			blazon = `${d}`
 		} else if (design === 'ordered') {
-			let d = (ordinaries == 'gyronny') ? '' : `${colorA}, `
+			let d = (ordinaries === 'gyronny') ? '' : `${colorA}, `
 			switch (ordinaries) {
 				case 'saltire':
 					d += `a saltire ${colorB} charged with ${describe(charge)}`;
