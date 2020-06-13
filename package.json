@@ -1,23 +1,22 @@
 {
   "name": "heraldry",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "private": true,
-  "license": "GPL-3.0",
+  "license": "MIT",
   "dependencies": {
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-scripts": "^3.2.0",
-    "save-svg-as-png": "^1.4.14"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "save-svg-as-png": "^1.4.17",
+    "twemoji": "^13.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
-  "homepage": "https://stockhuman.github.io/heraldry/build/",
+  "homepage": "https://heraldry.michaelhemingway.com/",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -32,8 +31,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^2.0.1"
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Generator from './Generator'
-import './assets/GutenbergTextura.ttf'
 import './assets/css/App.css'
 
 function App() {

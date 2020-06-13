@@ -12,12 +12,12 @@ export default class Generator extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
-			shape: 'spanish',
+			shape: 'french',
 			design: 'divided',
-			divisions: 'party per fess',
+			divisions: 'party per bend',
 			ordinaries: '',
 			seme: '',
-			chargeCount: 7,
+			chargeCount: 2,
 			charge: emoji('recommended'),
 			altCharge: emoji('alt'),
 			colors: ['vert', 'argent', 'sable'],
@@ -58,11 +58,13 @@ export default class Generator extends Component {
 			]
 			const divisions = [
 				'', // default, solid field
+				'party per bend',
 				'party per pale',
 				'party per fess',
 				'party per quartely',
 				'party per chevron',
-				'party per pale indented'
+				'party per pale indented',
+				'party per fess embattled',
 			]
 			const ordinaries = [
 				'', // default, solid field
@@ -72,7 +74,8 @@ export default class Generator extends Component {
 				'bend-sinister',
 				'chief',
 				'saltire',
-				'pile'
+				'pile',
+				'gyronny',
 			]
 			const designs = ['ordered', 'divided']
 			const patterns = [
@@ -97,13 +100,13 @@ export default class Generator extends Component {
 
 			// DEBUG
 			// this.setState({
-			// 	shape: 'spanish',
+			// 	shape: '',
 			// 	design: 'ordered',
-			// 	divisions: 'party per chevron',
-			// 	ordinaries: 'pile',
-			// 	chargeCount: 3,
+			// 	divisions: '',
+			// 	ordinaries: 'gyronny',
+			// 	chargeCount:  Math.max(1, Math.floor(Math.random() * 6)),
 			// 	charge: emoji(this.state.emojiSource),
-			// 	altCharge: emoji('inverted'),
+			// 	altCharge: emoji('alt'),
 			// 	colors: colors(),
 			// })
 
@@ -147,6 +150,17 @@ export default class Generator extends Component {
 					: <Divisions type={divisions} colors={colors} pattern={seme} />
 				}
 				<Charges state={this.state} count={chargeCount} alt={altCharge}/>
+				<filter id="dropshadow" height="130%">
+					<feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+					<feOffset dx="0" dy="0" result="offsetblur"/>
+					<feComponentTransfer>
+						<feFuncA type="linear" slope="0.5"/>
+					</feComponentTransfer>
+					<feMerge>
+						<feMergeNode/>
+						<feMergeNode in="SourceGraphic"/>
+					</feMerge>
+				</filter>
 			</svg>
 		)
 	}
