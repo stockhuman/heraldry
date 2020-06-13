@@ -153,7 +153,7 @@ export default function blazon (state) {
 						d += `a bend ${colorB}, overall ${describe(charge)}`
 					}
 					if (chargeCount === 2) {
-						d += `a bend ${colorB} between ${describe(charge)} and ${describe(altCharge)}`
+						d += `a bend ${colorB} between in chief ${describe(charge)} and in base ${describe(altCharge)}`
 					}
 					if (chargeCount >= 3 && (shape !== 'swiss' || shape !== 'rn2')) {
 						d += `in a bend ${colorB}, ${describe(charge, 3)}`
@@ -165,7 +165,7 @@ export default function blazon (state) {
 						d += `a bend sinister ${colorB}, overall ${describe(charge)}`
 					}
 					if (chargeCount > 1) {
-						d += `a bend sinister ${colorB} between ${describe(charge)} and ${describe(altCharge)}`
+						d += `a bend sinister ${colorB} between in chief ${describe(charge)} and in base ${describe(altCharge)}`
 					}
 					break
 				case 'pale':

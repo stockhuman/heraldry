@@ -79,7 +79,7 @@ export default function emojis (subset = 'reccomended') {
 			['📯', 'bugle# Or tasselled gules', or],
 			['💰', 'bag# of money Or, marked sable', or],
 			['🖋️', 'pen# bendwise sinister sable', sable],
-			['🗝', 'key# fesswise, wards to sinister Or'],
+			['🗝', 'key# bendwise, wards to sinister sable'],
 			['🗡️', 'dagger# bendwise inverted'],
 			['⚔️', 'pair# of swords in saltire proper'],
 			['🏹', 'bow# fully drawn and charged with arrows, bendwise to chief'],
