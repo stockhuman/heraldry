@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/heraldry/build/static/css/main.b344720e.chunk.css",
-    "main.js": "/heraldry/build/static/js/main.076eca1f.chunk.js",
-    "main.js.map": "/heraldry/build/static/js/main.076eca1f.chunk.js.map",
-    "runtime-main.js": "/heraldry/build/static/js/runtime-main.c0431198.js",
-    "runtime-main.js.map": "/heraldry/build/static/js/runtime-main.c0431198.js.map",
-    "static/js/2.de5b167c.chunk.js": "/heraldry/build/static/js/2.de5b167c.chunk.js",
-    "static/js/2.de5b167c.chunk.js.map": "/heraldry/build/static/js/2.de5b167c.chunk.js.map",
-    "index.html": "/heraldry/build/index.html",
-    "precache-manifest.ec5aa9eef4e89bc62bfab6aa91fca55b.js": "/heraldry/build/precache-manifest.ec5aa9eef4e89bc62bfab6aa91fca55b.js",
-    "service-worker.js": "/heraldry/build/service-worker.js",
-    "static/css/main.b344720e.chunk.css.map": "/heraldry/build/static/css/main.b344720e.chunk.css.map",
-    "static/media/App.css": "/heraldry/build/static/media/TwitterColorEmoji-SVGinOT.1d983b6f.ttf"
+    "main.css": "/static/css/main.b424866d.chunk.css",
+    "main.js": "/static/js/main.fc5d5621.chunk.js",
+    "main.js.map": "/static/js/main.fc5d5621.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.1fdb1f66.js",
+    "runtime-main.js.map": "/static/js/runtime-main.1fdb1f66.js.map",
+    "static/js/2.73a086fc.chunk.js": "/static/js/2.73a086fc.chunk.js",
+    "static/js/2.73a086fc.chunk.js.map": "/static/js/2.73a086fc.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.e3c8db766384cd2e58ffdd1b28dda49e.js": "/precache-manifest.e3c8db766384cd2e58ffdd1b28dda49e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.b424866d.chunk.css.map": "/static/css/main.b424866d.chunk.css.map",
+    "static/js/2.73a086fc.chunk.js.LICENSE.txt": "/static/js/2.73a086fc.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/TwitterColorEmoji-SVGinOT.0e98391e.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.c0431198.js",
-    "static/js/2.de5b167c.chunk.js",
-    "static/css/main.b344720e.chunk.css",
-    "static/js/main.076eca1f.chunk.js"
+    "static/js/runtime-main.1fdb1f66.js",
+    "static/js/2.73a086fc.chunk.js",
+    "static/css/main.b424866d.chunk.css",
+    "static/js/main.fc5d5621.chunk.js"
   ]
 }
