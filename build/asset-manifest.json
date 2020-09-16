@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/heraldry/build/static/css/main.d9c94f89.chunk.css",
-    "main.js": "/heraldry/build/static/js/main.2e710ebc.chunk.js",
-    "main.js.map": "/heraldry/build/static/js/main.2e710ebc.chunk.js.map",
-    "runtime-main.js": "/heraldry/build/static/js/runtime-main.026974f7.js",
-    "runtime-main.js.map": "/heraldry/build/static/js/runtime-main.026974f7.js.map",
-    "static/js/2.327da0c8.chunk.js": "/heraldry/build/static/js/2.327da0c8.chunk.js",
-    "static/js/2.327da0c8.chunk.js.map": "/heraldry/build/static/js/2.327da0c8.chunk.js.map",
+    "main.css": "/heraldry/build/static/css/main.913f36dd.chunk.css",
+    "main.js": "/heraldry/build/static/js/main.eb72bfa1.chunk.js",
+    "main.js.map": "/heraldry/build/static/js/main.eb72bfa1.chunk.js.map",
+    "runtime-main.js": "/heraldry/build/static/js/runtime-main.23a11cb1.js",
+    "runtime-main.js.map": "/heraldry/build/static/js/runtime-main.23a11cb1.js.map",
+    "static/js/2.73a086fc.chunk.js": "/heraldry/build/static/js/2.73a086fc.chunk.js",
+    "static/js/2.73a086fc.chunk.js.map": "/heraldry/build/static/js/2.73a086fc.chunk.js.map",
     "index.html": "/heraldry/build/index.html",
-    "precache-manifest.cfc8a31be2fae15e0792fc060f5e4fdb.js": "/heraldry/build/precache-manifest.cfc8a31be2fae15e0792fc060f5e4fdb.js",
+    "precache-manifest.afd02b1aaaeb4c5357d4c2accef967ea.js": "/heraldry/build/precache-manifest.afd02b1aaaeb4c5357d4c2accef967ea.js",
     "service-worker.js": "/heraldry/build/service-worker.js",
-    "static/css/main.d9c94f89.chunk.css.map": "/heraldry/build/static/css/main.d9c94f89.chunk.css.map",
-    "static/js/2.327da0c8.chunk.js.LICENSE.txt": "/heraldry/build/static/js/2.327da0c8.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/heraldry/build/static/media/TwemojiMozilla.01e848c6.ttf"
+    "static/css/main.913f36dd.chunk.css.map": "/heraldry/build/static/css/main.913f36dd.chunk.css.map",
+    "static/js/2.73a086fc.chunk.js.LICENSE.txt": "/heraldry/build/static/js/2.73a086fc.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/heraldry/build/static/media/TwitterColorEmoji-SVGinOT.0e98391e.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.026974f7.js",
-    "static/js/2.327da0c8.chunk.js",
-    "static/css/main.d9c94f89.chunk.css",
-    "static/js/main.2e710ebc.chunk.js"
+    "static/js/runtime-main.23a11cb1.js",
+    "static/js/2.73a086fc.chunk.js",
+    "static/css/main.913f36dd.chunk.css",
+    "static/js/main.eb72bfa1.chunk.js"
   ]
 }

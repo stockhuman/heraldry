@@ -1,13 +1,8 @@
 @font-face {
-  font-family: 'Gutenberg Textura';
-  src: url('../GutenbergTextura.ttf');
-}
-
-@font-face {
   font-family: 'Segoe UI Emoji';
   /* src: local('Segoe UI Emoji'), url('../seguiemj.ttf'); */
-  src: url('../TwemojiMozilla.ttf');
-  /* src: url('../TwitterColorEmoji-SVGinOT.ttf') */
+  /* src: url('../TwemojiMozilla.ttf'); */
+  src: url('../TwitterColorEmoji-SVGinOT.ttf')
 }
 
 
