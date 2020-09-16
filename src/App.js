@@ -9,15 +9,26 @@ function App() {
 		<div className="App">
 			<header>
 				<h1>Heraldry.io</h1>
-				<p>Press any key or tap to generate<br /><i>'S' to save</i></p>
+				<p>
+					Press any key or tap to generate
+					<br />
+					<i>'S' to save</i>
+				</p>
 			</header>
 			<main>
-				<span role="img" aria-label="crown">👑</span>
+				<span role="img" aria-label="crown">
+					👑
+				</span>
 				<Generator />
 			</main>
-			<footer>Made with honour and chivalry by <a href="https://michaelhemingway.com">Michael Hemingway</a></footer>
+			<footer>
+				Made with honour and chivalry by{' '}
+				<a href="https://www.michaelhemingway.com/projects/heraldry/">
+					Michael Hemingway
+				</a>
+			</footer>
 		</div>
-	);
+	)
 }
 
 export default App;
