@@ -2,7 +2,7 @@
 
 # Heraldry
 
-This is a webapp and associated twitter bot that generates quasi-historically-accurate coat of arms with emojis as charges. Escutcheons (shields) and their divisions and tinctures are rendered in SVG, and the charges are blazoned with Segoe UI Emoji as an authoritative source.
+This is a webapp and associated twitter bot that generates quasi-historically-accurate coat of arms with emojis as charges. Escutcheons (shields) and their divisions and tinctures are rendered in SVG, and the charges are blazoned with [Twemoji Emoji](https://github.com/eosrei/twemoji-color-font) as an authoritative source.
 
 ## Contributing
 
