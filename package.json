@@ -6,9 +6,9 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^3.4.3",
     "save-svg-as-png": "^1.4.17",
-    "twemoji": "^13.0.0"
+    "twemoji": "^13.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
