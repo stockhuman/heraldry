@@ -122,6 +122,10 @@ export function Ordinaries({ type, colors, pattern = null }) {
 			<polygon kind="cross" transform="translate(-150 -130)" points="905.52 376.88 529.01 376.88 529.01 0.38 376.88 0.38 376.88 376.88 0.38 376.88 0.38 529.01 376.88 529.01 376.88 905.52 529.01 905.52 529.01 529.01 905.52 529.01 905.52 376.88" fill={ match(colors[1]).hex } />
 		);
 			break;
+		case 'fess': ordinary = (
+			<rect kind="chief" x="0" y="220" width="970" height="150" fill={match(colors[1]).hex} />
+		);
+			break;
 		case 'saltire': ordinary = (
 			<polygon kind="saltire" transform="translate(-90 -60)" points="783.06 96.75 686.84 0.53 391.8 295.58 96.75 0.53 0.53 96.75 295.58 391.8 0.53 686.84 96.75 783.06 391.8 488.01 686.84 783.06 783.06 686.84 488.01 391.8 783.06 96.75" fill={ match(colors[1]).hex } />
 		);

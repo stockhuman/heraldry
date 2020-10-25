@@ -9,8 +9,8 @@ import blazon from './components/blazon'
 
 export default class Generator extends Component {
 
-	constructor (props) {
-		super(props)
+	constructor () {
+		super(null)
 		this.state = {
 			shape: 'french',
 			design: 'divided',
@@ -46,6 +46,19 @@ export default class Generator extends Component {
 			this.save()
 		} else {
 			const random = arr => arr[Math.floor(Math.random() * arr.length)]
+
+			const backgrounds = [
+				'#69d2e7',
+				'#a7dbd8',
+				'#e0e4cc',
+				'#f38630',
+				'#fa6900',
+				'#fe4365',
+				'#fc9d9a',
+				'#f9cdad',
+				'#c8c8a9',
+				'#83af9b',
+			]
 
 			const shapes = [
 				'', // default, old french
@@ -86,6 +99,9 @@ export default class Generator extends Component {
 				// 'lozengy'
 			]
 
+			// set background color as well, for Twitter
+			document.body.style.backgroundColor = random(backgrounds)
+
 			this.setState({
 				shape: random(shapes),
 				design: random(designs),
@@ -98,7 +114,7 @@ export default class Generator extends Component {
 				colors: colors(),
 			})
 
-			// DEBUG
+			// // DEBUG
 			// this.setState({
 			// 	shape: '',
 			// 	design: 'ordered',

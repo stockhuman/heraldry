@@ -38,7 +38,7 @@ export default function emojis (subset = 'reccomended') {
 		e = [
 			['🌞', 'sun# in their splendor', or],
 			['💘', 'heart# of gules pierced bendwise sinister Or', gules],
- 			['💚', 'heart# of vert', vert],
+			['💚', 'heart# of vert', vert],
 			['💙', 'heart# of azure', azure],
 			['🖤', 'heart# of sable', sable],
 			['💛', 'heart# of Or', sable],
@@ -86,7 +86,7 @@ export default function emojis (subset = 'reccomended') {
 			['🤔', 'thinking face emoji# Or', or],
 			['⚙️', 'gear# sable', sable],
 			['⚖️', 'standing balance# Or', or],
- 			['🔗', 'pair# of chainlinks bendwise to chief argent', argent],
+			['🔗', 'pair# of chainlinks bendwise to chief argent', argent],
 			['🐬', 'dolphin# sautant azure', azure],
 			['🖖🏿', "Moor's Palm# palmate splayed of thumb, middle, and ring proper"],
 			['🦉', 'owl# overt guardant proper'],
@@ -98,7 +98,7 @@ export default function emojis (subset = 'reccomended') {
 			['🟡', 'besant#', or],
 			['🟢', 'pomme#', vert],
 			['🧪', 'test tube# bendwise argent filled vert'],
- 			['💎', 'diamond# azure', azure],
+			['💎', 'diamond# azure', azure],
 			['🙃', '[an]upside-down smile emoji# Or', or],
 			['🥕', 'carrot# bendwise sinister proper'],
 			['🧺', 'basket# gules', gules],
@@ -118,6 +118,14 @@ export default function emojis (subset = 'reccomended') {
 			['🔔', 'bell# or', or],
 			['🦅', '[an]eagle’s head# argent, beaked or, plumed sable', sable],
 			['🦁', "lion's head# cabossed proper"],
+			['🧭', 'compass rose#', or],
+			['🔥', 'flame Or', or],
+			['🕯️', 'candle# enflamed Or', argent],
+			['🪵', 'log# proper'],
+			['💵', 'stack# of paper money vert, bound Or'],
+			['🫖', 'teapot# azure'],
+			['🌹', 'garden rose# slipped and leaved', gules],
+			['🪚', 'bendwise handsaw# proper'],
 		]
 	} else if (subset === 'alt') {
 		e = [
@@ -144,7 +152,9 @@ export default function emojis (subset = 'reccomended') {
 			['🐝', 'bee# tergiant proper', argent],
 			['🏰', 'castle# argent spired azure', argent],
 			['🩸', 'gout de sang', gules],
-			['🥺', 'pleading emoji# proper', or]
+			['🥺', 'pleading emoji# proper', or],
+			['🦠', 'microbe# vert', vert],
+			['⛲', 'natural fountain# argent spouting azure', azure],
 		]
 	}
 	return e[Math.floor(Math.random() * e.length)]
