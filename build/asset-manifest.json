@@ -1,23 +1,21 @@
 {
   "files": {
-    "main.css": "/heraldry/build/static/css/main.913f36dd.chunk.css",
-    "main.js": "/heraldry/build/static/js/main.eb72bfa1.chunk.js",
-    "main.js.map": "/heraldry/build/static/js/main.eb72bfa1.chunk.js.map",
-    "runtime-main.js": "/heraldry/build/static/js/runtime-main.23a11cb1.js",
-    "runtime-main.js.map": "/heraldry/build/static/js/runtime-main.23a11cb1.js.map",
-    "static/js/2.73a086fc.chunk.js": "/heraldry/build/static/js/2.73a086fc.chunk.js",
-    "static/js/2.73a086fc.chunk.js.map": "/heraldry/build/static/js/2.73a086fc.chunk.js.map",
+    "main.css": "/heraldry/build/static/css/main.a62bdbdb.chunk.css",
+    "main.js": "/heraldry/build/static/js/main.cfd45905.chunk.js",
+    "main.js.map": "/heraldry/build/static/js/main.cfd45905.chunk.js.map",
+    "runtime-main.js": "/heraldry/build/static/js/runtime-main.2ac1ed8c.js",
+    "runtime-main.js.map": "/heraldry/build/static/js/runtime-main.2ac1ed8c.js.map",
+    "static/js/2.b6a4506e.chunk.js": "/heraldry/build/static/js/2.b6a4506e.chunk.js",
+    "static/js/2.b6a4506e.chunk.js.map": "/heraldry/build/static/js/2.b6a4506e.chunk.js.map",
     "index.html": "/heraldry/build/index.html",
-    "precache-manifest.afd02b1aaaeb4c5357d4c2accef967ea.js": "/heraldry/build/precache-manifest.afd02b1aaaeb4c5357d4c2accef967ea.js",
-    "service-worker.js": "/heraldry/build/service-worker.js",
-    "static/css/main.913f36dd.chunk.css.map": "/heraldry/build/static/css/main.913f36dd.chunk.css.map",
-    "static/js/2.73a086fc.chunk.js.LICENSE.txt": "/heraldry/build/static/js/2.73a086fc.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/heraldry/build/static/media/TwitterColorEmoji-SVGinOT.0e98391e.ttf"
+    "static/css/main.a62bdbdb.chunk.css.map": "/heraldry/build/static/css/main.a62bdbdb.chunk.css.map",
+    "static/js/2.b6a4506e.chunk.js.LICENSE.txt": "/heraldry/build/static/js/2.b6a4506e.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/heraldry/build/static/media/TwitterColorEmoji-SVGinOT.379a0d39.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.23a11cb1.js",
-    "static/js/2.73a086fc.chunk.js",
-    "static/css/main.913f36dd.chunk.css",
-    "static/js/main.eb72bfa1.chunk.js"
+    "static/js/runtime-main.2ac1ed8c.js",
+    "static/js/2.b6a4506e.chunk.js",
+    "static/css/main.a62bdbdb.chunk.css",
+    "static/js/main.cfd45905.chunk.js"
   ]
 }
