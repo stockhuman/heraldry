@@ -302,8 +302,8 @@ export default function Charges({ state, count = 1, alt }) {
 						[{ x: 300, y: 370, size: 240 }],
 						// distrubuted horizontal in chief
 						[
-							{ x: 160, y: 160 },
-							{ x: 440, y: 160 },
+							{ x: 160, y: 150, size: 120 },
+							{ x: 440, y: 150, size: 120 },
 						],
 						// three horizontal
 						[
