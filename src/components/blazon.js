@@ -168,6 +168,18 @@ export default function blazon (state) {
 						d += `a bend sinister ${colorB} between in chief ${describe(charge)} and in base ${describe(altCharge)}`
 					}
 					break
+				case 'fess':
+					setCharges(7, 4)
+					d = `a fess ${colorB}, `
+					if (chargeCount === 1) {
+						d += `overtop ${describe(charge)}`
+					} else {
+						d += `in chief ${describe(charge, charges)}`
+						if (chargeCount > 3) {
+							d += `, in base ${describe(altCharge, altCharges)}`
+						}
+					}
+					break
 				case 'pale':
 					setCharges(3, 9)
 					d += `in a pale ${colorB}, ${describe(charge, charges)}`

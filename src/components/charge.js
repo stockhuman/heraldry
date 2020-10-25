@@ -295,6 +295,63 @@ export default function Charges({ state, count = 1, alt }) {
 					}
 					maxCharges = 4
 					break
+				// bar across the top
+				case 'fess':
+					placements = [
+						// central
+						[{ x: 300, y: 370, size: 240 }],
+						// distrubuted horizontal in chief
+						[
+							{ x: 160, y: 160 },
+							{ x: 440, y: 160 },
+						],
+						// three horizontal
+						[
+							{ x: 130, y: 160, size: 100 },
+							{ x: 300, y: 160, size: 100 },
+							{ x: 470, y: 160, size: 100 },
+						],
+						// Ante + larger
+						[
+							{ x: 130, y: 160, size: 100 },
+							{ x: 300, y: 160, size: 100 },
+							{ x: 470, y: 160, size: 100 },
+							{ x: 300, y: 550, size: 200, useAlt: true },
+						],
+						// Ante + larger x2
+						[
+							{ x: 130, y: 160, size: 100 },
+							{ x: 300, y: 160, size: 100 },
+							{ x: 470, y: 160, size: 100 },
+							{ x: 200, y: 520, size: 140, useAlt: true },
+							{ x: 400, y: 520, size: 140, useAlt: true },
+						],
+						// Three across fess, three below it
+						[
+							{ x: 130, y: 160, size: 100 },
+							{ x: 300, y: 160, size: 100 },
+							{ x: 470, y: 160, size: 100 },
+							{ x: 180, y: 460, size: 100, useAlt: true },
+							{ x: 420, y: 460, size: 100, useAlt: true },
+							{ x: 300, y: 560, size: 100, useAlt: true },
+						],
+						// Ante + 1 below
+						[
+							{ x: 130, y: 160, size: 100 },
+							{ x: 300, y: 160, size: 100 },
+							{ x: 470, y: 160, size: 100 },
+							{ x: 180, y: 490, size: 90, useAlt: true },
+							{ x: 420, y: 490, size: 90, useAlt: true },
+							{ x: 300, y: 590, size: 90, useAlt: true },
+							{ x: 300, y: 390, size: 90, useAlt: true },
+						],
+					]
+					maxCharges = 7
+					chargeSize = 100
+					if (shape === 'papal') {
+						chargeSize = 120
+					}
+					break
 
 				// line dividing the sides
 				case 'pale':
