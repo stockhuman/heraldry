@@ -46,7 +46,7 @@ export default function emojis (subset = 'reccomended') {
 			['💯', 'one hundred emoji# gules', gules],
 			['💣', 'bomb# sable', sable],
 			['🖐', 'hand# palmate Or', or],
-			['👌', 'OK Hand# Or', or],
+			['👌', '[an]OK Hand# Or', or],
 			['🤘', 'Sign of the Horns Or', or],
 			['🖕', 'Reversed Hand# With Middle Finger Extended Or', or],
 			['✊', 'Raised Fist# Or', or],
@@ -75,7 +75,7 @@ export default function emojis (subset = 'reccomended') {
 			['⚓', '[an]anchor# azure', azure],
 			['🌚', 'moon# in their plentitude', or], // https://mistholme.com/dictionary/moon/
 			['☁', 'cloud# argent', argent],
-			['♦️', 'lozengy gules', gules],
+			['♦️', 'lozenge gules', gules],
 			['📯', 'bugle# Or tasselled gules', or],
 			['💰', 'bag# of money Or, marked sable', or],
 			['🖋️', 'pen# bendwise sinister sable', sable],
