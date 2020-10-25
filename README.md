@@ -11,7 +11,7 @@ Have an emoji you think you can blazon? Open an issue with your propsed Emoji an
 --
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and as such relevant commands and documentation can be found at github.com/facebook/create-react-app.
 
-The Twitter bot is hosted on [glitch](https://glitch.com/~heraldry-bot). See relevant code there. The tweeted images are derived from the `puppeteer` branch.
+The Twitter bot was hosted on [glitch](https://glitch.com/~heraldry-bot). See relevant code there. The tweeted images are derived from the this branch.
 
 ## Acknowledgements
 This project utilises Twemoji emojis, bundled into a TTF font using [Mozilla's software](https://github.com/mozilla/twemoji-colr).
