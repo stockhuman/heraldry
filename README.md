@@ -14,6 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The Twitter bot was hosted on [glitch](https://glitch.com/~heraldry-bot). See relevant code there. The tweeted images are derived from the this branch.
 
 ## Acknowledgements
+
 This project utilises Twemoji emojis, bundled into a TTF font using [Mozilla's software](https://github.com/mozilla/twemoji-colr).
 
 ## License
