@@ -7,19 +7,17 @@
   font-family: 'Segoe UI Emoji';
   /* src: local('Segoe UI Emoji'), url('../seguiemj.ttf'); */
   /* src: url('../TwemojiMozilla.ttf'); */
-  src: url('../TwitterColorEmoji-SVGinOT.ttf')
+  src: url('../TwitterColorEmoji-SVGinOT.ttf');
 }
-
 
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:#1d2026;/* #282c34; */
+  background-color: #1d2026; /* #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -59,7 +57,7 @@ footer {
   left: 1rem;
   right: 2rem;
   text-align: right;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 footer:hover {
@@ -73,13 +71,13 @@ main {
 main span {
   display: block;
   text-align: center;
-  font-size: 150px
+  font-size: 150px;
 }
 
 #shield {
   max-width: 500px;
   width: 100%;
-  filter: drop-shadow( 0px 4px 3px rgba(0, 0, 0, .3));
+  filter: drop-shadow(0px 4px 3px rgba(0, 0, 0, 0.3));
 }
 
 a {
@@ -87,14 +85,30 @@ a {
 }
 
 @media (max-width: 550px) {
-  header { text-align: center; right: 0; margin: 1em 0; }
-  header h1 { font-size: 10vw }
-  header p { font-size: 10px }
-  main { margin: 1em }
-  main span { font-size: 100px}
-  #shield { max-width: 400px}
+  header {
+    text-align: center;
+    right: 0;
+    margin: 1em 0;
+  }
+  header h1 {
+    font-size: 10vw;
+  }
+  header p {
+    font-size: 10px;
+  }
+  main {
+    margin: 1em;
+  }
+  main span {
+    font-size: 100px;
+  }
+  #shield {
+    max-width: 400px;
+  }
 }
 
 @media (min-width: 1050px) and (min-height: 800px) {
-  #shield { width: 700px}
+  #shield {
+    width: 700px;
+  }
 }

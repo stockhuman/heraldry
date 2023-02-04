@@ -14,7 +14,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prebuild": "cp -r vendor/svg public/noto-svg"
+    "prebuild": "cp -r vendor/svg public/noto-svg",
+    "format": "prettier --write ."
   },
   "homepage": "https://heraldry.michaelhemingway.com/",
   "eslintConfig": {
@@ -31,5 +32,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.8.3"
   }
 }
