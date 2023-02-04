@@ -10,7 +10,7 @@ import blazon from './components/blazon'
 export default class Generator extends Component {
 
 	constructor () {
-		super(null)
+		super()
 		this.state = {
 			shape: 'french',
 			design: 'divided',
