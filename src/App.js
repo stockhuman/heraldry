@@ -17,7 +17,7 @@ function App() {
 			</header>
 			<main>
 				<span role="img" aria-label="crown">
-					👑
+					<img src="/noto-svg/emoji_u1f451.svg" width="150" alt='a crown'/>
 				</span>
 				<Generator />
 			</main>

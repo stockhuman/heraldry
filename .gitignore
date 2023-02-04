@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # submodule content
-src/assets/svg
+public/noto-svg

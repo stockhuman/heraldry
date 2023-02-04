@@ -14,7 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prebuild": "cp -r vendor/svg src/assets/svg"
+    "prebuild": "cp -r vendor/svg public/noto-svg"
   },
   "homepage": "https://heraldry.michaelhemingway.com/",
   "eslintConfig": {
