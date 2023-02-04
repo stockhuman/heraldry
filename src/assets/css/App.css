@@ -3,13 +3,6 @@
   src: url('../GutenbergTextura.ttf');
 }
 
-@font-face {
-  font-family: 'Segoe UI Emoji';
-  /* src: local('Segoe UI Emoji'), url('../seguiemj.ttf'); */
-  /* src: url('../TwemojiMozilla.ttf'); */
-  src: url('../TwitterColorEmoji-SVGinOT.ttf');
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -62,10 +55,6 @@ footer {
 
 footer:hover {
   opacity: 1;
-}
-
-main {
-  font-family: 'Segoe UI Emoji';
 }
 
 main span {
